@@ -15,13 +15,17 @@ $ apt install \
     texlive \
     texlive-latex-extra \
     texlive-fonts-extra \
-    texlive-lang-european
+    texlive-bibtex-extra \
+    texlive-lang-european \
+    biber
 ```
 
 To install optional packages, run
 
 ```shell
-$ apt install chktex
+$ apt install \
+    chktex \
+    latexmk
 ```
 
 Next, download required files from the [Aalto Thesis LaTeX Template](https://wiki.aalto.fi/display/Aaltothesis/Aalto+Thesis+LaTeX+Template).
