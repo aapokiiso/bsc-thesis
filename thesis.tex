@@ -99,14 +99,17 @@
 \subsection*{Käsitteet}
 
 \begin{tabular}{ll}
-personointi & palvelun yksilöllistäminen yksilöstä kerätyn tiedon perusteella
+mukauttaminen & kohdentaminen käyttäjälle tai käyttäjäryhmälle sopivaksi \\
+personointi & kerättyyn tietoon perustuva automaattinen mukauttaminen \\
+kustomointi & valintoihin ja asetuksiin perustuva mukauttaminen
 \end{tabular}
 
 \subsection*{Lyhenteet}
 
 \begin{tabular}{ll}
 CSS & Cascading Style Sheets \\
-HTML & HyperText Markup Language
+HTML & HyperText Markup Language \\
+RWD & Responsive Web Design
 \end{tabular}
 
 \cleardoublepage{}
@@ -114,7 +117,7 @@ HTML & HyperText Markup Language
 \section{Johdanto}
 
 Ihmisen ja tietokoneen välinen vuorovaikutus on ollut tietojenkäsittelytieteessä
-tutkimuksen kohteena jo henkilökohtaisen tietokoneen läpimurrosta 1970- ja
+tutkimuksen kohteena henkilökohtaisen tietokoneen läpimurrosta 1970- ja
 1980-lukujen vaihteesta lähtien~\cite{10.1145/800178.810088}. Yksi tutkimuksen
 tavoitteista on ollut löytää menetelmiä mukauttaa tietokoneen ohjelmistoja
 kullekin käyttäjälle sopivaksi.
@@ -132,19 +135,19 @@ on siirtynyt kustomoinnista personoinnin puolelle.
 Alkuaikoina ohjelmistojen jakelu fyysisten levykkeiden ja myöhemmin CD-levyjen
 muodossa hankaloitti personointiin liittyvän teknologian tutkimusta ja
 kehitystä, sillä ohjelmistopäivitysten jakelu käyttäjille oli hidasta ja
-kallista. 1990-luvulla yleistyneitä internet- eli verkkosivustoja ei tarvite
+kallista. 1990-luvulla yleistyneitä internet- eli verkkosivustoja ei tarvitse
 perinteisten ohjelmistojen tapaan jaella käyttäjille fyysisessä muodossa, vaan
-heille voidaan internetin avulla välittää palvelimelta aina uusin versio
+internetin avulla voidaan tarjoilla palvelimelta aina uusin versio
 verkkosivustosta. Internetin mahdollistama palveluntarjoajan ja loppukäyttäjän
 välinen reaaliaikainen vuorovaikutus johti myös osaltaan personointia
 hyödyntävän liiketoiminnan, kuten verkkokaupankäynnin ja sosiaalisen median
 kehittymiseen. Internetin käytön leviäminen arkielämään 1990- ja 2000-lukujen
 vaihteessa kiihdytti personointiin kohdistuvaa tutkimusta ja
-kehitystä~\cite{10.1108/03090560710737534}.
+kehitystä edelleen~\cite{10.1108/03090560710737534}.
 
 Vaikka verkkosivustojen personointia on tutkittu verrattain pitkään, käytännön
-hyödyntäminen toimialalla on edelleen harvinaista~\cite{viite puuttuu}.
-Verkkosivuston ulkoasu suunnitellaan edelleen lähtökohtaisesti ihmisen toimesta,
+hyödyntäminen toimialalla on vielä harvinaista~\cite{viite puuttuu}.
+Verkkosivuston ulkoasu suunnitellaan nykyäänkin lähtökohtaisesti ihmisen toimesta,
 ja myös ulkoasusuunnitelman tulkitseminen ja ohjelmoiminen lopulliseksi
 verkkosivustoksi on manuaalista työtä. Käyttäjille tai edes käyttäjäryhmille ei
 siis ole kustannustehokasta suunnitella personoituja versioita sivustoista.
@@ -169,27 +172,110 @@ persononointimenetelmät, joista saa suurimman hyödyn.
 \section{Aikaisempi tutkimus}
 
 Tarvitaanko tätä? Tulee mun mielestä ilmi seuraavissa kappaleissa.
+\\
+- Personalisoinnin tutkimuksen historia tähän päivään?
+\\
+- Personalisoinnin huonot puolet? Pohdintaa tietosuojasta ja siitä että
+seurataan ihmisiä ja kerätään niistä tietoa
+\\
+- Web-suunnittelu esittely yleisesti? suunnittelijan työkalut
+\\
+- Web-kehitys esittely yleisesti? HTML/CSS/JS, perinteiset floatti-leiskat, flexbox, css grid
+\\
 
 \clearpage
 
-\section{Verkkosivuston osien personointi}
+\section{Verkkosivuston eri osien personointi}
 
 Tässä käydään läpi kaikki eri verkkosivuston relevantit osa-alueet ja kuinka
 niitä voidaan personoida.
 
 \subsection{Sivun asettelu}
 
-Sivuston rakenteen personointi.
+Sivun asettelu määrittää verkkosivun perusrakenteen ja sivun sisällön
+keskinäisen järjestyksen. Tyypillisesti verkkosivuston yksittäisellä sivulla on
+vähintään otsake, sisältöalue ja alaviite. Otsake ja alaviite pysyvät yleensä
+suurin piirtein muuttumattomina sivustolla navigoidessa, mutta sisältöalueen
+sisältö luonnollisesti muuttuu sivun mukaan. Otsake ja alaviite ovat
+valikonomaisia sivuston osia, joita käsitellään luvussa~\ref{menus}. Otsake
+sijaitsee aina sivun alussa ja alaviite sivun lopussa. Niiden asettelun
+personointi ei ole mielekästä, joten niitä ei tarkastella enempää tässä luvussa.
+
+Sisältöalueen asettelu perustuu nykyään lähtökohtaisesti ruudukkorakenteeseen
+(engl.\ \textit{grid layout}). Ruudukko koostuu sivustosta ja päätelaitteen
+näyttökoosta riippuen yleensä n. \ 1--16 sarakkeesta (engl.\ \textit{column}),
+jotka on erotettu toisistaan vakiosuuruisella marginaalilla (engl.\
+\textit{margin}). Sarakkeiden leveys, joka on kääntäen verrannollinen
+sarakkeiden määrään, perustuu suhteelliseen osaan saatavilla olevasta
+ruudukkoalueen (engl.\ \textit{grid container}) leveydestä, ja sarakkeiden
+leveys muuttuu yhdessä ruudukkoalueen kanssa. Ruudukkoalueelle sijoittuvat
+elementit (engl.\ \textit{element}), kuten tekstipalstat ja kuvat, voivat kattaa
+yhden tai useamman sarakkeen leveyden. Elementtien leveys määritetään kuitenkin
+nimenomaan sarakkeiden kautta, eivätkä ne voi vapaasti laajentua leveyssuunnassa
+niiden sisällön kasvaessa. Sen sijaan elementit laajenevat tarvittaessa
+pituussuunnassa. Tyypillisesti verkkosivut eivät mahdukaan kokonaan kerralla
+näytölle, vaan niitä pitää vierittää alaspäin jolloin lisää sisältöä tulee
+näkyville.
+
+\subsection*{Responsiivinen web-suunnittelu}
+
+Ennen 2010-lukua asettelu tehtiin lähtökohtaisesti staattisesti, tarkoittaen
+että sivun sisältöalueella oli ennalta määrätty leveys. Leveys oli yleensä
+maksimissaan 1024 pikseliä, joka oli senaikaiset päätelaitteet huomioon ottaen sopiva
+koko. Sisältöalueen leveys ei muuttunut päätelaitteen mukaan. Sivun suunnittelu
+ja toteutus oli verrattain helppoa, koska hankalista asettelun rajatapauksista
+ei tarvinnut huolehtia. Toisaalta staattisesti rakennetut sivustot alkoivat olla
+hankalia käyttää älypuhelinten yleistyessä, sillä sivustojen käyttö pienellä
+näyttökoolla vaati zoomausta sisällön erottamiseksi.
+
+Nykypäivänä on tyypillistä, että sivuston asettelu mukautuu päätelaitteen
+näyttökokoon. Näyttökokoon perustuvaa asettelun mukautumista kutsutaan
+responsiiviseksi web-suunnitteluksi (engl.\ \textit{responsive web design}),
+joskin termi kattaa myös muita mukauttamisperusteita, kuten paperille
+tulostuksen. Sivuston perustuessa ruudukkorakenteeseen asettelu mukautuu
+automaattisesti näyttökoon muutoksiin, sillä sarakkeiden leveys on määritetty
+suhteessa ruudukkoalueeseen. Asettelua voi kuitenkin parantaa entisestään
+lisäämällä sarakkeiden määrää näyttökoon kasvaessa, ja vähentämällä sarakkeiden
+määrää näyttökoon pienentyessä. Tällä tavalla esimerkiksi työpöytälaiteella
+vierekkäin näkyvät elementit voidaan mobiililaitteella asetella allekkain,
+jolloin ne ovat pienelläkin näyttökoolla yhtä suuria kuin työpöytälaiteella.
+
+Asettelun muuttaminen näyttökoon muuttuessa tapahtuu leveyteen perustuvien
+pysäytyspisteiden (engl.\ \textit{breakpoint}) avulla. Pysäytyspisteet
+määritetään \textit{media queries} -tekniikan~\cite{Rivoal:12:MQ} avulla, joka
+mahdollistaa muun muassa CSS-tyylien kohdentamisen päätelaitteen ominaisuuksien
+mukaan. Pysäytyspisteisiin pohjautuva asettelun mukauttaminen on yleinen ja
+helppo tapa personoida sivuston asettelua eri päätelaitteille. Pysäytyspisteiden
+avulla asettelu mukautetaan yleensä vähintään niin, että puhelimille,
+tableteille ja työpöytälaitteille on kullekin oma asettelunsa.
+
+\subsection*{Responsiivisen web-suunnittelun automatisointi}
+
+Responsiivisen web-suunnittelun haasteena on se, että se täytyy ottaa
+huomioon jo sivuston suunnittelu- ja toteutusvaiheessa. Suunnittelijan tulee
+prosessin aikaisessa vaiheessa päättää, mitkä pysäytyspisteet sivustolla on
+käytössä. Pysäytyspisteiden muuttaminen suunnitteluprosessin aikana on työlästä,
+ja toteutuksen aikana se on vielä työläämpää.
+
+Aalto-yliopiston \href{https://userinterfaces.aalto.fi/}{User Interfaces
+-tutkimusryhmä} kehitti vuonna 2020 \textit{Layout as a
+Service}-alustakonseptin~\cite{laine2020_laas} ja myöhemmin vuonna 2021 siihen
+pohjautuvan \textit{Computation responsive web design
+(C-RWD)}-teknologiakonseptin~\cite{laine2021responsive}. Tutkimusryhmän C-RWD
+-teknologia kykenee automatisoimaan sivuston mukauttamisen eri päätelaitteille
+ja näyttöko'oille.
+
+Tähän lisää lihaa luiden ympärille.
+
+\subsection*{Sisällön korostaminen}
+
+Directing user attention via visual flow on web designs ym.
 
 \subsection{Ulkoasu ja ilme}
 
 Fontit, värit, jne.
 
-\subsection{Sisältö}
-
-Sisällön korostaminen jne.
-
-\subsection{Valikot}
+\subsection{Valikot}\label{menus}
 
 Valikkojen uudelleenjärjestely jne.
 
@@ -205,13 +291,13 @@ Apuelementit (tooltips), aria, jne.
 
 \section{Personointimenetelmien toimintatavat}
 
-- Matemaattinen optimointi (integer programming?)
+- Matemaattinen optimointi: integer programming
 \\
-- Käyttöliittymäsuunnittelun heuristiikat
+- Käyttöliittymäsuunnittelun heuristiikat: fonttikoko hyvä 16px, väri-säännöt
 \\
-- Koneoppiminen
+- Koneoppiminen: tähän kuva ai->ml->deep ml
 \\
-- Suunnittelijan syöte / työkalut
+- Suunnittelijan input personointiin
 
 \clearpage
 
@@ -247,5 +333,13 @@ kynnyksellä.
 
 \thesisbibliography{}
 \printbibliography{}
+
+\clearpage
+\thesisappendix{}
+
+\section{Esimerkki liitteestä\label{LiiteA}}
+
+- Kuva tyypillisestä verkkosivusta jossa korostettu työn kannalta relevantit
+osat, kuten rakenne, ilme, sisältö, saavutettavuus.
 
 \end{document}
