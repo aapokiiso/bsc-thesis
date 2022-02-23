@@ -185,11 +185,112 @@ seurataan ihmisiä ja kerätään niistä tietoa
 
 \clearpage
 
-\section{Tarve personoinnille}
+\section{Web-suunnittelun taustaa}
+
+Web-suunnittelu eli verkkosivujen suunnittelu on edelleen lähellä
+printtisuunnittelua, vaikka mediana web tarjoaa paljon enemmän mahdollisuuksia
+vuorovaikutukseen. Web-suunnittelun päätuotos eli tunnetummin \textit{leiska} on
+päällisin puolin staattinen kuvaus siitä, miltä verkkosivuston tulee näyttää.
+Leiskan lisäksi suunnittelija tuottaa usein rajoitetun interaktiivisia
+prototyyppejä, joilla leiskan toimintaa voi esitellä esimerkiksi asiakkaalle.
+Leiskaan tehdään tarvittavat mukautukset eri asiakasryhmille vain ennalta
+sovittujen määrittelyjen ja palvelumuotoilun pohjalta. Yksi tällainen mukautus
+on omien leiskojen tuottaminen eri laitetyypeille, kuten mobiili-, tabletti- ja
+työpöytälaitteille. Laitetyyppeihin perustuvaa mukauttamista kutsutaan
+responsiiviseksi web-suunnitteluksi, josta kerrotaan lisää
+luvussa~\ref{responsive-web-design}. Varsinaista personointia leiskoihin ei
+yleensä sisällytetä.
+
+Web-kehittäjän tehtävä on kääntää leiska toimivaksi verkkosivustoksi. Leiska ei
+staattisesta luonteestaan huolimatta ole nykyään enää pelkkä rasterikuva, toisin
+kuin vielä 2000-luvun alussa. Leiskaan on upotettu kaikki web-kehittäjän
+tarvitsemat yksityiskohdat ulkoasun toteuttamiseen, kuten kirjasintyyppi ja
+-koko, marginaalit ja värit. Web-kehittäjä hyödyntää työssään joko samoja
+työkaluja kuin suunnittelija, tai varta vasten leiskojen käsittelyyn
+tarkoitettuja kehittäjätyökaluja.
+
+Yleisesti ottaen web-kehityksessä on pääosassa kolme teknologiaa: HTML, CSS ja
+JavaScript. HTML-merkintäkielen avulla määritetään verkkosivun rakenne ja eri
+osien merkitys. CSS-säännöstön avulla määritetään verkkosivun tyyli ja ulkoasu,
+eli se on HTML-merkintäkielen lisäksi merkittävässä osassa leiskaa toteuttaessa.
+JavaScript on ainoa web-alustalla kattavasti tuettu varsinainen
+ohjelmointikieli. Sillä on mahdollista toteuttaa käyttäjän ja sivuston välinen
+vuorovaikutus.
+
+Nykyään web-kehittäjä rakentaa harvemmin sivustoja enää pelkästään näillä
+kolmella perusteknologialla, vaan niiden päälle on kehitetty teknologioita ja
+kirjastoja jotka vähentävät toistuvaa työtä ja huolehtivat jossain määrin
+hyvistä käytänteistä kuten saavutettavuudesta. Nämä teknologiat hyödyntävät
+enenevissä määrin JavaScript-ohjelmointikieltä, mikä on tuonut web-kehitystä
+lähemmäs perinteisempää ohjelmistokehitystä. Aiemmin verkkosivustoja oli yleistä
+rakentaa lähes ilman ohjelmointityötä pelkän HTML-merkintäkielen ja
+CSS-tyylisäännöstön avulla. Sivustojen käytettävyyttä parannettiin kevyen
+JavaScript-skriptauksen kera siellä ja täällä, mutta varsinainen ohjelmointityö
+rajoittui yleensä palvelinpuolelle. Palvelinpuolen kehitystä ei tässä työssä
+esitellä tai käsitellä työn rajauksesta johtuen.
+
+Sittemmin tärkeä edistysaskel web-kehityksessä on tapahtunut 2010-luvun
+loppupuolen jälkeen, kun JavaScript-käyttöliittymäkirjastot ovat yleistyneet
+räjähdysmäisesti. Yleisimmät käyttöliittymäkirjastot ovat React ja Vue.
+Käyttöliittymäkirjastot abstraktoivat perinteisen web-kehityksen kuten
+HTML-rakenteen luomisen, CSS-tyylittelyn ja JavaScript-toiminnallisuuden
+rakentamisen semanttisten web-komponenttien alle. Komponentit enkapsuloivat
+jonkin tietyn toiminnallisuuden, ja niitä on suhteellisen helppo
+uudelleenkäyttää myöhemmin. Komponentit myös mahdollistavat
+suunnittelu-järjestelmien (engl.\ \textit{design system}) luomisen jo projektin
+alussa. Suunnittelujärjestelmä sisältää yleensä projektin komponenttikirjaston,
+joka käsittää sivuston rakennuspalikat kuten painikkeet, otsikot ja lomakkeet.
 
 \clearpage
 
-\section{Asettelun personointi}
+\section{Tarve personoinnille}
+
+Personoinnilla tarkoitetaan käyttäjästä kerätyn tiedon perusteella tehtävää
+automaattista mukauttamista. Kerätty tieto voi olla hyvin erilaisista lähteistä,
+kuten asiointihistoriasta, julkishallinnon rekistereistä tai verkkosivujen
+tapauksessa käyttäytymisestä sivustolla. Tieto jonka pohjalta personointia
+tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin puhutaan
+yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa
+jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-,
+puhelin- tai verkkoasioinnissa. Tämä työ keskittyy verkkoasioinnin personointiin
+ja nimenomaan verkkosivustojen ulkoasun personointiin.
+
+Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
+ja työ on tarkoituksella rajattu vain verkkosivuston ulkoasun personointiin
+näkökulman tarkentamiseksi. Työ keskittyy pääasiassa ulkoasun personointiin
+vaikka myös verkkosivuston sisällön personointia sivutaan, sillä sisällön
+personointi on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
+Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
+suosittelualgoritmit ja verkkomainonnan kohdennus, jotka eroavat menetelmiltään
+merkittävästi verkkosivuston ulkoasun personoinnista. Ulkoasun personointiin
+kuuluu kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen,
+jota tarkastellaan luvussa~\ref{layout-personalization}.
+
+Tarve personoinnille vaihtelee verkkosivuston mukaan, mutta yleisesti voidaan
+todeta että personoinnin tavoitteena on ohjata käyttäjän toimintaa
+verkkosivuston palveluntarjoajan tavoitteiden mukaisesti, ja täten joko lisätä
+palveluntarjoajan tuloja tai vähentää sen menoja. Esimerkiksi tyypillisen
+verkossa toimivan uutismedian tavoite on kerätä tuloja näyttämällä mainoksia
+artikkelien yhteydessä. Personoimalla käyttäjälle näytettäviä sisältöjä
+esimerkiksi korostamalla tälle mielenkiintoisia aiheita, käyttäjä saadaan
+lukemaan enemmän artikkeleja ja täten kasvatettua uutismedian mainostuloja.
+Käänteisenä esimerkkinä kunnan tavoitteena voisi olla vähentää lomakeasiointiin
+liittyviä soittoja puhelinneuvontaan, jonka ylläpitäminen on kallista.
+Verkkosivustonsa etusivua personoimalla kunta voisi näyttää juuri käyttäjälle
+ajankohtaiset lomakkeet heti sivun alussa ja täten helpottaa asiointia.
+
+Verkkosivuston personointi mahdollistaa yksilöllisen tiedonvälityksen
+kokoluokassa, joka ei aiemmin ole ollut mahdollista. Printtimedia skaalautuu
+kyllä hyvin ja sen kautta tietoa on ollut mahdollista levittää laajalle jo
+vuosisatoja, mutta sen personointi on liki mahdotonta tai ainakin erittäin
+kallista. Toinen ääripää eli tiedonvälitys henkilöltä toiselle on aina
+personoitua, mutta se ei skaalaudu. Personointi sekä muukin ihmisen ja
+tietokoneen välinen vuorovaikutus on edelleen mielenkiintoinen ja tärkeä
+tutkimusalue.
+
+\clearpage
+
+\section{Asettelun personointi}\label{layout-personalization}
 
 Sivun asettelu määrittää verkkosivun perusrakenteen ja sivun sisällön
 keskinäisen järjestyksen. Tyypillisesti verkkosivuston yksittäisellä sivulla on
@@ -218,7 +319,7 @@ pituussuunnassa. Tyypillisesti verkkosivut eivät mahdukaan kokonaan kerralla
 näytölle, vaan niitä pitää vierittää alaspäin jolloin lisää sisältöä tulee
 näkyville.
 
-\subsection{Responsiivinen web-suunnittelu}
+\subsection{Responsiivinen web-suunnittelu}\label{responsive-web-design}
 
 Ennen 2010-lukua asettelu tehtiin lähtökohtaisesti staattisesti, tarkoittaen
 että sivun sisältöalueella oli ennalta määrätty leveys. Leveys oli yleensä
@@ -275,7 +376,7 @@ verkkosivuja, koska toteutusvaihe vaatii edelleen manuaalista työtä. Personoin
 jääkin responsiivisen web-suunnittelun tapaan melko yleiselle, isoille
 käyttäjäryhmille suunnatulle tasolle.
 
-\subsection{Asettelun laskennallinen personointi}
+\subsection{Laskennallinen personointi}
 
 Responsiivisen web-suunnittelun haasteena on se, että se täytyy ottaa huomioon
 jo sivuston suunnittelu- ja toteutusvaiheessa. Suunnittelijan tulee prosessin
