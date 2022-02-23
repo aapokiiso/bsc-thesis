@@ -124,13 +124,13 @@ kullekin käyttäjälle sopivaksi.
 
 Ohjelmistojen mukauttaminen voidaan jakaa karkeasti kahteen ryhmään:
 Kustomoinnilla tarkoitetaan käyttäjän itse tekemää mukauttamista, personoinnilla
-sen sijaan automaattista mukauttamista käyttäjästä kerätyn tiedon
+automaattista mukauttamista käyttäjästä kerätyn tiedon
 perusteella.~\cite{10.1108/03090560710737534}
 
 Aikaisessa tutkimuksessa tutkittiin nimenomaan ohjelmistojen mukauttamista
 kustomoinnin kautta, eli muun muassa tarjoamalla käyttäjälle asetuksia
 tarpeettomien toimintojen piilottamiseen. Ajan kuluessa tutkimuksen painopiste
-on siirtynyt kustomoinnista personoinnin puolelle.
+on siirtynyt kustomoinnista personoinnin puolelle~\cite{viite?}.
 
 Alkuaikoina ohjelmistojen jakelu fyysisten levykkeiden ja myöhemmin CD-levyjen
 muodossa hankaloitti personointiin liittyvän teknologian tutkimusta ja
@@ -146,26 +146,26 @@ vaihteessa kiihdytti personointiin kohdistuvaa tutkimusta ja
 kehitystä edelleen~\cite{10.1108/03090560710737534}.
 
 Vaikka verkkosivustojen personointia on tutkittu verrattain pitkään, käytännön
-hyödyntäminen toimialalla on vielä harvinaista~\cite{viite puuttuu}.
+hyödyntäminen toimialalla on vielä harvinaista~\cite{viite?}.
 Verkkosivuston ulkoasu suunnitellaan nykyäänkin lähtökohtaisesti ihmisen toimesta,
 ja myös ulkoasusuunnitelman tulkitseminen ja ohjelmoiminen lopulliseksi
 verkkosivustoksi on manuaalista työtä. Käyttäjille tai edes käyttäjäryhmille ei
 siis ole kustannustehokasta suunnitella personoituja versioita sivustoista.
 Yhden ja saman version jakelu kaikille verkkosivuston käyttäjille ei ole
 kuitenkaan aina optimaalista, sillä käyttäjillä on usein eri tarpeita muun
-muassa kulttuuritaustasta ja iästä riippuen~\cite{viite puuttuu}.
+muassa kulttuuritaustasta ja iästä riippuen~\cite{viite?}.
 
-Työn tarkoitus on selvittää mitä menetelmiä verkkosivuston eri osien
+Työn tarkoitus on selvittää mitä menetelmiä verkkosivuston ulkoasun eri osien
 personointiin on olemassa. Tarkasteltavia osia ovat muun muassa verkkosivuston
-rakenne, kirjasin- ja värivalinnat, valikot, sisältö ja saavutettavuus. Työ
-tarkastelee myös eri personointimenetelmien toimintatapoja. Monet
-tarkasteltavista menetelmistä perustuvat matemaattisen optimointiin, mutta
-hyödyntävät myös käyttöliittymäsuunnittelun heuristiikkoja kuten tekstin
-luettavuuskriiterejä tuloksissaan. Oma lukunsa ovat koneoppimiseen perustuvat
-menetelmät, joiden opetusdatana on käytetty esimerkiksi olemassa olevia
-verkkosivustoja. Työ myös vertailee menetelmien käyttöönoton kustannuksia
-saavutettaviin hyötyihin, ja pyrkii tätä kautta löytämään matalan kynnyksen
-persononointimenetelmät, joista saa suurimman hyödyn.
+asettelu, kirjasin- ja värivalinnat sekä valikot. Työ tarkastelee myös eri
+personointimenetelmien toimintatapoja. Monet tarkasteltavista menetelmistä
+perustuvat matemaattisen optimointiin, mutta hyödyntävät myös
+käyttöliittymäsuunnittelun heuristiikkoja kuten tekstin luettavuuskriiterejä
+tuloksissaan. Oma lukunsa ovat koneoppimiseen perustuvat menetelmät, joiden
+opetusdatana on käytetty esimerkiksi olemassa olevia verkkosivustoja. Työ myös
+vertailee menetelmien käyttöönoton kustannuksia saavutettaviin hyötyihin, ja
+pyrkii tätä kautta löytämään matalan kynnyksen persononointimenetelmät, joista
+saa suurimman hyödyn.
 
 \clearpage
 
@@ -185,21 +185,22 @@ seurataan ihmisiä ja kerätään niistä tietoa
 
 \clearpage
 
-\section{Verkkosivuston eri osien personointi}
+\section{Tarve personoinnille}
 
-Tässä käydään läpi kaikki eri verkkosivuston relevantit osa-alueet ja kuinka
-niitä voidaan personoida.
+\clearpage
 
-\subsection{Sivun asettelu}
+\section{Asettelun personointi}
 
 Sivun asettelu määrittää verkkosivun perusrakenteen ja sivun sisällön
 keskinäisen järjestyksen. Tyypillisesti verkkosivuston yksittäisellä sivulla on
-vähintään otsake, sisältöalue ja alaviite. Otsake ja alaviite pysyvät yleensä
-suurin piirtein muuttumattomina sivustolla navigoidessa, mutta sisältöalueen
-sisältö luonnollisesti muuttuu sivun mukaan. Otsake ja alaviite ovat
-valikonomaisia sivuston osia, joita käsitellään luvussa~\ref{menus}. Otsake
-sijaitsee aina sivun alussa ja alaviite sivun lopussa. Niiden asettelun
-personointi ei ole mielekästä, joten niitä ei tarkastella enempää tässä luvussa.
+vähintään ylätunniste (engl.\ \textit{header}), sisältöalue (engl.\
+\textit{content area}) ja alatunniste (engl.\ \textit{footer}). Ylätunniste ja
+alatunniste pysyvät yleensä suurin piirtein muuttumattomina sivustolla
+navigoidessa, mutta sisältöalueen sisältö luonnollisesti vaihtuu sivun mukaan.
+Ylätunniste ja alatunniste ovat valikonomaisia sivuston osia, joita käsitellään
+luvussa~\ref{menus}. Ylätunniste sijaitsee aina sivun alussa ja alatunniste
+sivun lopussa. Niiden asettelun personointi ei ole mielekästä, joten niitä ei
+tarkastella enempää tässä luvussa.
 
 Sisältöalueen asettelu perustuu nykyään lähtökohtaisesti ruudukkorakenteeseen
 (engl.\ \textit{grid layout}). Ruudukko koostuu sivustosta ja päätelaitteen
@@ -217,12 +218,12 @@ pituussuunnassa. Tyypillisesti verkkosivut eivät mahdukaan kokonaan kerralla
 näytölle, vaan niitä pitää vierittää alaspäin jolloin lisää sisältöä tulee
 näkyville.
 
-\subsection*{Responsiivinen web-suunnittelu}
+\subsection{Responsiivinen web-suunnittelu}
 
 Ennen 2010-lukua asettelu tehtiin lähtökohtaisesti staattisesti, tarkoittaen
 että sivun sisältöalueella oli ennalta määrätty leveys. Leveys oli yleensä
 maksimissaan 1024 pikseliä, joka oli senaikaiset päätelaitteet huomioon ottaen sopiva
-koko. Sisältöalueen leveys ei muuttunut päätelaitteen mukaan. Sivun suunnittelu
+koko~\cite{viite?}. Sisältöalueen leveys ei muuttunut päätelaitteen mukaan. Sivun suunnittelu
 ja toteutus oli verrattain helppoa, koska hankalista asettelun rajatapauksista
 ei tarvinnut huolehtia. Toisaalta staattisesti rakennetut sivustot alkoivat olla
 hankalia käyttää älypuhelinten yleistyessä, sillä sivustojen käyttö pienellä
@@ -245,39 +246,97 @@ pysäytyspisteiden (engl.\ \textit{breakpoint}) avulla. Pysäytyspisteet
 määritetään \textit{media queries} -tekniikan~\cite{Rivoal:12:MQ} avulla, joka
 mahdollistaa muun muassa CSS-tyylien kohdentamisen päätelaitteen ominaisuuksien
 mukaan. Pysäytyspisteisiin pohjautuva asettelun mukauttaminen on yleinen ja
-helppo tapa personoida sivuston asettelua eri päätelaitteille. Pysäytyspisteiden
+helppo tapa mukauttaa sivuston asettelua eri päätelaitteille. Pysäytyspisteiden
 avulla asettelu mukautetaan yleensä vähintään niin, että puhelimille,
 tableteille ja työpöytälaitteille on kullekin oma asettelunsa.
 
-\subsection*{Responsiivisen web-suunnittelun automatisointi}
+\subsection{Personointi suunnitteluvaiheessa}
 
-Responsiivisen web-suunnittelun haasteena on se, että se täytyy ottaa
-huomioon jo sivuston suunnittelu- ja toteutusvaiheessa. Suunnittelijan tulee
-prosessin aikaisessa vaiheessa päättää, mitkä pysäytyspisteet sivustolla on
-käytössä. Pysäytyspisteiden muuttaminen suunnitteluprosessin aikana on työlästä,
-ja toteutuksen aikana se on vielä työläämpää.
+Personointimenetelmät voivat toimia suunnittelijan työkalujen kontekstissa.
+Tällöin ne on helpompi ottaa käyttöön, koska työkalut on lähtökohtaisesti samat
+kaikilla ja niihin integroituminen voidaan lisäosa-tyyppisten ratkaisujen
+kautta. Nykyään suosittuja verkkosivustojen suunnitteluun käytettäviä
+ohjelmistoja ovat muun muassa Sketch, Figma ja Adobe XD, joihin kaikkiin on
+mahdollista rakentaa lisäosia. Perinteisempiä työkaluja edustavat Adoben
+tuoteperheen Photoshop ja Illustrator, joiden käyttö web-suunnittelussa on
+vähentynyt huomattavasti.
+
+Yksi suunnittelijoille suunnattu apukeino on Pang et al.~\cite{Pang2016}
+esittelemä menetelmä verkkosivuston asettelun optimoimiseen käyttäjien
+silmänliikkeistä kerätyn datan perusteella. Suunnittelija kertoo työkalulle
+tavoittelemansa elementtien lukujärjestyksen, ja työkalu tuottaa suunnitelman
+verkkosivusta jossa elementtien asettelu on optimoitu annetun lukujärjestyksen
+mukaan. Pangin työkalu ei integroidu suoraan suunnittelijan työkaluihin, mutta
+vastaavan kaupallisen ratkaisun tuominen yleisimpiin työkaluihin olisi varmasti
+tervetullut apu suunnittelijoille.
+
+Suunnitteluvaiheen optimointimenetelmien kautta on hankala personoida
+verkkosivuja, koska toteutusvaihe vaatii edelleen manuaalista työtä. Personointi
+jääkin responsiivisen web-suunnittelun tapaan melko yleiselle, isoille
+käyttäjäryhmille suunnatulle tasolle.
+
+\subsection{Asettelun laskennallinen personointi}
+
+Responsiivisen web-suunnittelun haasteena on se, että se täytyy ottaa huomioon
+jo sivuston suunnittelu- ja toteutusvaiheessa. Suunnittelijan tulee prosessin
+aikaisessa vaiheessa päättää, mitkä pysäytyspisteet sivustolla on käytössä.
+Pysäytyspisteiden muuttaminen myöhemmin suunnittelun tai toteutuksen aikana on
+hyvin työlästä, sillä pysäytyspisteet määrittävät asettelun perustan ja niiden
+muuttaminen vaikuttaa siten kaikkeen muuhun.
+
+Responsiivinen web-suunnittelu ei ole personointia sanan varsinaisessa
+merkityksessä, sillä sivuston responsiviisuus on määritelty jo
+suunnitteluvaiheessa eikä aidosti mukaudu yksittäisen käyttäjän tarpeisiin.
+Responsiivisen web-suunnittelun kautta tapahtuva asettelun personointi perustuu
+vain käyttäjän laitteen karkeaan kategorisointiin, yleensä joko mobiili-,
+tabletti- tai työpöytälaitteeksi.
+
+Näistä lähtökohdista tutkimusta on kohdistunut laskennallisten menetelmien
+hyödyntämiseen responsiivisessa web-suunnittelussa. Verkkosivusto on
+pohjimmiltaan rakenteellista sisältöä, joten sitä voidaan käsitellä
+koneellisesti. Jos responsiivinen web-suunnittelu kyetään automatisoimaan,
+vähentää se suunnittelijan ja kehittäjän työtaakkaa huomattavasti. Tällöin
+riittää että sivustosta suunnitellaan vain mobiiliversio (ns. \textit{mobile
+first} web-suunnittelu), josta voidaan laskennallisten menetelmien avulla
+laajentaa muille laitteille sopivat versiot.
 
 Aalto-yliopiston \href{https://userinterfaces.aalto.fi/}{User Interfaces
 -tutkimusryhmä} kehitti vuonna 2020 \textit{Layout as a
 Service}-alustakonseptin~\cite{laine2020_laas} ja myöhemmin vuonna 2021 siihen
-pohjautuvan \textit{Computation responsive web design
+pohjautuvan \textit{Computational responsive web design
 (C-RWD)}-teknologiakonseptin~\cite{laine2021responsive}. Tutkimusryhmän C-RWD
 -teknologia kykenee automatisoimaan sivuston mukauttamisen eri päätelaitteille
-ja näyttöko'oille.
+ja näyttöko'oille. Teknologia seuraa sivuston vieralijoiden käyttäytymiseen
+liittyviä tietoja, kuten vierailuaikaa kullakin sivulla ja mitä sisältöjä on
+klikattu. C-RWD parsii sivun HTML-rakennetta ja kykenee kerättyjen tietojen
+avulla optimoimaan siitä käyttäjälle personoidun version. Personoitu versio
+sivustosta tarjoillaan käyttäjälle vanhan sivuston sijasta. Käyttäjälle
+tärkeiksi arvioituja sisältöjä voidaan esimerkiksi nostaa ylemmäs sivulla,
+jolloin ne näkyvät käyttäjälle heti sivun latautuessa.
 
-Tähän lisää lihaa luiden ympärille.
+C-RWD laajentaa asettelun laskennallista suunnittelua nimenomaan responsiivisen
+web-suunnittelun osalta. Aiempaa tutkimusta edustaa mm.
+SUPPLE~\cite{10.1145/964442.964461}, joka tutki sivun asettelua
+optimointiongelmana. SUPPLE kuitenkin vaati suunnittelijaa määrittämään
+asettelun rajoitteet, kuten päätelaitteen näyttökoon ja käyttötavan. C-RWD
+päättelee optimointiin tarvittavat rajoitteet itse seuraamalla käyttäjän
+käyttäytymistä.
 
-\subsection*{Sisällön korostaminen}
-
-Directing user attention via visual flow on web designs ym.
-
-\subsection{Ulkoasu ja ilme}
+\section{Ilmeen personointi}
 
 Fontit, värit, jne.
 
-\subsection{Valikot}\label{menus}
+\section{Valikoiden personointi}\label{menus}
 
 Valikkojen uudelleenjärjestely jne.
+
+\section{Muu personointi}
+
+Lyhyesti vaan. Kannattaakohan ees pitää?
+
+\subsection{Sisältö}
+
+Content-based filtering, etc.
 
 \subsection{Lomakkeet}
 
@@ -301,7 +360,7 @@ Apuelementit (tooltips), aria, jne.
 
 \clearpage
 
-\section{Personointimenetelmien luokittelu}
+\section{Personointimenetelmien vertailu}
 
 Kuinka personoinnin menetelmät voidaan luokitella niin, että ne ovat helposti
 vertailtavissa verkkosivuston kehittäjän näkökulmasta?
