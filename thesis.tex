@@ -299,7 +299,9 @@ enää ole kartalla siitä, mitä tietoa on suostunut luovuttamaan ja mihin.
 Tietojen luovutuspyyntöihin myös turtuu nopeasti, mistä esimerkkinä on EUn
 GDPR-direktiivin myötä yleistyneet evästesuostumukset. Suostumusta kysytään
 lähes jokaisella verkkosivustolla, koska verkkoanalytiikka ja kohdennettu
-mainonta on niin yleistä.
+mainonta on niin yleistä. Asenteet tämäntyyppisen personoinnin osalta ovat
+muuttuneet negatiiviseen suuntaan, kun vielä 90-luvulla sisällön personointi
+nähtiin verkkoon siirtyvän printtimedian pelastajana~\cite{adams_1995}.
 
 Arkielämän teknistyessä käyttäjälle ei myöskään ole välttämättä aina selvää,
 mitä kaikkea tietoa on edes mahdollista kerätä. Tietoja kuten hiiren liike,
@@ -309,6 +311,15 @@ käyttäjästä sormenjäljen, jota on käytännössä mahdoton muuttaa tai pyyh
 vaihtamatta laitetta. Evästeiden avulla isot mainosverkostot pystyvät seuraamaan
 käyttäjää sivustolta toiselle ja personoimaan mainontaa selailukäyttäytymisen
 perusteella.
+
+Personointi ei aina ole edes haluttua. Monet alustapohjaiset teknologiayritykset
+ovat viime vuosina panostaneet erilaisiin suosittelualgoritmeihin kohdentaakseen
+sisältöään paremmin. Suosittelualgoritmit toimivat hyvin suurelle osalle
+käyttäjäkunnasta, mutta saattavat hankaloittaa palvelun käyttöä pienelle osalle,
+johon kuuluvat eivät istu hyvin algoritmin luokittelijaan. Suosittelualgoritmit
+ovat myös korvanneet palveluiden aiemmin käyttäjälle tarjoamia
+kustomointimahdollisuuksia kuten sisällön järjestelyasetuksia, mikä on
+hankaloittanut palvelun käyttöä~\cite{patel_2022}.
 
 Jo aiemmin mainittu COVID-19 rokotetietoisuuden kohdentaminen on myös
 kaksiteräinen miekka. Jos hyväntahtoiset toimijat kuten terveysvirastot pystyvät
@@ -385,7 +396,7 @@ helppo tapa mukauttaa sivuston asettelua eri päätelaitteille. Pysäytyspisteid
 avulla asettelu mukautetaan yleensä vähintään niin, että puhelimille,
 tableteille ja työpöytälaitteille on kullekin oma asettelunsa.
 
-\subsection{Personointi suunnitteluvaiheessa}
+\subsection{Suunnittelijan työkalut}
 
 Personointimenetelmät voivat toimia suunnittelijan työkalujen kontekstissa.
 Tällöin ne on helpompi ottaa käyttöön, koska työkalut on lähtökohtaisesti samat
@@ -406,11 +417,14 @@ vastaavan kaupallisen ratkaisun tuominen yleisimpiin työkaluihin olisi varmasti
 tervetullut apu suunnittelijoille.
 
 Suunnitteluvaiheen optimointimenetelmien kautta on hankala personoida
-verkkosivuja, koska toteutusvaihe vaatii edelleen manuaalista työtä. Personointi
-jääkin responsiivisen web-suunnittelun tapaan melko yleiselle, isoille
-käyttäjäryhmille suunnatulle tasolle.
+verkkosivuja, koska toteutusvaihe vaatii edelleen manuaalista työtä. Tietyllä
+tapaa Pangin työkalun kaltaiset menetelmät voidaan nähdä personoivan leiskaa
+itse suunnittelijalle, mutta tämä menee hiukan saivartelun puolelle.
+Personointimenetelmät jäävätkin suunnittelijan työkalujen osalta responsiivisen
+web-suunnittelun tapaan melko yleiselle, isoille käyttäjäryhmille suunnatulle
+tasolle.
 
-\subsection{Laskennallinen personointi}
+\subsection{Personointi optimointiongelmana}
 
 Responsiivisen web-suunnittelun haasteena on se, että se täytyy ottaa huomioon
 jo sivuston suunnittelu- ja toteutusvaiheessa. Suunnittelijan tulee prosessin
@@ -459,7 +473,60 @@ käyttäytymistä.
 
 \section{Ilmeen personointi}
 
-Fontit, värit, jne.
+Ilmeellä tarkoitetaan tässä verkkosivuston visuaalista tyyliä. Siihen sisältyy
+käytetty kirjasintyyppi (engl.\ \textit{font}) ja muut tekstiin liittyvät
+ominaisuudet kuten kirjasinkoko sekä lihavoinnin tai kursiivin kaltaiset
+muotoseikat. Ilmeeseen sisältyy myös verkkosivuston väripaletti, joka on hyvin
+tärkeässä osassa personoinnissa. Väreisiin liittyy tunnelatauksia ja täten
+värivalinnat vaikuttavat siihen, millaisena ihmiset kokevat verkkosivuston
+käytön. Ilmeen kannalta oleellista on myös tyhjän tilan käyttö eli se kuinka
+paljon tilaa sivuston osien välillä on. Nämä ovat kaikki asioita, jotka voi
+jossain määrin yleistää kaikkeen graafiseen suunnitteluun web-suunnittelun
+lisäksi, ja ilmeen personointia on tutkittu myös graafisen suunnittelun
+näkökulmasta.
+
+\subsection{Tekstin ilme}
+
+Luettavuus, eri kielissä eri aakkoset, miten pelaa yhteen tekstin sävyn kanssa
+(virallinen teksti ei voi olla comic sans jne)
+
+Voiko esim https://www.metaflop.com/ käyttää automaattiseen personointiin?
+
+Tähän O'Donovanilla hyvää asiaa
+
+\subsection{Värit}
+
+Väripaletin suunnittelu on aina hankalaa. Verkkosivustolla on usein käytössä
+ainakin yksi pääväri, yksi huomioväri ja lisäksi muutama hillitympi sävy.
+Suunnittelija valitsee värit intuition ja heuristiikkojen kuten värin `lämmön'
+perusteella~\cite{odonovan_2015}. Onneksi suunnittelijan ei yleensä tarvitse
+aloittaa tyhjästä, vaan ennen verkkosivuston suunnittelua on jo olemassa
+jonkinlainen organisaation kattava suunnittelujärjestelmä.
+
+Haastavaa värisuunnittelua on mahdollista helpottaa personoimalla väripalettia
+kullekin käyttäjälle sopivaksi. Personoinissa täytyy toki ottaa huomioon
+brändiin liittyvät seikat, mutta esimerkiksi huomiovärin kaltaisia
+yksityiskohtia on mahdollista personoida hyvin tuloksin. Suhtautuminen väreihin
+on erilaista eri puolilla maailmaa. Jos verkkosivuston käyttäjäkunta koostuu
+vain pienen kultuurillisesti yhtenäisen alueen asukkaista, värien personoinnista
+ei välttämättä ole hyötyä. Jos käyttäjäkunta on laajempaa tai jopa globaalia,
+väripersonointi nousee uuteen merkitykseen. Reinecke et
+al.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelussa
+pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri verkkosivustojen
+visuaalista miellyttävyyttä. He huomasivat, että esimerkiksi makedonialaiset
+pitävät keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
+yksinkertaisempia leiskoja ja väripaletteja.
+
+Jatkuu... mitä menetelmiä värien personointiin? pitääkö ottaa huomioon jo
+suunnitteluvaiheessa vai voidaanko automatisoida?
+
+\subsection{Kuvat ja grafiikat}
+
+Tähän ainakin Personalization of image enhancement artikkelista asiaa.
+
+\subsection{Tyhjän tilan käyttö}
+
+Mainitaanko golden ratio? Mitä muuta?
 
 \section{Valikoiden personointi}\label{menus}
 
@@ -488,9 +555,12 @@ Apuelementit (tooltips), aria, jne.
 Kuinka personoinnin menetelmät voidaan luokitella niin, että ne ovat helposti
 vertailtavissa verkkosivuston kehittäjän näkökulmasta?
 
+Tähän olisi hyvä saada grafiikkaa
+
 \subsection{Käyttöönoton monimutkaisuus ja hinta}
 
-Kuinka kallista / vaikeaa ne on ottaa käyttöön?
+Kuinka kallista / vaikeaa ne on ottaa käyttöön? Onko avoimia haasteita? Onko
+tilanteita joissa menetelmiä ei voi käyttää?
 
 \subsection{Vaikuttavuus ja hyöty}
 
