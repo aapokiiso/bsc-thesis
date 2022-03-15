@@ -138,13 +138,13 @@ tiedontallennusvälineiden muodossa hankaloitti personointiin liittyvän
 teknologian tutkimusta ja kehitystä, sillä ohjelmistopäivitysten jakelu
 käyttäjille oli hidasta ja kallista. 1990-luvulla yleistyneitä internet- eli
 web-sivustoja (engl.\ \textit{website}) ei tarvitse perinteisten ohjelmistojen
-tapaan jaella käyttäjille fyysisillä välineillä, vaan palvelimelta voidaan
-tarjoilla aina uusin versio web-sivustosta. Internetin mahdollistama
-palveluntarjoajan ja loppukäyttäjän välinen reaaliaikainen vuorovaikutus johti
-myös osaltaan personointia hyödyntävän liiketoiminnan, kuten sähköisen
-kaupankäynnin ja sosiaalisen median kehittymiseen. Internetin käytön leviäminen
-arkielämään 1990- ja 2000-lukujen kuluessa kiihdytti personointiin kohdistuvaa
-tutkimusta ja kehitystä edelleen~\cite{10.1108/03090560710737534}.
+tapaan jaella käyttäjille, vaan palvelimelta voidaan tarjoilla aina uusin versio
+web-sivustosta. Internetin mahdollistama palveluntarjoajan ja loppukäyttäjän
+välinen reaaliaikainen vuorovaikutus johti myös osaltaan personointia
+hyödyntävän liiketoiminnan, kuten sähköisen kaupankäynnin ja sosiaalisen median
+kehittymiseen. Internetin käytön leviäminen arkielämään 1990- ja 2000-lukujen
+kuluessa kiihdytti personointiin kohdistuvaa tutkimusta ja kehitystä
+edelleen~\cite{10.1108/03090560710737534}.
 
 Vaikka web-sivustojen personointia on tutkittu verrattain pitkään, käytännön
 hyödyntäminen toimialalla on vielä harvinaista~\cite{viite?}.
@@ -176,81 +176,10 @@ Web-kehitys on muuhun ohjelmistokehitykseen verrattuna nuori ala ja
 edelleen jatkuvassa murroksessa. Tässä kappaleessa esitellään web-kehityksen
 nykytilannetta työn taustatiedoksi.
 
-\subsection{Web-suunnittelu}
+Ensiksi kuitenkin tarkastellaan, mitä personointi tarkoittaa yleisesti ja mitkä
+ovat sen hyödyt ja haitat.
 
-Web-suunnittelu (engl.\ \textit{web design}) on käytännön tasolla lähellä muita
-graafisen suunnittelun aloja kuten printtisuunnittelua, vaikka mediana web
-tarjoaa paljon enemmän mahdollisuuksia vuorovaikutukseen. Web-suunnittelun
-päätuotos eli arkikielessä \textit{leiska} (engl.\ \textit{layout}) on
-ei-vuorovaikutteinen vektorikuva siitä, miltä toteutettavan web-sivuston tulee
-näyttää. Leiskan lisäksi suunnittelija tuottaa usein rajoitetun interaktiivisia
-prototyyppejä, joilla sivuston toimintaa voi esitellä leiskan kautta esimerkiksi
-asiakkaalle ennen toteutusta. Leiskaan tehdään tarvittavat mukautukset eri
-käyttäjäryhmille vain ennalta sovittujen määrittelyjen ja palvelumuotoilun
-(engl.\ \textit{service design}) pohjalta. Yleisin tällainen mukautus on omien
-leiskojen tuottaminen eri laitetyypeille, kuten mobiili-, tabletti- ja
-työpöytälaitteille. Laitetyyppeihin perustuvaa mukauttamista kutsutaan
-responsiiviseksi web-suunnitteluksi (engl.\ \textit{responsive web design}),
-josta kerrotaan lisää luvussa~\ref{responsive-web-design}. Varsinaista
-personointia leiskoihin ei yleensä sisällytetä.
-
-\subsection{Web-kehitys}
-
-Web-kehittäjän (engl.\ \textit{web developer}) tehtävä on kääntää
-leiska toimivaksi web-sivustoksi. Ei-vuorovaikutteisesta luonteestaan
-huolimatta leiska ei nykyään ole enää pelkkä rasterikuva (engl.\ \textit{raster
-image}), toisin kuin yleisesti vielä 2000-luvun alussa. Vektorimuotoiseen
-leiskaan on upotettu kaikki web-kehittäjän tarvitsemat yksityiskohdat
-ulkoasun toteuttamiseen, kuten kirjasintyyppi ja -koko, marginaalit ja
-värikoodit. Web-kehittäjä hyödyntää leiskan käsittelyyn joko samoja
-työkaluja kuin suunnittelija, tai varta vasten leiskojen käsittelyyn
-tarkoitettuja kehittäjätyökaluja.
-
-Karkeasti yleistäen web-kehityksessä on pääosassa kolme teknologiaa: HTML, CSS
-ja JavaScript. HTML-merkintäkielen avulla määritetään web-sivuston rakenne ja
-eri osien rakenteellinen merkitys. Web-selain (engl.\ \textit{web browser})
-ymmärtää rakenteen eri osien merkityksen ja pystyy piirtämään ne sivulle
-oikealla tavalla. CSS-säännöstön avulla määritetään web-sivuston osien tyyli ja
-asettelu, eli se on HTML-merkintäkielen lisäksi merkittävässä osassa leiskaa
-toteuttaessa. JavaScript on ainoa web-alustalla kattavasti tuettu varsinainen
-ohjelmointikieli. Sillä on mahdollista luoda vuorovaikutusta käyttäjän ja
-sivuston välille.
-
-Nykyään web-kehittäjä rakentaa sivustoja harvemmin enää pelkästään näillä
-kolmella perusteknologialla, vaan niiden päälle on kehitetty teknologioita ja
-kirjastoja jotka vähentävät toistuvaa työtä ja huolehtivat jossain määrin
-hyvistä käytänteistä kuten saavutettavuudesta. Nämä teknologiat hyödyntävät
-enenevissä määrin JavaScript-ohjelmointikieltä, mikä on tuonut web-kehitystä
-lähemmäs perinteisempää ohjelmistokehitystä. Aiemmin web-sivustoja oli yleistä
-rakentaa lähes ilman ohjelmointityötä pelkän HTML-merkintäkielen ja
-CSS-tyylisäännöstön avulla. Sivustojen käytettävyyttä parannettiin kevyen
-JavaScript-skriptauksen kera siellä ja täällä, mutta varsinainen ohjelmointityö
-rajoittui yleensä palvelinpuolelle. Palvelinpuolen kehitystä ei tässä työssä
-esitellä tai käsitellä työn rajauksesta johtuen.
-
-Sittemmin tärkeä edistysaskel web-kehityksessä on tapahtunut 2010-luvun
-loppupuolen jälkeen, kun JavaScript-käyttöliittymäkirjastot ovat yleistyneet
-merkittävästi. Yleisimmät käyttöliittymäkirjastot vuonna 2022 ovat React ja Vue.
-Käyttöliittymäkirjastot abstraktoivat perinteisen web-kehityksen kuten
-HTML-rakenteen luomisen, CSS-tyylittelyn ja JavaScript-toiminnallisuuden
-rakentamisen semanttisten web-komponenttien sisälle. Komponentit enkapsuloivat
-jonkin tietyn toiminnallisuuden, ja niitä on suhteellisen helppo
-uudelleenkäyttää myöhemmin. Komponentit myös mahdollistavat osaltaan
-suunnittelujärjestelmien (engl.\ \textit{design system}) luomisen jo projektin
-alussa. Suunnittelujärjestelmä sisältää yleensä projektin komponenttikirjaston,
-joka käsittää sivuston rakennuspalikat kuten painikkeet, otsikot ja lomakkeet.
-
-Tähän vielä selkeytystä komponenteista ja mitä muuta fronttikirjastot tekee.
-Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esim. valmiit
-komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
-
-\subsection{Ulkoasun automaattinen generointi}
-
-Nimenomaan ei-personoinnin näkökulmasta, vaan yleisiä menetelmiä.
-
-\clearpage
-
-\section{Personointi}
+\subsection{Personointi}
 
 Personoinnilla tarkoitetaan käyttäjästä kerätyn tiedon perusteella tehtävää
 automaattista mukauttamista. Kerätty tieto voi olla hyvin erilaisista lähteistä,
@@ -261,19 +190,6 @@ yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa
 jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-,
 puhelin- tai web-asioinnissa. Tämä työ keskittyy web-asioinnin personointiin
 ja nimenomaan web-sivuston ulkoasun personointiin.
-
-Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
-ja työ on tarkoituksella rajattu vain web-sivuston ulkoasun personointiin
-näkökulman tarkentamiseksi. Työ keskittyy pääasiassa ulkoasun personointiin
-vaikka myös web-sivuston sisällön personointia sivutaan, sillä sisällön
-personointi on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
-Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
-suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
-merkittävästi web-sivuston ulkoasun personoinnista. Ulkoasun personointiin
-kuuluu kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen,
-jota tarkastellaan luvussa~\ref{layout-personalization}.
-
-\subsection{Personoinnin hyödyt ja haitat}
 
 Tarve personoinnille vaihtelee web-sivuston mukaan, mutta yleisesti voidaan
 todeta että personoinnin tavoitteena on ohjata käyttäjän toimintaa web-sivuston
@@ -345,7 +261,93 @@ tekninen monimutkaisuus käytetystä menetelmästä riippuen. Saavutetut hyödyt
 web-sivuston palveluntarjoajan lisääntyvässä asiakastyytyväisyydessä ja sitä
 kautta lisääntyvissä tuloissa tai vähentyvissä menoissa.
 
+\subsection{Web-suunnittelu}
+
+Web-suunnittelu (engl.\ \textit{web design}) on käytännön tasolla lähellä muita
+graafisen suunnittelun aloja kuten printtisuunnittelua, vaikka mediana web
+tarjoaa paljon enemmän mahdollisuuksia vuorovaikutukseen. Web-suunnittelun
+päätuotos eli arkikielessä \textit{leiska} (engl.\ \textit{layout}) on
+ei-vuorovaikutteinen vektorikuva siitä, miltä toteutettavan web-sivuston tulee
+näyttää. Leiskan lisäksi suunnittelija tuottaa usein rajoitetun interaktiivisia
+prototyyppejä, joilla sivuston toimintaa voi esitellä leiskan kautta esimerkiksi
+asiakkaalle ennen toteutusta. Leiskaan tehdään tarvittavat mukautukset eri
+käyttäjäryhmille vain ennalta sovittujen määrittelyjen ja palvelumuotoilun
+(engl.\ \textit{service design}) pohjalta. Yleisin tällainen mukautus on omien
+leiskojen tuottaminen eri laitetyypeille, kuten mobiili-, tabletti- ja
+työpöytälaitteille. Laitetyyppeihin perustuvaa mukauttamista kutsutaan
+responsiiviseksi web-suunnitteluksi (engl.\ \textit{responsive web design}),
+josta kerrotaan lisää luvussa~\ref{responsive-web-design}. Varsinaista
+personointia leiskoihin ei yleensä sisällytetä.
+
+\subsection{Moderni web-kehitys}
+
+Web-kehittäjän (engl.\ \textit{web developer}) tehtävä on kääntää
+leiska toimivaksi web-sivustoksi. Ei-vuorovaikutteisesta luonteestaan
+huolimatta leiska ei nykyään ole enää pelkkä rasterikuva (engl.\ \textit{raster
+image}), toisin kuin yleisesti vielä 2000-luvun alussa. Vektorimuotoiseen
+leiskaan on upotettu kaikki web-kehittäjän tarvitsemat yksityiskohdat
+ulkoasun toteuttamiseen, kuten kirjasintyyppi ja -koko, marginaalit ja
+värikoodit. Web-kehittäjä hyödyntää leiskan käsittelyyn joko samoja
+työkaluja kuin suunnittelija, tai varta vasten leiskojen käsittelyyn
+tarkoitettuja kehittäjätyökaluja.
+
+Karkeasti yleistäen web-kehityksessä on pääosassa kolme teknologiaa: HTML, CSS
+ja JavaScript. HTML-merkintäkielen avulla määritetään web-sivuston rakenne ja
+eri osien rakenteellinen merkitys. Web-selain (engl.\ \textit{web browser})
+ymmärtää rakenteen eri osien merkityksen ja pystyy piirtämään ne sivulle
+oikealla tavalla. CSS-säännöstön avulla määritetään web-sivuston osien tyyli ja
+asettelu, eli se on HTML-merkintäkielen lisäksi merkittävässä osassa leiskaa
+toteuttaessa. JavaScript on ainoa web-alustalla kattavasti tuettu varsinainen
+ohjelmointikieli. Sillä on mahdollista luoda vuorovaikutusta käyttäjän ja
+sivuston välille.
+
+Nykyään web-kehittäjä rakentaa sivustoja harvemmin enää pelkästään näillä
+kolmella perusteknologialla, vaan niiden päälle on kehitetty teknologioita ja
+kirjastoja jotka vähentävät toistuvaa työtä ja huolehtivat jossain määrin
+hyvistä käytänteistä kuten saavutettavuudesta. Nämä teknologiat hyödyntävät
+enenevissä määrin JavaScript-ohjelmointikieltä, mikä on tuonut web-kehitystä
+lähemmäs perinteisempää ohjelmistokehitystä. Aiemmin web-sivustoja oli yleistä
+rakentaa lähes ilman ohjelmointityötä pelkän HTML-merkintäkielen ja
+CSS-tyylisäännöstön avulla. Sivustojen käytettävyyttä parannettiin kevyen
+JavaScript-skriptauksen kera siellä ja täällä, mutta varsinainen ohjelmointityö
+rajoittui yleensä palvelinpuolelle. Palvelinpuolen kehitystä ei tässä työssä
+esitellä tai käsitellä työn rajauksesta johtuen.
+
+Sittemmin tärkeä edistysaskel web-kehityksessä on tapahtunut 2010-luvun
+loppupuolen jälkeen, kun JavaScript-käyttöliittymäkirjastot ovat yleistyneet
+merkittävästi. Yleisimmät käyttöliittymäkirjastot vuonna 2022 ovat React ja Vue.
+Käyttöliittymäkirjastot abstraktoivat perinteisen web-kehityksen kuten
+HTML-rakenteen luomisen, CSS-tyylittelyn ja JavaScript-toiminnallisuuden
+rakentamisen semanttisten web-komponenttien sisälle. Komponentit enkapsuloivat
+jonkin tietyn toiminnallisuuden, ja niitä on suhteellisen helppo
+uudelleenkäyttää myöhemmin. Komponentit myös mahdollistavat osaltaan
+suunnittelujärjestelmien (engl.\ \textit{design system}) luomisen jo projektin
+alussa. Suunnittelujärjestelmä sisältää yleensä projektin komponenttikirjaston,
+joka käsittää sivuston rakennuspalikat kuten painikkeet, otsikot ja lomakkeet.
+
+Tähän vielä selkeytystä komponenteista ja mitä muuta fronttikirjastot tekee.
+Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esim. valmiit
+komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
+
+\subsection{Ulkoasun tuottaminen koneellisesti}
+
+Tähän ulkoasun generoinnista asiaa. Nimenomaan ei-personoinnin näkökulmasta,
+vaan yleisiä menetelmiä
+
 \clearpage
+
+\section{Ulkoasun personointi}
+
+Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
+ja työ on tarkoituksella rajattu vain web-sivuston ulkoasun personointiin
+näkökulman tarkentamiseksi. Työ keskittyy pääasiassa ulkoasun personointiin
+vaikka myös web-sivuston sisällön personointia sivutaan, sillä sisällön
+personointi on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
+Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
+suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
+merkittävästi web-sivuston ulkoasun personoinnista. Ulkoasun personointiin
+kuuluu kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen,
+jota tarkastellaan luvussa~\ref{layout-personalization}.
 
 \subsection{Asettelun personointi}\label{layout-personalization}
 
@@ -428,13 +430,12 @@ mukaan. Pangin työkalu ei integroidu suoraan suunnittelijan työkaluihin, mutta
 vastaavan kaupallisen ratkaisun tuominen yleisimpiin työkaluihin olisi varmasti
 tervetullut apu suunnittelijoille.
 
-Suunnitteluvaiheen optimointimenetelmien kautta on hankala personoida
-web-sivustoja, koska toteutusvaihe vaatii edelleen manuaalista työtä.
-Personointimenetelmät jäävätkin suunnittelijan työkalujen osalta responsiivisen
-web-suunnittelun tapaan melko yleiselle, isoille käyttäjäryhmille suunnatulle
-tasolle.
+Suunnitteluvaiheessa web-sivustojen ulkoasun personointi on hankalaa, koska
+toteutusvaihe vaatii edelleen manuaalista työtä. Personointimenetelmät jäävätkin
+suunnittelijan työkalujen osalta responsiivisen web-suunnittelun tapaan melko
+yleiselle, isoille käyttäjäryhmille suunnatulle tasolle.
 
-\subsubsection{Personointi optimointiongelmana}
+\subsubsection{Asettelu optimointiongelmana}
 
 Responsiivisen web-suunnittelun haasteena on se, että se täytyy ottaa huomioon
 jo sivuston suunnittelu- ja toteutusvaiheessa. Suunnittelijan tulee prosessin
