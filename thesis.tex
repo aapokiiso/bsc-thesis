@@ -534,7 +534,10 @@ jossain määrin yleistää kaikkeen graafiseen suunnitteluun web-suunnittelun
 lisäksi, ja ilmeen personointia on tutkittu myös graafisen suunnittelun
 näkökulmasta.
 
-\subsubsection{Tekstin ilme}
+Ilmeeseen liittyy myös osa-alueita, kuten siirtymät ja tyhjän tilan käyttö,
+jotka on tästä työstä rajattu pois rajallisen tutkimusaineiston takia.
+
+\subsubsection{Typografia}
 
 Luettavuus, eri kielissä eri aakkoset, miten pelaa yhteen tekstin sävyn kanssa
 (virallinen teksti ei voi olla comic sans jne)
@@ -569,17 +572,9 @@ yksinkertaisempia leiskoja ja väripaletteja.
 Jatkuu... mitä menetelmiä värien personointiin? pitääkö ottaa huomioon jo
 suunnitteluvaiheessa vai voidaanko automatisoida?
 
-\subsubsection{Kuvat ja grafiikat}
+\subsubsection{Kuvien sovitus}
 
 Tähän ainakin Personalization of image enhancement artikkelista asiaa.
-
-\subsubsection{Tyhjän tilan käyttö}
-
-Margin, padding, jne. Mainitaanko golden ratio? Mitä muuta?
-
-\subsubsection{Siirtymät ja animaatiot}
-
-Nopeus, kuinka aggressiivisia, jne.
 
 \clearpage
 
@@ -649,10 +644,17 @@ kullekin ulkoasun osa-alueelle, ja taulukossa personointimenetelmät pisteytetä
 luvussa~\ref{personalization-aspects} kuvattujen personoinnin näkökulmien
 kautta.
 
+Pisteytystaulukon lisäksi kunkin osion tärkeimmät menetelmät on esitetty
+graafisessa priorisointikuvassa, jonka akseleina toimivat aiemmin kuvatut
+vaivattomuus ja hyöty. Tärkeimmiksi menetelmiksi lasketaan ne, joiden
+vaivattomuus ja/tai hyöty on yli 10 pistettä.
+
 \subsubsection{Sisällön asettelu}
 
+Sisällön asettelussa käytettäviä personointimenetelmiä tarkasteltiin luvussa~\ref{layout-personalization}.
+
 {\tiny\tabcolsep=3pt
-\begin{longtable}{p{1in}|p{2in}|p{0.25in}p{0.25in}p{0.25in}|p{0.25in}|p{0.25in}p{0.25in}p{0.25in}|p{0.25in}|}
+\begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
     \multirow[t]{2}{*}{\textbf{Näkökulma}}&\multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}}&\multicolumn{4}{c|}{\textbf{Vaivattomuus}}&\multicolumn{4}{c|}{\textbf{Hyöty}}\\\cline{3-10}
     &&\vertical{\textbf{Toteutuksen helppous}}&\vertical{\textbf{Monistettavuus}}&\vertical{\textbf{Käyttö toimialalla}}&\vertical{\textbf{Yhteensä}}&\vertical{\textbf{Vaikutus käyttökokemukseen}~}&\vertical{\textbf{Kohdennuksen tarkkuus}}&\vertical{\textbf{Tulevaisuuden näkymät}}&\vertical{\textbf{Yhteensä}}\\
     \midrule
@@ -671,9 +673,9 @@ kautta.
     kuitenkin menetelmän, jolla anonyymin käyttäjän sukupuoli voidaan
     tunnistaa selaimessa~\cite{fernandez2018dimension}.&1&1&0&2&0&0&0&0 \\
     \midrule
-    Kulttuuri- ja kielitausta&Vaikutusta ei ole tutkittu. Kulttuuritaustan
-    tunnistamista ei ole tutkittu, mutta osittain pääteltävissä käyttäjän
-    sijainnin ja kielen kautta, jotka voidaan tunnistaa selaimessa käyttäjän
+    Kulttuuritausta&Vaikutusta ei ole tutkittu. Tämän tunnistamista selaimessa
+    ei myöskään ole tutkittu, mutta osittain pääteltävissä käyttäjän sijainnin
+    ja kielen kautta, jotka voidaan tunnistaa selaimessa käyttäjän
     suostumuksella.&0&1&0&1&1&1&0&2 \\
     \midrule
     Koulutustausta&Vaikutusta ei ole tutkittu. Tieto koulutustaustasta kerättävä
@@ -737,18 +739,216 @@ kautta.
 \end{longtable}
 }
 
+Tärkein menetelmä sisällön asettelun personoinnissa on laitteen näyttökoon
+mukainen personointi eli responsiivinen web-suunnittelu, jota käsiteltiin
+luvussa~\ref{responsive-web-design}. Lisäksi tutkimusta on tehty käyttäjän
+kiinnostukseen kohteisiin perustuvan asettelun personoinnista. Molemmat
+menetelmät ovat sellaisia, jotka kannattaa ottaa käyttöön. Lisäksi käyttäjän
+rajoitteisiin pohjautuva personointi on hyödyllistä, mutta sen toteuttaminen on
+tällä hetkellä vielä suuren vaivan takana. Nämä tärkeimmät menetelmät on
+merkitty kuvaan~\ref{fig:layout-priorization}.
+
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{images/layout-content-priorization.pdf}
-\caption{Tärkeimmät sisällön asettelun personointinäkökulmat.~\label{layout-content-priorization}}
+\includegraphics[width=\textwidth]{images/layout-priorization.pdf}
+\caption{Tärkeimmät sisällön asettelun personointimenetelmät.~\label{fig:layout-priorization}}
 \end{figure}
+
+\subsubsection{Valikoiden asettelu}
+
+{\tiny\tabcolsep=3pt
+\begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
+    \multirow[t]{2}{*}{\textbf{Näkökulma}}&\multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}}&\multicolumn{4}{c|}{\textbf{Vaivattomuus}}&\multicolumn{4}{c|}{\textbf{Hyöty}}\\\cline{3-10}
+    &&\vertical{\textbf{Toteutuksen helppous}}&\vertical{\textbf{Monistettavuus}}&\vertical{\textbf{Käyttö toimialalla}}&\vertical{\textbf{Yhteensä}}&\vertical{\textbf{Vaikutus käyttökokemukseen}~}&\vertical{\textbf{Kohdennuksen tarkkuus}}&\vertical{\textbf{Tulevaisuuden näkymät}}&\vertical{\textbf{Yhteensä}}\\
+    \midrule
+    \textbf{Käyttäjä} \\
+    \midrule
+    Rajoitteet\\
+    \midrule
+    Ikä\\
+    \midrule
+    Sukupuoli\\
+    \midrule
+    Kulttuuritausta\\
+    \midrule
+    Koulutustausta\\
+    \midrule
+    Kiinnostuksen kohteet\\
+    \midrule
+    Mieliala\\
+    \midrule
+    Sosiaaliset verkostot\\
+    \midrule
+    \textbf{Käyttöympäristö} \\
+    \midrule
+    Laitteen näyttökoko\\
+    \midrule
+    Laitteen suorituskyky\\
+    \midrule
+    Verkkoyhteyden laatu\\
+    \midrule
+    Sijainti\\
+    \midrule
+    Aika\\
+    \midrule
+    Kirkkaus\\
+    \midrule
+    Äänekkyys\\
+    \midrule
+    Lämpötila ja sää\\
+    \midrule
+    Liike\\
+\end{longtable}
+}
+
+\subsubsection{Typografia}
+
+{\tiny\tabcolsep=3pt
+\begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
+    \multirow[t]{2}{*}{\textbf{Näkökulma}}&\multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}}&\multicolumn{4}{c|}{\textbf{Vaivattomuus}}&\multicolumn{4}{c|}{\textbf{Hyöty}}\\\cline{3-10}
+    &&\vertical{\textbf{Toteutuksen helppous}}&\vertical{\textbf{Monistettavuus}}&\vertical{\textbf{Käyttö toimialalla}}&\vertical{\textbf{Yhteensä}}&\vertical{\textbf{Vaikutus käyttökokemukseen}~}&\vertical{\textbf{Kohdennuksen tarkkuus}}&\vertical{\textbf{Tulevaisuuden näkymät}}&\vertical{\textbf{Yhteensä}}\\
+    \midrule
+    \textbf{Käyttäjä} \\
+    \midrule
+    Rajoitteet\\
+    \midrule
+    Ikä\\
+    \midrule
+    Sukupuoli\\
+    \midrule
+    Kulttuuritausta\\
+    \midrule
+    Koulutustausta\\
+    \midrule
+    Kiinnostuksen kohteet\\
+    \midrule
+    Mieliala\\
+    \midrule
+    Sosiaaliset verkostot\\
+    \midrule
+    \textbf{Käyttöympäristö} \\
+    \midrule
+    Laitteen näyttökoko\\
+    \midrule
+    Laitteen suorituskyky\\
+    \midrule
+    Verkkoyhteyden laatu\\
+    \midrule
+    Sijainti\\
+    \midrule
+    Aika\\
+    \midrule
+    Kirkkaus\\
+    \midrule
+    Äänekkyys\\
+    \midrule
+    Lämpötila ja sää\\
+    \midrule
+    Liike\\
+\end{longtable}
+}
+
+\subsubsection{Värit}
+
+{\tiny\tabcolsep=3pt
+\begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
+    \multirow[t]{2}{*}{\textbf{Näkökulma}}&\multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}}&\multicolumn{4}{c|}{\textbf{Vaivattomuus}}&\multicolumn{4}{c|}{\textbf{Hyöty}}\\\cline{3-10}
+    &&\vertical{\textbf{Toteutuksen helppous}}&\vertical{\textbf{Monistettavuus}}&\vertical{\textbf{Käyttö toimialalla}}&\vertical{\textbf{Yhteensä}}&\vertical{\textbf{Vaikutus käyttökokemukseen}~}&\vertical{\textbf{Kohdennuksen tarkkuus}}&\vertical{\textbf{Tulevaisuuden näkymät}}&\vertical{\textbf{Yhteensä}}\\
+    \midrule
+    \textbf{Käyttäjä} \\
+    \midrule
+    Rajoitteet\\
+    \midrule
+    Ikä\\
+    \midrule
+    Sukupuoli\\
+    \midrule
+    Kulttuuritausta\\
+    \midrule
+    Koulutustausta\\
+    \midrule
+    Kiinnostuksen kohteet\\
+    \midrule
+    Mieliala\\
+    \midrule
+    Sosiaaliset verkostot\\
+    \midrule
+    \textbf{Käyttöympäristö} \\
+    \midrule
+    Laitteen näyttökoko\\
+    \midrule
+    Laitteen suorituskyky\\
+    \midrule
+    Verkkoyhteyden laatu\\
+    \midrule
+    Sijainti\\
+    \midrule
+    Aika\\
+    \midrule
+    Kirkkaus\\
+    \midrule
+    Äänekkyys\\
+    \midrule
+    Lämpötila ja sää\\
+    \midrule
+    Liike\\
+\end{longtable}
+}
+
+\subsubsection{Kuvien sovitus}
+
+{\tiny\tabcolsep=3pt
+\begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
+    \multirow[t]{2}{*}{\textbf{Näkökulma}}&\multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}}&\multicolumn{4}{c|}{\textbf{Vaivattomuus}}&\multicolumn{4}{c|}{\textbf{Hyöty}}\\\cline{3-10}
+    &&\vertical{\textbf{Toteutuksen helppous}}&\vertical{\textbf{Monistettavuus}}&\vertical{\textbf{Käyttö toimialalla}}&\vertical{\textbf{Yhteensä}}&\vertical{\textbf{Vaikutus käyttökokemukseen}~}&\vertical{\textbf{Kohdennuksen tarkkuus}}&\vertical{\textbf{Tulevaisuuden näkymät}}&\vertical{\textbf{Yhteensä}}\\
+    \midrule
+    \textbf{Käyttäjä} \\
+    \midrule
+    Rajoitteet\\
+    \midrule
+    Ikä\\
+    \midrule
+    Sukupuoli\\
+    \midrule
+    Kulttuuritausta\\
+    \midrule
+    Koulutustausta\\
+    \midrule
+    Kiinnostuksen kohteet\\
+    \midrule
+    Mieliala\\
+    \midrule
+    Sosiaaliset verkostot\\
+    \midrule
+    \textbf{Käyttöympäristö} \\
+    \midrule
+    Laitteen näyttökoko\\
+    \midrule
+    Laitteen suorituskyky\\
+    \midrule
+    Verkkoyhteyden laatu\\
+    \midrule
+    Sijainti\\
+    \midrule
+    Aika\\
+    \midrule
+    Kirkkaus\\
+    \midrule
+    Äänekkyys\\
+    \midrule
+    Lämpötila ja sää\\
+    \midrule
+    Liike\\
+\end{longtable}
+}
+
+\subsection{Yhteenveto}
+
+Tähän yhteinen kuva kaikista menetelmistä.
 
 \clearpage
 
 \section{Yhteenveto}
-
-Summa summarum parhaat menetelmät, jotka voi ottaa käyttöön matalalla
-kynnyksellä.
 
 \clearpage
 
