@@ -50,7 +50,16 @@
 
 \usepackage{amsfonts, amssymb, amsbsy, amsmath}
 
+\usepackage{longtable, multirow, booktabs}
+
+% Rotation: \rot[<angle>][<width>]{<stuff>}
+\newcommand{\rot}[3]{\makebox[#1][c]{\rotatebox{#2}{#3}}}
+
+% Vertical: \vertical[<angle>][<width>]{<stuff>}
+\newcommand{\vertical}[1]{\rot{12pt}{90}{#1}}
+
 \usepackage{biblatex}
+
 \addbibresource{refs.bib}
 
 \degreeprogram{Automaatio- ja informaatioteknologia}
@@ -349,6 +358,31 @@ merkittävästi web-sivuston ulkoasun personoinnista. Ulkoasun personointiin
 kuuluu kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen,
 jota tarkastellaan luvussa~\ref{layout-personalization}.
 
+\subsection{Personoinnin näkökulmat}\label{personalization-aspects}
+
+Tässä työssä personointia tarkastellaan eri näkökulmista. Näkökulmat jakaantuvat
+karkeasti kahteen ryhmään, käyttäjälähtöisiin näkökulmiin ja ympäristölähtöisiin
+näkökulmiin.
+
+Osa käyttäjälähtöisistä näkökulmista perustuu käyttäjän fyysisiin
+ominaisuuksiin. Käyttäjällä voi olla esimerkiksi rajoitteita, kuten näkö- ja
+liikuntarajoitteita, jotka vaikuttavat merkittävästi web-sivuston käyttöön.
+Muita fyysisiä ominaisuuksia, jotka vaikuttavat web-sivuston käyttöön, ovat ikä
+ja sukupuoli. Fyysisten ominaisuuksien lisäksi myös kulttuuritausta ja kieli,
+koulutustaso, kiinnostuksen kohteet, sosiaaliset verkostot ja jopa mieliala ovat
+ominaisuuksia, joiden perusteella web-sivustoa voidaan personoida käyttäjälle.
+Lisäksi myös web-sivuston aiempi käyttöhistoria voi vaikuttaa personointiin.
+
+Ympäristölähtöiset näkökulmat liittyvät web-sivuston selailuun käytettävän
+laitteen ominaisuuksiin ja toisaalta myös laajemmin käyttöympäristön
+ominaisuuksiin. Laitteen ominaisuuksia, joiden perusteella personointia voidaan
+tehdä, ovat laitteen näyttökoko ja suorituskyky. Laajemmin käyttöympäristöön
+liittyviä personoitavia näkökulmia ovat verkkoyhteyden nopeus, sijainti sekä
+vuoden- ja kellonaika. Laitteen antureita voidaan hyödyntää lähiympäristön
+havainnoimiseen, jolloin personoinnissa voidaan hyödyntää ympäristön kirkautta,
+lämpötilaa, taustamelun äänenvoimakkuutta sekä liike-ominaisuuksia, kuten
+tärinää ja nopeutta.
+
 \subsection{Asettelun personointi}\label{layout-personalization}
 
 Sivun asettelu määrittää web-sivuston perusrakenteen ja sivun sisällön
@@ -551,27 +585,157 @@ Nopeus, kuinka aggressiivisia, jne.
 
 \section{Personointimenetelmien vertailu}
 
-Kuinka personoinnin menetelmät voidaan luokitella niin, että ne ovat helposti
-vertailtavissa web-kehittäjän näkökulmasta?
+Tässä luvussa vertaillaan yllä kuvattuja personointimenetelmiä pisteyttämällä ne
+taulukkoon ja lopuksi vetämällä tulokset graafisesti yhteen. Vertailun
+tarkoituksena on tuottaa lista selkeistä matalan kynnyksen personointikeinoista,
+joita kannattaa priorisoida web-sivuston ulkoasun personointia miettiessä.
 
-Tähän olisi hyvä saada grafiikkaa
+\subsection{Pisteytysmenetelmä}
 
-\subsection{Käyttöönoton monimutkaisuus ja hinta}
+Personointimenetelmien pisteytys perustuu kahteen akseliin, käyttöönoton
+vaivattomuuteen ja saavutettavaan hyötyyn. Molemmissa akseleissa on kolme
+kriteeriä, joissa kaikissa on kolme tasoa. Pisteytys perustuu eksponentiaaliseen
+asteikkoon, tarkoittaen että kustakin kriteeristä voi saada 0, 1 tai 10
+pistettä. Miinuspisteitä ei voi saada. Täten kummankin akselin minimipistemäärä
+on 0 ja maksimipistemäärä 30. Eksponentiaaliseen asteikon tarkoitus on korostaa
+kunkin akselin ääripäitä, jolloin heikoimmat ja parhaimmat menetelmät
+erottautuisivat vertailuissa paremmin.
 
-Kuinka kallista / vaikeaa ne on ottaa käyttöön? Onko avoimia haasteita? Onko
-tilanteita joissa menetelmiä ei voi käyttää?
+Vaivattomuus -akselia arvioidaan välillä \textit{suuri vaiva}--\textit{pieni
+vaiva}. Akselin pisteytyksen kolme tarkasteltavaa kriteeriä ovat toteutuksen
+helppous, monistettavuus sekä nykyinen käyttö toimialalla. Toteutuksen
+helppoudesta saa 10 pistettä, jos menetelmään löytyy valmis toimialaratkaisu, 1
+pisteen jos menetelmästä löytyy tutkimusta, ja 0 pistettä jos menetelmää täytyy
+tutkia ja kehittää itse. Monistettavuudesta saa 10 pistettä jos menetelmä on
+toteutuksen myötä asennettavissa minimaalisella ohjelmointityöllä
+(plug-and-play) olemassaolevalle sivustolle, 1 pisteen jos toteutus on
+ylipäätään mahdollista monistaa pelkällä ohjelmointityöllä olemassaolevalle
+sivustolle, ja 0 pistettä jos menetelmä täytyy huomioida jo sivuston
+suunnitteluvaiheessa tai vaatii käyttäjälle näkyviä muutoksia sivuston
+toimintaan. Toimialakäytöstä saa 10 pistettä, jos menetelmä on käytössä Fortune
+500 -yrityksen web-sivustolla, 1 pisteen jos menetelmä on ylipäätään käytössä
+jollain olemassaolevalla sivustolla ja 0 pistettä jos menetelmästä ei löydy
+referenssitoteutuksia. Toimialakäytön arviointi perustuu julkisiin kirjallisiin
+lähteisiin eikä esimerkiksi sivustojen toiminnan analysointiin, ja on siksi
+suuntaa-antavaa.
 
-\subsection{Vaikuttavuus ja hyöty}
+Hyöty-akselia arvioidaan on välillä \textit{pieni hyöty}--\textit{suuri hyöty}.
+Akselin pisteytyksen kolme tarkasteltavaa kriteeriä ovat vaikutus kohderyhmän
+käyttökokemukseen, kohdennuksen tarkkuus sekä tulevaisuuden näkymät.
+Vaikutuksesta kohderyhmän käyttökokemukseen saa 10 pistettä, jos menetelmä
+parantaa käyttökokemusta merkittävästi, 1 pisteen jos menetelmä ylipäätään
+parantaa käyttökokemusta ja 0 pistettä jos menetelmällä ei ole vaikutusta
+kohderyhmän käyttökokemukseen, tai jos menetelmä heikentää sitä. Vaikutukset
+kohderyhmän käyttökokemukseen ovat suuntaa-antavia ja perustuvat omaan
+henkilökohtaiseen arviooni. Kohdennuksen tarkkuudesta saa 10 pistettä jos
+menetelmä on mielekkäästi kohdennettavissa yksilötasolla, 1 pisteen jos
+kohdennus on säädettävissä ilman merkittävää ohjelmointyötä ja 0 pistettä jos
+kohdennus on pysyvää tai päätettävä ennen toteutusta. Tulevaisuuden näkymistä
+saa 10 pistettä jos menetelmästä löytyy uusi tai jatkokehitetty toimialaratkaisu
+kolmen vuoden sisään, 1 pisteen jos menetelmästä löytyy uutta tutkimusta kolmen
+vuoden sisään ja 0 pistettä muuten. Tulevaisuuden näkymillä pyritään arvioimaan
+menetelmän kehittymistä ja täten siitä myöhemmin saatavia uusia hyötyjä ja
+parannuksia olemassaolevaan toimintaan. Samalla kriteeri auttaa välttämään
+menetelmiä joista on riski muodostua teknistä velkaa tulevaisuudessa. Kolmen
+vuoden rajauksella tarkoitetaan vuosia 2019--2022.
 
-Kuinka suuri positiivinen vaikutus niillä on?
+\subsection{Pisteytys}
 
-\subsection{Nykyinen käyttö toimialalla}
+Pisteytyksessä tarkasteltavia web-sivuston ulkoasun osa-alueita ovat aiemmin
+kuvatut sisällön asettelu, valikoiden asettelu, typografia, värit, siirtymät ja
+animaatiot, tyhjän tilan käyttö sekä kuvien ja graafikan sovitus.
+Pisteytystaulukon selkeyttämiseksi pisteytys on jaettu erillisiin taulukoihin
+kullekin ulkoasun osa-alueelle, ja taulukossa personointimenetelmät pisteytetään
+luvussa~\ref{personalization-aspects} kuvattujen personoinnin näkökulmien
+kautta.
 
-Kuinka laajasti ne ovat käytössä toimialalla?
+\subsubsection{Sisällön asettelu}
 
-\subsection{Tulevaisuuden näkymät}
-
-Onko jatkokehitystä, "trendaako"?
+{\tiny\tabcolsep=3pt
+\begin{longtable}{p{1in}|p{2in}|p{0.25in}p{0.25in}p{0.25in}|p{0.25in}|p{0.25in}p{0.25in}p{0.25in}|p{0.25in}|}
+    \multirow[t]{2}{*}{\textbf{Näkökulma}}&\multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}}&\multicolumn{4}{c|}{\textbf{Vaivattomuus}}&\multicolumn{4}{c|}{\textbf{Hyöty}}\\\cline{3-10}
+    &&\vertical{\textbf{Toteutuksen helppous}}&\vertical{\textbf{Monistettavuus}}&\vertical{\textbf{Käyttö toimialalla}}&\vertical{\textbf{Yhteensä}}&\vertical{\textbf{Vaikutus käyttökokemukseen}~}&\vertical{\textbf{Kohdennuksen tarkkuus}}&\vertical{\textbf{Tulevaisuuden näkymät}}&\vertical{\textbf{Yhteensä}}\\
+    \midrule
+    \textbf{Käyttäjä} \\
+    \midrule
+    Rajoitteet&Gajos ym.~\cite{10.1145/1357054.1357250} tutkivat liikunnallisten
+    rajoitteiden pohjalta tehtävää asettelun personointia, mutta käytännön
+    sovelluksia menetelmällä ei vielä ole. Tieto rajoitteista kerättävä
+    käyttäjältä erikseen.&1&0&0&1&10&1&1&12 \\
+    \midrule
+    Ikä&Vaikutusta ei ole tutkittu. Fernandez-Lanvin ym.\ esittävät kuitenkin
+    menetelmän, jolla anonyymin käyttäjän ikä voidaan
+    tunnistaa selaimessa~\cite{fernandez2018dimension}.&1&1&0&2&1&1&0&2 \\
+    \midrule
+    Sukupuoli&Vaikutusta ei ole tutkittu. Fernandez-Lanvin ym.\ esittävät
+    kuitenkin menetelmän, jolla anonyymin käyttäjän sukupuoli voidaan
+    tunnistaa selaimessa~\cite{fernandez2018dimension}.&1&1&0&2&0&0&0&0 \\
+    \midrule
+    Kulttuuri- ja kielitausta&Vaikutusta ei ole tutkittu. Kulttuuritaustan
+    tunnistamista ei ole tutkittu, mutta osittain pääteltävissä käyttäjän
+    sijainnin ja kielen kautta, jotka voidaan tunnistaa selaimessa käyttäjän
+    suostumuksella.&0&1&0&1&1&1&0&2 \\
+    \midrule
+    Koulutustausta&Vaikutusta ei ole tutkittu. Tieto koulutustaustasta kerättävä
+    käyttäjältä erikseen.&0&0&0&0&1&1&0&2 \\
+    \midrule
+    Kiinnostuksen kohteet&Laine ym.~\cite{laine2020_laas} esittävät
+    LaaS-menetelmän, jolla asettelua voidaan optimoida käyttäjän selailun
+    pohjalta. Laine ym.~\cite{laine2021responsive} esittävät myös C-RWD
+    -menetelmän, jolla asettelua voidaan optimoida myös eri laitteiden
+    näyttöko'oille.&1&10&0&11&10&10&1&21 \\
+    \midrule
+    Mieliala&Vaikutusta ei ole tutkittu. Ei selkeää keinoa kerätä tietoa.&0&0&0&0&1&1&0&2 \\
+    \midrule
+    Sosiaaliset verkostot&Vaikutusta ei ole tutkittu. Tieto kerättävissä
+    suuntaa-antavasti sosiaalisen median kautta käyttäjän suostumuksella.&0&0&0&0&0&10&0&10
+    \\
+    \midrule
+    \textbf{Käyttöympäristö} \\
+    \midrule
+    Laitteen näyttökoko&Responsiivinen web-suunnittelu, \textit{media queries}
+    -tekniikka~\cite{Rivoal:12:MQ}. Hussain ym.~\cite{WOS:000218608600006}
+    löysivät, että mobiililaitteille optimoitu sivusto parantaa käytettävyyttä
+    merkittävästi.&10&0&10&20&10&0&10&20 \\
+    \midrule
+    Laitteen suorituskyky&Vaikutusta ei ole tutkittu. Selaimen
+    \href{https://developer.mozilla.org/en-US/docs/Web/API/Performance}{Performance-rajapintaa}
+    on mahdollista käyttää suorituskyvyn tunnistamiseen.&0&1&0&1&0&1&0&1 \\
+    \midrule
+    Verkkoyhteyden laatu&Vaikutusta ei ole tutkittu. Selaimen
+    \href{https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API}{Network Information -rajapintaa}
+    on mahdollista käyttää verkkoyhteyden laadun tunnistamiseen.&0&1&0&1&0&1&0&1
+    \\
+    \midrule
+    Sijainti&Vaikutusta ei ole tutkittu. Selaimen
+    \href{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}{Geolocation -rajapintaa}
+    on mahdollista käyttää sijainnin tunnistamiseen käyttäjän suostumuksella.&0&1&0&1&0&1&0&1
+    \\
+    \midrule
+    Aika&Vuorokauden- tai vuodenaikaan perustuvaa sisällön asettelun
+    personointia ei ole tutkittu. Aikatieto on helposti saatavilla
+    selaimessa.&0&1&0&1&1&1&0&2 \\
+    \midrule
+    Kirkkaus&Vaikutusta ei ole tutkittu. Selaimen
+    \href{https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor}{AmbientLightSensor-rajapintaa}
+    on mahdollista käyttää ympäristön kirkkauden tunnistamiseen käyttäjän suostumuksella.&0&1&0&1&1&1&0&2
+    \\
+    \midrule
+    Äänekkyys&Vaikutusta ei ole tutkittu. Selaimen
+    \href{https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API}{Media Capture -rajapintaa}
+    on mahdollista käyttää ympäristön äänekkyyden tunnistamiseen käyttäjän suostumuksella.&0&1&0&1&0&1&0&1
+    \\
+    \midrule
+    Lämpötila ja sää&Vaikutusta ei ole tutkittu. Käyttäjän suostumuksella
+    sijaintietoa voidaan käyttää säätietojen hakemiseen kolmannen osapuolen
+    rajapinnasta.&0&1&0&1&0&1&0&1 \\
+    \midrule
+    Liike&Vaikutusta ei ole tutkittu. Selaimen
+    \href{https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer}{Accelerometer-rajapintaa}
+    on mahdollista käyttää laitteen kiihtyvyyden tunnistamiseen käyttäjän suostumuksella.&0&1&0&1&0&1&0&1
+    \\
+\end{longtable}
+}
 
 \clearpage
 
