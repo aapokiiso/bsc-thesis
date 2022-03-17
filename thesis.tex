@@ -133,9 +133,12 @@ kullekin käyttäjälle sopivaksi.
 
 Ohjelmistojen mukauttaminen voidaan jakaa karkeasti kahteen osa-alueeseen.
 Ensinnäkin kustomoinnilla (engl.~\textit{customization}) tarkoitetaan käyttäjän
-itse tekemää mukauttamista. Toisekseen personoinnilla
-(engl.~\textit{personalization}) tarkoitetaan automaattista mukauttamista
-käyttäjästä kerätyn tiedon perusteella.~\cite{10.1108/03090560710737534}
+itse suorittamaa mukauttamista, kuten sivustoasetusten muuttamista. Toisekseen
+personoinnilla (engl.~\textit{personalization}) tarkoitetaan automaattista
+mukauttamista käyttäjästä kerätyn tiedon perusteella. On kuitenkin tärkeää
+tiedostaa että nämä kaksi osa-aluetta eivät ole toisiaan poissulkevia, vaan
+usein mukauttamisessa hyödynnetään sekä automaattista että käyttäjälähtöistä
+mukautusta~\cite{10.1145/633292.633483}.
 
 Aikaisessa tutkimuksessa tutkittiin nimenomaan ohjelmistojen mukauttamista
 kustomoinnin avulla, eli muun muassa tarjoamalla käyttäjälle asetuksia
@@ -185,7 +188,17 @@ Web-kehitys on muuhun ohjelmistokehitykseen verrattuna nuori ala ja
 edelleen jatkuvassa murroksessa. Tässä kappaleessa esitellään web-kehityksen
 nykytilannetta työn taustatiedoksi.
 
-\subsection{Web-suunnittelu}
+\subsection{Web-teknologiat}
+
+\subsubsection{HyperText Markup Language}
+
+\subsubsection{Cascading Style Sheets}
+
+\subsubsection{JavaScript}
+
+\subsection{Web-sivuston toteutus}
+
+\subsubsection{Web-suunnittelu}
 
 Web-suunnittelu (engl.~\textit{web design}) on käytännön tasolla lähellä muita
 graafisen suunnittelun aloja kuten printtisuunnittelua, vaikka mediana web
@@ -203,7 +216,7 @@ responsiiviseksi web-suunnitteluksi (engl.~\textit{responsive web design}),
 josta kerrotaan lisää luvussa~\ref{responsive-web-design}. Varsinaista
 personointia leiskoihin ei yleensä sisällytetä.
 
-\subsection{Moderni web-kehitys}
+\subsubsection{Web-kehitys}
 
 Web-kehittäjän (engl.~\textit{web developer}) tehtävä on kääntää leiska
 toimivaksi web-sivustoksi. Ei-vuorovaikutteisesta luonteestaan huolimatta leiska
@@ -256,6 +269,8 @@ komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
 
 Tähän ulkoasun generoinnista asiaa. Nimenomaan ei-personoinnin näkökulmasta,
 vaan yleisiä menetelmiä
+
+\subsection{Yhteenveto}
 
 \clearpage
 
@@ -644,26 +659,26 @@ Vetää yhteen personoinnin.
 
 \clearpage
 
-\section{Personointimenetelmien vertailu}
+\section{Personointinäkökulmien vertailu}
 
-Tässä luvussa vertaillaan yllä kuvattuja personointimenetelmiä pisteyttämällä ne
+Tässä luvussa vertaillaan yllä kuvattuja personointinäkökulmia pisteyttämällä ne
 taulukkoon ja lopuksi vetämällä tulokset graafisesti yhteen. Vertailun
-tarkoituksena on tuottaa lista selkeistä matalan kynnyksen personointikeinoista,
+tarkoituksena on tuottaa lista selkeistä matalan kynnyksen näkökulmista,
 joita kannattaa priorisoida web-sivuston ulkoasun personointia miettiessä.
 
 \subsection{Pisteytysmenetelmä}
 
-Personointimenetelmien pisteytys perustuu kahteen akseliin, käyttöönoton
-vaivattomuuteen ja saavutettavaan hyötyyn. Molemmissa akseleissa on kolme
-kriteeriä, joissa kaikissa on kolme tasoa. Pisteytys perustuu eksponentiaaliseen
-asteikkoon, tarkoittaen että kustakin kriteeristä voi saada 0, 1 tai 10
-pistettä. Miinuspisteitä ei voi saada. Täten kummankin akselin minimipistemäärä
-on 0 ja maksimipistemäärä 30. Eksponentiaaliseen asteikon tarkoitus on korostaa
-kunkin akselin ääripäitä, jolloin heikoimmat ja parhaimmat menetelmät
-erottautuisivat vertailuissa paremmin.
+Personointinäkökulmien pisteytys perustuu kahteen akseliin, arvioituun
+käyttöönoton vaivattomuuteen ja saavutettavaan hyötyyn. Molemmissa akseleissa on
+kolme kriteeriä, joissa kaikissa on kolme tasoa. Pisteytys perustuu
+eksponentiaaliseen asteikkoon, tarkoittaen että kustakin kriteeristä voi saada
+0, 1 tai 10 pistettä. Miinuspisteitä ei voi saada. Täten kummankin akselin
+minimipistemäärä on 0 ja maksimipistemäärä 30. Eksponentiaaliseen asteikon
+tarkoitus on korostaa kunkin akselin ääripäitä, jolloin heikoimmat ja parhaimmat
+menetelmät erottautuisivat vertailuissa paremmin.
 
 Vaivattomuus -akselia arvioidaan välillä \textit{suuri vaiva}--\textit{pieni
-    vaiva}. Akselin pisteytyksen kolme tarkasteltavaa kriteeriä ovat toteutuksen
+vaiva}. Akselin pisteytyksen kolme tarkasteltavaa kriteeriä ovat toteutuksen
 helppous, monistettavuus sekä nykyinen käyttö toimialalla. Toteutuksen
 helppoudesta saa 10 pistettä, jos menetelmään löytyy valmis toimialaratkaisu, 1
 pisteen jos menetelmästä löytyy tutkimusta, ja 0 pistettä jos menetelmää täytyy
@@ -673,10 +688,10 @@ toteutuksen myötä asennettavissa minimaalisella ohjelmointityöllä
 ylipäätään mahdollista monistaa pelkällä ohjelmointityöllä olemassaolevalle
 sivustolle, ja 0 pistettä jos menetelmä täytyy huomioida jo sivuston
 suunnitteluvaiheessa tai vaatii käyttäjälle näkyviä muutoksia sivuston
-toimintaan. Toimialakäytöstä saa 10 pistettä, jos menetelmä on käytössä Fortune
-500 -yrityksen web-sivustolla, 1 pisteen jos menetelmä on ylipäätään käytössä
-jollain olemassaolevalla sivustolla ja 0 pistettä jos menetelmästä ei löydy
-referenssitoteutuksia. Toimialakäytön arviointi perustuu julkisiin kirjallisiin
+toimintaan. Toimialakäytöstä saa 10 pistettä, jos menetelmän käyttöönotosta
+löytyy dokumentaatiota, 1 pisteen jos menetelmästä on ylipäätään kirjoitettu
+tutkimusten ulkopuolella ja 0 pistettä jos menetelmästä ei löydy ohjeellista
+sisältöä. Toimialakäytön arviointi perustuu siis julkisiin kirjallisiin
 lähteisiin eikä esimerkiksi sivustojen toiminnan analysointiin, ja on siksi
 suuntaa-antavaa.
 
@@ -703,8 +718,7 @@ vuoden rajauksella tarkoitetaan vuosia 2019--2022.
 \subsection{Pisteytys}
 
 Pisteytyksessä tarkasteltavia web-sivuston ulkoasun osa-alueita ovat aiemmin
-kuvatut sisällön asettelu, valikoiden asettelu, typografia, värit, siirtymät ja
-animaatiot, tyhjän tilan käyttö sekä kuvien ja graafikan sovitus.
+kuvatut asettelu, typografia, värit sekä kuvien sovitus.
 Pisteytystaulukon selkeyttämiseksi pisteytys on jaettu erillisiin taulukoihin
 kullekin ulkoasun osa-alueelle, ja taulukossa personointimenetelmät pisteytetään
 luvussa~\ref{personalization-aspects} kuvattujen personoinnin näkökulmien
@@ -715,10 +729,10 @@ graafisessa priorisointikuvassa, jonka akseleina toimivat aiemmin kuvatut
 vaivattomuus ja hyöty. Tärkeimmiksi menetelmiksi lasketaan ne, joiden
 vaivattomuus ja/tai hyöty on yli 10 pistettä.
 
-\subsubsection{Sisällön asettelu}
+\subsubsection{Asettelu}
 
-Sisällön asettelussa käytettäviä personointimenetelmiä tarkasteltiin
-tarkemmin luvussa~\ref{layout-personalization}.
+Asettelussa käytettäviä personointimenetelmiä tarkasteltiin tarkemmin
+luvussa~\ref{layout-personalization}.
 
 {\tiny\tabcolsep=3pt
 \begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
