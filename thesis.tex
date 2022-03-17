@@ -459,7 +459,7 @@ mahdollista rakentaa lisäosia. Perinteisempiä työkaluja edustavat Adoben
 tuoteperheen Photoshop ja Illustrator, joiden käyttö web-suunnittelussa on
 vähentynyt merkittävästi.
 
-Yksi suunnittelijoille suunnattu apukeino on Pang et al.~\cite{Pang2016}
+Yksi suunnittelijoille suunnattu apukeino on Pang et al.~\cite{10.1145/2980179.2982422}
 esittelemä menetelmä web-sivuston asettelun optimoimiseen käyttäjien
 silmänliikkeistä kerätyn tiedon perusteella. Suunnittelija kertoo työkalulle
 tavoittelemansa elementtien lukemisjärjestyksen, ja työkalu tuottaa suunnitelman
@@ -609,7 +609,38 @@ Tähän ehkä vielä Reineckelta asiaa että onko worth it, aika pienet hyödyt?
 
 \subsubsection{Kuvien sovitus}
 
-Tähän ainakin Personalization of image enhancement artikkelista asiaa.
+Nykyään arkinen valokuvaus tapahtuu pääasiassa puhelimen kameralla. Valokuvaus
+on myös laajentunut vaativasta ammattilais- ja harrastelijatoiminnasta
+jokapäiväiseen elämään. Koska taitotaso on matalampi kuin ennen, myös kuvien
+laatu vaihtelee enemmän. Puhelimen kamera pyrkii korjaamaan kuvan puutteita
+kuten kontrastia ja tarkennusta. Nämä ovat kuitenkin asioita, joista ihmisillä
+on eri mieltymyksiä, joten puhelimen ohjelmisto ei välttämättä pysty korjaamaan
+kuvaa aina parhaalla mahdollisella tavalla käyttäjän näkökulmasta. Oma lukunsa
+ovat perinteiset DSLR-kamerat, jotka eivät välttämättä edes yritä parantaa
+kuvaa, vaan luottavat kuvaajan osaamiseen.
+
+Kang ym.~\cite{5539850} osoittavat, että kuvan ominaisuuksilla, kuten
+valkotasapainolla ja kontrastilla on vaikutusta koettuun mielekkyyteen. He
+toteuttivat pienen (n=19) tutkimuksen kollegoillaan testatakseen menetelmää,
+joka personoi kuvia aiemmin kerättyjen mieltymysten perusteella. He löysivät
+että yli puolet suosi omien mieltymystensä mukaan personoituja versioituja
+kuvista. Tutkimuksen otanta on pieni, mutta suuntaa-antava ja itse menetelmä on
+mielenkiintoinen. Sen isoin rajoite on käyttäjän mieltymysten kerääminen, joka
+täytyy tehdä ennen kuin kuvia voidaan personoida. Myös personoitavat
+ominaisuudet rajoittuvat vain kontrastiin ja valkotasapainoon, mutta ryhmä
+pohtii että menetelmää voisi laajentaa esimerkiksi tekemään automaattista
+rajausta, tarkkuuden säätöä ja optista korjausta.
+
+Kang ym.~kehittämää menetelmää ei siis voi suoraan tuoda web-sivustolle
+personoimaan kuvia, mutta jos käyttäjästä saadaan pääteltyä tietoja, kuten
+esimerkiksi arvioitu ikä Fernandez-Lanvin ym.~\cite{fernandez2018dimension}
+esittelemällä tavalla, vastaavaa menetelmää voitaisiin käyttää yleisempään
+personointiin. Esimerkiksi iäkkäämmälle käyttäjälle kuvien kontrastia ja
+tarkkuutta voitaisiin lisätä tämäntyyppisellä menetelmällä.
+
+\subsection{Yhteenveto}
+
+Vetää yhteen personoinnin.
 
 \clearpage
 
@@ -748,53 +779,6 @@ merkitty kuvaan~\ref{fig:layout-priorization}.
     \includegraphics[width=\textwidth]{images/layout-priorization.pdf}
     \caption{Tärkeimmät sisällön asettelun personointimenetelmät.~\label{fig:layout-priorization}}
 \end{figure}
-
-\subsubsection{Valikoiden asettelu}
-
-{\tiny\tabcolsep=3pt
-    \begin{longtable}{p{2.5cm}|p{6cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|p{0.5cm}p{0.5cm}p{0.5cm}|p{0.5cm}|}
-        \multirow[t]{2}{*}{\textbf{Näkökulma}} & \multirow[t]{2}{*}{\textbf{Menetelmän kuvaus}} & \multicolumn{4}{c|}{\textbf{Vaivattomuus}} & \multicolumn{4}{c|}{\textbf{Hyöty}}                                                                                                                                                                                                                                                  \\\cline{3-10}
-                                               &                                                & \vertical{\textbf{Toteutuksen helppous}}   & \vertical{\textbf{Monistettavuus}}  & \vertical{\textbf{Käyttö toimialalla}} & \vertical{\textbf{Yhteensä}} & \vertical{\textbf{Vaikutus käyttökokemukseen}~} & \vertical{\textbf{Kohdennuksen tarkkuus}} & \vertical{\textbf{Tulevaisuuden näkymät}} & \vertical{\textbf{Yhteensä}} \\
-        \midrule
-        \textbf{Käyttäjä}                                                                                                                                                                                                                                                                                                                                                                                                           \\
-        \midrule
-        Rajoitteet                                                                                                                                                                                                                                                                                                                                                                                                                  \\
-        \midrule
-        Ikä                                                                                                                                                                                                                                                                                                                                                                                                                         \\
-        \midrule
-        Sukupuoli                                                                                                                                                                                                                                                                                                                                                                                                                   \\
-        \midrule
-        Kulttuuritausta                                                                                                                                                                                                                                                                                                                                                                                                             \\
-        \midrule
-        Koulutustausta                                                                                                                                                                                                                                                                                                                                                                                                              \\
-        \midrule
-        Kiinnostuksen kohteet                                                                                                                                                                                                                                                                                                                                                                                                       \\
-        \midrule
-        Mieliala                                                                                                                                                                                                                                                                                                                                                                                                                    \\
-        \midrule
-        Sosiaaliset verkostot                                                                                                                                                                                                                                                                                                                                                                                                       \\
-        \midrule
-        \textbf{Käyttöympäristö}                                                                                                                                                                                                                                                                                                                                                                                                    \\
-        \midrule
-        Laitteen näyttökoko                                                                                                                                                                                                                                                                                                                                                                                                         \\
-        \midrule
-        Laitteen suorituskyky                                                                                                                                                                                                                                                                                                                                                                                                       \\
-        \midrule
-        Verkkoyhteyden laatu                                                                                                                                                                                                                                                                                                                                                                                                        \\
-        \midrule
-        Sijainti                                                                                                                                                                                                                                                                                                                                                                                                                    \\
-        \midrule
-        Aika                                                                                                                                                                                                                                                                                                                                                                                                                        \\
-        \midrule
-        Kirkkaus                                                                                                                                                                                                                                                                                                                                                                                                                    \\
-        \midrule
-        Äänekkyys                                                                                                                                                                                                                                                                                                                                                                                                                   \\
-        \midrule
-        Lämpötila ja sää                                                                                                                                                                                                                                                                                                                                                                                                            \\
-        \midrule
-        Liike                                                                                                                                                                                                                                                                                                                                                                                                                       \\
-    \end{longtable}
-}
 
 \subsubsection{Typografia}
 
