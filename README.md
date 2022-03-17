@@ -16,6 +16,7 @@ $ apt install \
     texlive-latex-extra \
     texlive-fonts-extra \
     texlive-bibtex-extra \
+    texlive-extra-utils \
     texlive-lang-european \
     biber
 ```
