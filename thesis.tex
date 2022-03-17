@@ -536,23 +536,16 @@ ilmeen personointia on tutkittu myös graafisen suunnittelun näkökulmasta.
 Ilmeeseen liittyy myös osa-alueita, kuten siirtymät ja tyhjän tilan käyttö,
 jotka on tästä työstä rajattu pois rajallisen tutkimusaineiston takia.
 
-\subsubsection{Typografia}
-
-Luettavuus, eri kielissä eri aakkoset, miten pelaa yhteen tekstin sävyn kanssa
-(virallinen teksti ei voi olla comic sans jne)
-
-Voiko esim https://www.metaflop.com/ käyttää automaattiseen personointiin?
-
-Tähän O'Donovanilla hyvää asiaa
-
 \subsubsection{Värit}
 
-Väripaletin suunnittelu on aina hankalaa. Web-sivustolla on usein käytössä
-ainakin yksi pääväri, yksi huomioväri ja lisäksi muutama hillitympi sävy.
-Suunnittelija valitsee värit intuition ja heuristiikkojen kuten värin `lämmön'
-perusteella~\cite{odonovan_2015}. Onneksi suunnittelijan ei yleensä tarvitse
-aloittaa tyhjästä, vaan ennen web-suunnittelua on jo olemassa jonkinlainen
-organisaation kattava suunnittelujärjestelmä.
+Sivuston väripaletilla on suuri merkitys käyttäjän
+ensivaikutelmaan\cite{10.1145/2470654.2481281}. Väripaletin suunnittelu on aina
+hankalaa. Web-sivustolla on usein käytössä ainakin yksi pääväri, yksi huomioväri
+ja lisäksi muutama hillitympi sävy. Suunnittelija valitsee värit intuition ja
+heuristiikkojen kuten värin `lämmön' perusteella~\cite{odonovan_2015}. Onneksi
+suunnittelijan ei yleensä tarvitse aloittaa tyhjästä, vaan ennen
+web-suunnittelua on jo olemassa jonkinlainen organisaation kattava
+suunnittelujärjestelmä.
 
 Haastavaa värisuunnittelua on mahdollista helpottaa personoimalla väripalettia
 kullekin käyttäjälle sopivaksi. Personoinissa täytyy toki ottaa huomioon
@@ -561,8 +554,8 @@ yksityiskohtia on mahdollista personoida hyvin tuloksin. Suhtautuminen väreihin
 on erilaista eri puolilla maailmaa. Jos web-sivuston käyttäjäkunta koostuu vain
 pienen kultuurillisesti yhtenäisen alueen asukkaista, värien personoinnista ei
 välttämättä ole hyötyä. Jos käyttäjäkunta on laajempaa tai jopa globaalia,
-väripersonointi nousee uuteen merkitykseen. Reinecke et
-al.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelussa
+väripersonointi nousee uuteen merkitykseen. Reinecke
+ym.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelussa
 pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri web-sivuston
 visuaalista miellyttävyyttä. He huomasivat, että esimerkiksi makedonialaiset
 pitävät keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
@@ -570,6 +563,49 @@ yksinkertaisempia leiskoja ja väripaletteja.
 
 Jatkuu... mitä menetelmiä värien personointiin? pitääkö ottaa huomioon jo
 suunnitteluvaiheessa vai voidaanko automatisoida?
+
+\subsubsection{Typografia}
+
+Väripaletin jälkeen seuraava tärkeä kokonaisuus sivuston ilmeessä on typografia.
+Typografialla tarkoitetaan tekstin ilmettä, eli kirjasintyyppiä ja -kokoa sekä
+tekstissä käytettyä korostusta kuten lihavointia ja kursiivia. Eri kielet
+käyttävät eri kirjoitusjärjestelmiä, kuten latinalaisia ja kyrillisiä aakkosia.
+
+Typografia on tärkeässä osassa kun tarkastellaan sivuston luettavuutta ja
+sivuston antamaa yleisvaikutelmaa. Virallinen teksti ei voi käyttää samaa
+typografiaa kuin syntymäpäiväjuhlakutsu. Eri kirjasintyyppejä on tuhansia, joten
+suunnittelijalla täytyy olla asiantuntemusta tietää, mikä kirjasintyyppi sopii
+kuhunkin tarpeeseen. Personoinnin näkökulmasta on mahdoton löytää yksi
+kirjastintyyppi, joka olisi paras kaikille käyttäjille. Edellämainitussa
+Reinecke ym.~tutkimuksessa~\cite{10.1145/2556288.2557052} ryhmä löysi värien
+lisäksi yhteyden ulkoasun monimutkaisuuden ja kulttuuritaustan välillä. Siksi
+olisi hyvä jos myös kirjasintyyppi voitaisiin personoida kullekin käyttäjälle
+sopivaksi.
+
+Jotta kirjasintyyppiä voitaisiin personoida, täytyy niille ensin kehittää
+luokittelujärjestelmä. O'Donovan~\cite{odonovan_2015} esittelee kirjasintyyppien
+ominaisuuksiin pohjautuvan luokittelujärjestelmän, jolla kirjasintyyppi voidaan
+luokitella erilaisten tunnesanojen perusteella. Esimerkkejä O'Donovanin
+menetelmän luokitteluista on mm.~ohut, monimutkainen, rauhallinen ja virallinen.
+Näiden luokittelun avulla sivuston kirjasintyyppi voitaisiin personoida
+käyttäjän mielialan tai Reinecken osoittaman kulttuuritaustayhteyden avulla. Jos
+käyttäjä esimerkiksi selailee omaisen kuolemaan liittyviä tietoja kuten
+perunkirjoituksen tekemistä Verohallinnon sivustolla, kirjasintyyppi voidaan
+vaihtaa hienovaraisempaan. Samoin jos käyttäjän huomataan olevan hyvällä
+tuulella, verkkokaupan kirjasintyyppiä voidaan muuttaa hieman leikittelevämmäksi
+houkuttelevuuden lisäämiseksi. Riskinä on käyttäjän hämmentyminen, sillä
+kirjasintyyppi on perinteisesti ollut melko pysyvä osa web-sivuston ulkoasua.
+
+Jos kirjasintyypin personointi halutaan viedä yksilötasolle, suunnittelijan on
+mahdotonta valita eri kirjasintyypit etukäteen. Sen sijaan voidaan käyttää
+\href{https://www.metaflop.com/}{Metaflop}-palvelun kaltaista kirjasintyypin
+koneellista luontia. Metaflop perustuu TeX-ladontaohjelman kehittäjän Donald
+Knuthin kehittämään Metafont-kieleen, jolla on mahdollista luoda
+kirjasintyyppejä koneellisesti~\cite{knuth_1986}. Personointimenetelmä voisi
+käyttää hyväkseen O'Donovanin kehittämää kirjasintyyppien luokittelujärjestelmää
+ja luoda käyttäjälle sopivan kirjasintyypin lennosta.
+
+Tähän ehkä vielä Reineckelta asiaa että onko worth it, aika pienet hyödyt?
 
 \subsubsection{Kuvien sovitus}
 
