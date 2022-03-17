@@ -553,38 +553,67 @@ jotka on tästä työstä rajattu pois rajallisen tutkimusaineiston takia.
 
 \subsubsection{Värit}
 
-Sivuston väripaletilla on suuri merkitys käyttäjän
-ensivaikutelmaan\cite{10.1145/2470654.2481281}. Väripaletin suunnittelu on aina
-hankalaa. Web-sivustolla on usein käytössä ainakin yksi pääväri, yksi huomioväri
-ja lisäksi muutama hillitympi sävy. Suunnittelija valitsee värit intuition ja
-heuristiikkojen kuten värin `lämmön' perusteella~\cite{odonovan_2015}. Onneksi
-suunnittelijan ei yleensä tarvitse aloittaa tyhjästä, vaan ennen
+Sivuston väripaletilla on suuri merkitys käyttäjän ensivaikutelmaan
+sivustosta~\cite{10.1145/2470654.2481281}. Osittain tästä johtuen väripaletin
+suunnittelu voi olla hankalaa, sillä heikko ensivaikutelma tai harkitsemattomat
+värivalinnat voivat ajaa käyttäjiä pois sivustolta.
+
+Web-sivustolla on usein käytössä ainakin yksi pääväri, yksi huomioväri ja
+lisäksi muutama hillitympi sävy. Suunnittelija valitsee värit intuition ja
+väriteorian oppien kuten värin `lämmön' perusteella~\cite{odonovan_2015}.
+Suunnittelijan ei yleensä tarvitse aloittaa tyhjästä, vaan ennen
 web-suunnittelua on jo olemassa jonkinlainen organisaation kattava
-suunnittelujärjestelmä.
+suunnittelujärjestelmä ja väripaletti.
 
 Haastavaa värisuunnittelua on mahdollista helpottaa personoimalla väripalettia
 kullekin käyttäjälle sopivaksi. Personoinissa täytyy toki ottaa huomioon
-brändiin liittyvät seikat, mutta esimerkiksi huomiovärin kaltaisia
-yksityiskohtia on mahdollista personoida hyvin tuloksin. Suhtautuminen väreihin
-on erilaista eri puolilla maailmaa. Jos web-sivuston käyttäjäkunta koostuu vain
-pienen kultuurillisesti yhtenäisen alueen asukkaista, värien personoinnista ei
-välttämättä ole hyötyä. Jos käyttäjäkunta on laajempaa tai jopa globaalia,
-väripersonointi nousee uuteen merkitykseen. Reinecke
+esimerkiksi yrityskuvaan (engl.~\textit{brand}) liittyvät seikat, mutta
+esimerkiksi sivuston huomiovärin kaltaisia yksityiskohtia voi olla mahdollista
+personoida matalalla kynnyksellä.
+
+Suhtautuminen väreihin on erilaista eri puolilla maailmaa. Jos web-sivuston
+käyttäjäkunta koostuu vain pienen kultuurillisesti yhtenäisen alueen asukkaista,
+värien personoinnista ei välttämättä ole hyötyä. Jos käyttäjäkunta on laajempaa
+tai jopa maailmanlaajuista, väripersonointi nousee uuteen merkitykseen. Reinecke
 ym.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelussa
 pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri web-sivuston
 visuaalista miellyttävyyttä. He huomasivat, että esimerkiksi makedonialaiset
 pitävät keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
 yksinkertaisempia leiskoja ja väripaletteja.
 
-Jatkuu... mitä menetelmiä värien personointiin? pitääkö ottaa huomioon jo
-suunnitteluvaiheessa vai voidaanko automatisoida?
+O'Donovan esittelee väitöskirjassaan~\cite{odonovan_2015} menetelmän tuottaa
+osan väripaletista koneellisesti. Menetelmä olettaa, että päävärit on lukittu,
+kuten yleensä on. Joukkoistamisella kerätyn tiedon pohjalta menetelmä pystyy
+muodostamaan puuttuvat värit palettiin miellyttävällä tavalla. Menetelmä ei ole
+suoraan sovellettavissa web-sivuston ulkoasun personointiin, koska se perustuu
+joukkoistamisen avulla kerättyyn yleiseen tietoon väripalettien mielekkyydestä.
+Jotta menetelmä olisi hyödyksi personoinnissa, tieto väripalettien
+mielekkyydestä täytyisi kerätä web-sivuston käyttäjäryhmiltä etukäteen.
+
+Värien personoinnista löytyy jonkin verran sovelluksia web-suunnittelun ja
+-kehityksen toimialalta. Salesforcen
+\href{https://medium.com/salesforce-ux/einstein-designer-ai-powered-personalized-design-at-scale-367d71b85a3d}{Einstein
+Designer} -konsepti analysoi olemassaolevan web-sivuston ja luo sen pohjalta
+uusia vedoksia sivustosta. Einstein Designer huomioi asettelun, typografian ja
+myös värit. Konsepti kykenee luomaan kullekin käyttäjälle oman version
+sivustosta. Konsepti on siitä mielenkiintoinen, että se toimii olemassaolevan
+sivuston kanssa, eli sen voi ottaa käyttöön myös suunnitteluvaiheen ja
+toteutuksen jälkeen. Einstein Designer on kuitenkin vasta konseptitasolla eikä
+sitä ole vielä tuotteistettu.
+
+Värit on tunnistettu tärkeäksi osaksi web-sivuston personointia, mutta tällä
+hetkellä osa-alue on vasta tutkimuksen ja konseptien tasolla. Valmista tuotetta
+web-sivuston väripaletin yksilölliseen personointiin ei toimialalta vielä löydy.
+Toisaalta ei ole vielä selvää, kuinka iso vaikutus värien personoinnilla on
+käyttökokemukseen.
 
 \subsubsection{Typografia}
 
-Väripaletin jälkeen seuraava tärkeä kokonaisuus sivuston ilmeessä on typografia.
-Typografialla tarkoitetaan tekstin ilmettä, eli kirjasintyyppiä ja -kokoa sekä
-tekstissä käytettyä korostusta kuten lihavointia ja kursiivia. Eri kielet
-käyttävät eri kirjoitusjärjestelmiä, kuten latinalaisia ja kyrillisiä aakkosia.
+Väripaletin ohella toinen web-sivuston ilmeen tärkeä osa on typografia.
+Typografialla tarkoitetaan tekstin ulkoasua, eli kirjasintyyppiä ja -kokoa,
+riviväliä yms.~sekä tekstissä käytettyä korostusta kuten lihavointia ja
+kursiivia. Lisäksi sivustoa riippuen on huomioitava kielet jotka käyttävät eri
+kirjoitusjärjestelmiä kuin latinalaisia aakkosia, kuten kyrillisiä aakkosia.
 
 Typografia on tärkeässä osassa kun tarkastellaan sivuston luettavuutta ja
 sivuston antamaa yleisvaikutelmaa. Virallinen teksti ei voi käyttää samaa
@@ -611,6 +640,14 @@ tuulella, verkkokaupan kirjasintyyppiä voidaan muuttaa hieman leikittelevämmä
 houkuttelevuuden lisäämiseksi. Riskinä on käyttäjän hämmentyminen, sillä
 kirjasintyyppi on perinteisesti ollut melko pysyvä osa web-sivuston ulkoasua.
 
+Eräs mielenkiintoinen sovelluskohde typografian personoinnille on monilla
+web-sivustoilla viime vuosina yleistynyt asiakaspalvelu-chat. Choi ja
+Aizawa~\cite{choi_aizawa_2018} tarkastelivat menetelmää, jossa viestittelyn
+kirjasintyyppiä pystyi muuttamaan koetun mielialan mukaisesti. He löysivät että
+kirjasintyypin vaihtaminen mielialan mukaan tekee keskustelusta eläväisempää. Ei
+ole selvää päteekö sama asiallisempaan chat-keskusteluun, mutta menetelmä on
+mielenkiintoinen.
+
 Jos kirjasintyypin personointi halutaan viedä yksilötasolle, suunnittelijan on
 mahdotonta valita eri kirjasintyypit etukäteen. Sen sijaan voidaan käyttää
 \href{https://www.metaflop.com/}{Metaflop}-palvelun kaltaista kirjasintyypin
@@ -620,7 +657,13 @@ kirjasintyyppejä koneellisesti~\cite{knuth_1986}. Personointimenetelmä voisi
 käyttää hyväkseen O'Donovanin kehittämää kirjasintyyppien luokittelujärjestelmää
 ja luoda käyttäjälle sopivan kirjasintyypin lennosta.
 
-Tähän ehkä vielä Reineckelta asiaa että onko worth it, aika pienet hyödyt?
+Ei ole selvää, kuinka suuri merkitys kirjasintyypin personoinnilla oikeasti
+olisi. Reinecke ym.~\cite{10.1145/2556288.2557052} eivät ota typografiaan
+suoraan kantaa tutkimuksessaan, keskittyen väreihin ja ulkoasun
+monimutkaisuuteen. Amare ja Manning~\cite{10.1109/IPCC.2012.6408605} löysivät
+alustavan yhteyden kirjasintyypin ja tunnevasteen väliltä, mutta eivät tee
+pitkälle meneviä johtopäätöksiä tämän yhteyden vaikutuksista. Typografia kaipaa
+värien tapaan lisätutkimusta personoinnin hyödyistä.
 
 \subsubsection{Kuvien sovitus}
 
@@ -654,8 +697,6 @@ personointiin. Esimerkiksi iäkkäämmälle käyttäjälle kuvien kontrastia ja
 tarkkuutta voitaisiin lisätä tämäntyyppisellä menetelmällä.
 
 \subsection{Yhteenveto}
-
-Vetää yhteen personoinnin.
 
 \clearpage
 
