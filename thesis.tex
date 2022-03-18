@@ -267,6 +267,8 @@ Tähän vielä selkeytystä komponenteista ja mitä muuta fronttikirjastot tekee
 Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esimerkiksi valmiit
 komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
 
+\subsubsection{Web-analytiikka}
+
 \subsection{Ulkoasun tuottaminen koneellisesti}
 
 Tähän ulkoasun generoinnista asiaa. Nimenomaan ei-personoinnin näkökulmasta,
@@ -278,8 +280,22 @@ vaan yleisiä menetelmiä
 
 \section{Personointi}
 
+Tässä työssä käytetään Blomin~\cite{10.1145/633292.633483} vuonna 2000
+julkaisemaa personoinnin taksonomiaa. Sen mukaan personoinnilla tarkoitetaan
+järjestelmän muuttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän
+näkökulmasta kasvaa. Personoinnin myötä tehdyt muutokset ovat lähtökohtaisesti
+käyttäjälle pysyviä, joskin ne voivat muuttua edelleen käytön edetessä.
+Personoinnin perusteeksi kerätty tieto voi olla hyvin erilaisista lähteistä,
+kuten asiointihistoriasta, julkishallinnon rekistereistä tai web-sivuston
+tapauksessa sivuston web-analytiikasta ja lokitiedoista. Tieto jonka pohjalta
+personointia tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin
+puhutaan yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa
+rajapinnassa jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten
+toimipiste-, puhelin- tai web-asioinnissa. Työni keskittyy web-asioinnin
+personointiin ja nimenomaan web-sivuston ulkoasun personointiin.
+
 Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
-ja työ on tarkoituksella rajattu vain web-sivuston ulkoasun personointiin
+ja työni on tarkoituksella rajattu vain web-sivuston ulkoasun personointiin
 näkökulman tarkentamiseksi. Työ keskittyy pääasiassa ulkoasun personointiin
 vaikka myös web-sivuston sisällön personointia sivutaan, sillä sisällön
 personointi on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
@@ -287,59 +303,82 @@ Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
 suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
 merkittävästi web-sivuston ulkoasun personoinnista. Ulkoasun personointiin
 kuuluu kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen,
-jota tarkastellaan luvussa~\ref{layout-personalization}.
+jota tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
+personointia.
 
-\subsection{Hyödyt ja haitat}
+Ennen kuin personoinnin näkökulmia ja varsinaisia menetelmiä käydään läpi, on
+tärkeää tarkentaa miksi personointia ylipäätään kannattaa hyödyntää
+web-sivustolla.
 
-Personoinnilla tarkoitetaan käyttäjästä kerätyn tiedon perusteella tehtävää
-automaattista mukauttamista. Kerätty tieto voi olla hyvin erilaisista lähteistä,
-kuten asiointihistoriasta, julkishallinnon rekistereistä tai web-sivuston
-tapauksessa käyttäytymisestä sivustolla. Tieto jonka pohjalta personointia
-tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin puhutaan
-yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa
-jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-,
-puhelin- tai web-asioinnissa. Tämä työ keskittyy web-asioinnin personointiin
-ja nimenomaan web-sivuston ulkoasun personointiin.
+\subsection{Personoinnin hyödyt}
 
-Tarve personoinnille vaihtelee web-sivuston mukaan, mutta yleisesti voidaan
-todeta että personoinnin tavoitteena on ohjata käyttäjän toimintaa web-sivuston
+Tarve personoinnille vaihtelee web-sivuston mukaan, mutta Blomin taksonomian
+mukaisesti tarpeet voidaan jakaa karkeasti kahteen luokkaan.
+
+Ensimmäinen luokka käsittää ohjelmiston, kuten web-sivuston, kanssa
+työskentelyyn liittyvät syyt, jotka voidaan jakaa kolmeen ryhmään. Ensinnäkin
+personointi mahdollistaa tehokkaamman pääsyn käyttäjälle tärkeään sisältöön.
+Blom antaa esimerkkinä kirjanmerkkien käytön sivustolla, mutta nykyaikaisempi
+esimerkki voisi olla suosittelualgoritmin automaattisesti korostamat sisällöt.
+Toisekseen personoinnilla on mahdollista optimoida prosesseja, kuten lomakkeen
+täyttöä sivustolla. Osa lomakkeen vaiheista voidaan ohittaa, jos tiedot saadaan
+haettua suoraan taustajärjestelmistä. Kolmanneksi personoinnilla voidaan
+huomioida yksilölliset erot, kuten näkövammat ja liikunnalliset rajoitteet.
+Esimerkiksi näkövammaisille voidaan tarjota suurempikontrastinen versio
+sivustosta. Yksilölliset erot ja rajoitteet voivat olla lähtöisiä myös
+käyttöympäristöstä, kuten esimerkiksi kirkas auringonvalo tai voimakas
+taustahäly. Myös tämäntyyppisten rajoitteiden kaipaamaa personointia käsitellään
+osana tätä työtä.
+
+Toinen luokka käsittää sosiaaliset syyt, jotka voidaan jakaa kahteen ryhmään.
+Ensimmäisenä Blom mainitsee ihmisen tarpeen herättää tietynlainen tunnereaktio
+myös vuorovaikutuksessa ohjelmiston kanssa. Blom pohtii, että samaan tapaan kuin
+ihmisellä on tapana sisustaa työtilaansa, sama personoinnin tarve koskee myös
+ihmisen käyttämiä tuotteita, kuten autoja tai ohjelmistoja. Toisena Blom
+mainitsee ihmisen tarpeen ilmaista omaa identiteettiään, jota hän tarkentaa
+vielä ihmisen tarpeella liittää itsensä johonkin yhteisöön. Nämä syyt mielessä
+pitäen henkilö saadaan personoinnin avulla kokemaan itsensä tervetulleeksi
+web-sivustolla.
+
+Vesanen~\cite{10.1108/03090560710737534} pohtii laajemmin personoinnin
+määritelmää erityisesti palveluntarjoajan näkökulmasta. Yleisesti voidaan todeta
+että personoinnin tavoitteena on ohjata käyttäjän toimintaa web-sivuston
 palveluntarjoajan tavoitteiden mukaisesti, ja yleensä nimenomaan joko lisätä
-palveluntarjoajan tuloja tai vähentää sen menoja. Esimerkiksi tyypillisen
-verkossa toimivan uutismedian tavoite on kerätä tuloja näyttämällä mainoksia
-artikkelien yhteydessä. Personoimalla käyttäjälle näytettäviä sisältöjä
-esimerkiksi korostamalla tälle mielenkiintoisia aiheita, käyttäjä saadaan
-lukemaan enemmän artikkeleja ja täten kasvatettua uutismedian mainostuloja. Sitä
-vastoin esimerkiksi kunta voisi pyrkiä vähentämään asiointiin liittyviä soittoja
-puhelinneuvontaan, jonka ylläpitäminen on kallista. Sivuston etusivua
-personoimalla kunta voisi nostaa juuri käyttäjälle ajankohtaiset lomakkeet heti
-sivun alkuun, ja täten helpottaa käyttäjän asiointia.
+palveluntarjoajan tuloja tai vähentää sen menoja. Esimerkiksi verkkokauppa voi
+lisätä myyntiä personoimalla asiakkaalle suositeltavia tuotteita tämän
+ostohistorian perusteella. Sitä vastoin kunta voisi asiointisivustoaan
+personoimalla nostaa vierailijalle ajankohtaiset lomakkeet heti etusivun alkuun,
+ja täten lisätä verkkoasiointia ja vähentää kalliimpaa puhelinasiointia.
 
-Personoinnilla voidaan siis säästää rahaa, mutta sen kautta on mahdollista saada
-myös yleishyödyllisempiä hyötyjä. Web-sivuston personointi mahdollistaa
+Personoinnilla voidaan siis parantaa käyttökokemusta ja säästää rahaa, mutta
+siitä on hyötyä myös yhteiskunnan tasolla. Web-sivuston personointi mahdollistaa
 yksilöllisen tiedonvälityksen kokoluokassa, joka ei aiemmin ole ollut
-mahdollista. Printtimedia skaalautuu kyllä hyvin ja sen kautta tietoa on ollut
+mahdollista. Painettu media skaalautuu hyvin, ja sen kautta tietoa on ollut
 mahdollista levittää laajalle jo vuosisatoja, mutta sen personointi on liki
-mahdotonta tai ainakin erittäin kallista. Toinen ääripää eli tiedonvälitys
-henkilöltä toiselle on aina personoitua, mutta se ei skaalaudu. Julkinen valta
-ja muut yleishyödylliset toimijat voivat siis hyödyntää personointia
-tiedonvälityksessä tavoittaakseen suurempia yleisöjä. Tästä on ollut hyötyä
-esimerkiksi COVID-19 -pandemian aikana, kun rokotekampanjoita on voitu kohdentaa
-verkossa tärkeille yleisöille~\cite{viite?}.
+mahdotonta tai ainakin erittäin kallista. Toinen ääripää, eli tiedonvälitys
+henkilöltä toiselle, on aina personoitua, mutta ei mahdollista tehokasta tiedon
+levitystä. Julkinen valta ja muut yleishyödylliset toimijat voivat siis
+hyödyntää personointia tiedonvälityksessä tavoittaakseen suurempia yleisöjä.
+Tästä on ollut hyötyä esimerkiksi koronaviruspandemian aikana, kun
+rokotekampanjoiden verkkoviestintää on voitu personoida tärkeille
+yleisöille~\cite{sanchez_2022}.
 
-Tähän vielä personoinnin hyödyistä saavutettavuuden näkökulmasta ja mukautuminen
-eri fyysisiin ympäristöihin (esim isompi fontti auringonpaisteessa).
+Personoidulla tiedonvälityksellä on kuitenkin myös kääntöpuolensa, jota
+tarkastellaan seuraavaksi osana personoinnin haittoja.
 
-Personoinnissa on kuitenkin myös selkeitä kipukohtia. Personointi perustuu
+\subsection{Personoinnin haitat}
+
+Personoinnissa on hyötyjen lisäksi selkeitä kipukohtia. Personointi perustuu
 käyttäjästä kerättyyn tietoon. Tietoa kerätään mahdollisesti monesta eri
 kanavasta, ja on tärkeää että tietojen keräämiseen on aina käyttäjän suostumus.
 Tietolähteiden lisääntyessä käyttäjä ei välttämättä enää ole kartalla siitä,
 mitä tietoa on suostunut luovuttamaan ja mihin. Tietojen luovutuspyyntöihin myös
 turtuu nopeasti, mistä esimerkkinä on EUn GDPR-direktiivin myötä yleistyneet
-evästesuostumuslomakkeet. Suostumusta kysytään lähes jokaisella
-web-sivustolla, koska web-analytiikka ja kohdennettu mainonta on niin
-yleistä. Asenteet sisällön personoinnin osalta ovat muuttuneet kielteisempään
-suuntaan, kun vielä 90-luvulla sisällön personointi nähtiin verkkoon siirtyvän
-printtimedian pelastajana~\cite{adams_1995}.
+evästesuostumuslomakkeet. Suostumusta kysytään lähes jokaisella web-sivustolla,
+koska web-analytiikka ja kohdennettu mainonta on niin yleistä. Asenteet sisällön
+personoinnin osalta ovat muuttuneet kielteisempään suuntaan, kun vielä
+90-luvulla sisällön personointi nähtiin verkkoon siirtyvän printtimedian
+pelastajana~\cite{adams_1995}.
 
 Arkielämän teknistyessä käyttäjälle ei myöskään ole välttämättä aina selvää,
 mitä kaikkea tietoa on edes mahdollista kerätä. Tietoja kuten hiiren liike,
