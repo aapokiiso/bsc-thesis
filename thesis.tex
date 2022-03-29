@@ -131,21 +131,24 @@ Ihmisen ja tietokoneen välinen vuorovaikutus on ollut tietojenkäsittelytietees
 tutkimuksen kohteena henkilökohtaisen tietokoneen läpimurrosta 1970- ja
 1980-lukujen vaihteesta lähtien~\cite{10.1145/800178.810088}. Yksi tutkimuksen
 tavoitteista on ollut löytää menetelmiä mukauttaa tietokoneen ohjelmistoja
-kullekin käyttäjälle sopivaksi.
+kullekin käyttäjälle sopivaksi. Ohjelmistoa mukauttamalla voidaan parantaa
+yksittäisen käyttäjän käyttökokemusta erilaisista näkökulmista, kuten
+saavutettavuuden kannalta. Mukauttamisen avulla voidaan myös tehostaa
+ohjelmiston toimintaa, kuten lisätä myyntiä verkkokaupassa.
 
 Ohjelmistojen mukauttaminen voidaan jakaa karkeasti kahteen osa-alueeseen.
 Ensinnäkin kustomoinnilla (engl.~\textit{customization}) tarkoitetaan käyttäjän
-itse suorittamaa mukauttamista, kuten sivustoasetusten muuttamista. Toisekseen
-personoinnilla (engl.~\textit{personalization}) tarkoitetaan automaattista
-mukauttamista käyttäjästä kerätyn tiedon perusteella. Nämä kaksi osa-aluetta
-eivät kuitenkaan ole toisiaan poissulkevia, vaan usein mukauttamisessa
-hyödynnetään sekä automaattisia että käyttäjälähtöisiä
+itse suorittamaa mukauttamista, kuten ohjelmiston asetusten muuttamista.
+Toisekseen personoinnilla (engl.~\textit{personalization}) tarkoitetaan
+automaattista mukauttamista käyttäjästä kerätyn tiedon perusteella. Nämä kaksi
+osa-aluetta eivät kuitenkaan ole toisiaan poissulkevia, vaan usein
+mukauttamisessa hyödynnetään sekä automaattisia että käyttäjälähtöisiä
 menetelmiä~\cite{10.1145/633292.633483}.
 
-Aikaisessa tutkimuksessa tutkittiin nimenomaan ohjelmistojen mukauttamista
+Aikaisessa tutkimuksessa tutkittiin ohjelmistojen mukauttamista nimenomaan
 kustomoinnin avulla, eli muun muassa tarjoamalla käyttäjälle asetuksia
-tarpeettomien toimintojen piilottamiseen. Ajan kuluessa tutkimuksen painopiste
-on siirtynyt kustomoinnista personoinnin puolelle.
+tarpeettomien toimintojen piilottamiseen. Myöhemmin tutkimuksen painopiste on
+siirtynyt kustomoinnista personointiin.
 
 Alkuaikoina ohjelmistojen jakelu levykkeiden ja muiden fyysisten
 tiedontallennusvälineiden muodossa hankaloitti personointiin liittyvän
@@ -169,19 +172,19 @@ sivuston käyttäjille ei ole kuitenkaan aina optimaalista, sillä käyttäjill�
 eri mieltymyksiä muun muassa kulttuuritaustasta ja iästä
 riippuen~\cite{10.1145/2556288.2557052}.
 
-Työ selvittää mitä menetelmiä web-sivuston ulkoasun eri osien personointiin on
-olemassa. Tarkasteltavia osia ovat muun muassa sivuston asettelu, kirjasin- ja
-värivalinnat sekä valikot. Työ tarkastelee myös eri personointimenetelmien
+Selvitän työssäni mitä menetelmiä web-sivuston ulkoasun eri osien personointiin
+on olemassa. Tarkasteltavia osia ovat muun muassa sivuston asettelu, kirjasin-
+ja värivalinnat sekä valikot. Työ tarkastelee myös eri personointimenetelmien
 toimintatapoja. Monet tarkasteltavista menetelmistä perustuvat matemaattisen
 optimointiin, mutta hyödyntävät myös käyttöliittymäsuunnittelun heuristiikkoja
 kuten tekstin luettavuuskriiterejä tuloksissaan. Sivuston eri osien personointia
 ja personointimenetelmien toimintatapoja tarkastellaan
 luvussa~\ref{personalization}.
 
-Tarkoituksenani on myös vertailla personointimenetelmien käyttöönoton
-vaivattomuutta ja menetelmillä saavutettavia hyötyjä. Pyrin vertailun avulla
-löytämään persononointimenetelmät, joista saa suurimman hyödyn pienimmällä
-vaivalla. Pisteytyskriteeristö ja vertailun tulokset on esitelty
+Vertailen työssäni myös personointimenetelmien käyttöönoton vaivattomuutta ja
+niillä saavutettavaa hyötyä. Pyrin vertailun avulla löytämään
+persononointimenetelmät, joista saa suurimman hyödyn pienimmällä vaivalla.
+Pisteytyskriteeristö ja vertailun tulokset on esitelty
 luvussa~\ref{personalization-comparison}.
 
 \clearpage
@@ -252,7 +255,7 @@ rakentaa lähes ilman ohjelmointityötä pelkän HTML-merkintäkielen ja
 CSS-tyylisäännöstön avulla. Sivustojen käytettävyyttä parannettiin kevyen
 JavaScript-skriptauksen avulla siellä ja täällä, mutta varsinainen
 ohjelmointityö rajoittui yleensä palvelinpuolelle. Palvelinpuolen kehitystä ei
-tässä työssä esitellä tai käsitellä työn rajauksesta johtuen.
+esitellä tai käsitellä työn rajauksesta johtuen.
 
 Sittemmin tärkeä edistysaskel sivuston ulkoasun kehityksessä on tapahtunut
 2010-luvun loppupuolen jälkeen, kun JavaScript-käyttöliittymäkirjastot ovat
@@ -278,43 +281,40 @@ otsikot ja lomakkeet.
 %Tähän ulkoasun generoinnista asiaa. Nimenomaan ei-personoinnin näkökulmasta,
 %vaan yleisiä menetelmiä
 
-\subsection{Yhteenveto}
-
 \clearpage
 
 \section{Personointi}\label{personalization}
 
-Tässä työssä käytetään Blomin~\cite{10.1145/633292.633483} vuonna 2000
-julkaisemaa personoinnin taksonomiaa. Sen mukaan personoinnilla tarkoitetaan
-järjestelmän muuttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän
-näkökulmasta kasvaa. Personoinnin myötä tehdyt muutokset ovat lähtökohtaisesti
-käyttäjälle pysyviä, joskin ne voivat muuttua edelleen käytön edetessä.
-Personoinnin perusteeksi kerätty tieto voi olla hyvin erilaisista lähteistä,
-kuten asiointihistoriasta, julkishallinnon rekistereistä tai web-sivuston
-tapauksessa sivuston web-analytiikasta ja lokitiedoista. Tieto jonka pohjalta
-personointia tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin
-puhutaan yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa
-rajapinnassa jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten
-toimipiste-, puhelin- tai web-asioinnissa. Työni keskittyy web-asioinnin
-personointiin ja nimenomaan web-sivuston ulkoasun personointiin.
+Käytän työssäni Blomin~\cite{10.1145/633292.633483} vuonna 2000 julkaisemaa
+personoinnin taksonomiaa. Sen mukaan personoinnilla tarkoitetaan järjestelmän
+muuttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän näkökulmasta
+kasvaa. Personoinnin myötä tehdyt muutokset ovat lähtökohtaisesti käyttäjälle
+pysyviä, joskin ne voivat muuttua edelleen käytön jatkuessa. Personoinnin
+perusteeksi kerätty tieto voi olla hyvin erilaisista lähteistä, kuten
+asiointihistoriasta, julkishallinnon rekistereistä tai web-sivuston tapauksessa
+sivuston web-analytiikasta ja lokitiedoista. Tieto jonka pohjalta personointia
+tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin puhutaan
+yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa
+jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-,
+puhelin- tai web-asioinnissa. Työni keskittyy web-asioinnin personointiin ja
+nimenomaan web-sivuston ulkoasun personointiin.
 
 Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
 ja työni on tarkoituksella rajattu vain sivuston ulkoasun personointiin
-näkökulman tarkentamiseksi. Työ keskittyy pääasiassa ulkoasun personointiin
-vaikka myös sivuston sisällön personointia sivutaan, sillä sisällön
-personointi on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
+näkökulman tarkentamiseksi. Rajauksen ulkopuolelle jää sivuston sisällön
+personointi, joka on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
 Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
 suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
-merkittävästi sivuston ulkoasun personoinnista. Ulkoasun personointiin
-kuuluu kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen,
-jota tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
+merkittävästi sivuston ulkoasun personoinnista. Ulkoasun personointiin kuuluu
+kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen, jota
+tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
 personointia.
 
 Ennen kuin personoinnin näkökulmia ja varsinaisia menetelmiä käydään läpi, on
 tärkeää tarkentaa miksi personointia ylipäätään kannattaa hyödyntää
 sivustolla.
 
-\subsection{Personoinnin hyödyt}
+\subsection{Personoinnin hyödyt}\label{personalization-pros}
 
 Tarve personoinnille vaihtelee sivuston mukaan, mutta Blomin taksonomian
 mukaisesti tarpeet voidaan jakaa karkeasti kahteen luokkaan.
@@ -338,11 +338,10 @@ Toinen luokka käsittää sosiaaliset syyt, jotka voidaan jakaa kahteen ryhmää
 Ensimmäisenä Blom mainitsee ihmisen tarpeen herättää tietynlainen tunnereaktio
 myös vuorovaikutuksessa ohjelmiston kanssa. Blom pohtii, että samaan tapaan kuin
 ihmisellä on tapana sisustaa työtilaansa, sama personoinnin tarve koskee myös
-ihmisen käyttämiä tuotteita, kuten autoja tai ohjelmistoja. Toisena Blom
-mainitsee ihmisen tarpeen ilmaista omaa identiteettiään, jota hän tarkentaa
-vielä ihmisen tarpeella liittää itsensä johonkin yhteisöön. Nämä syyt mielessä
-pitäen henkilö saadaan personoinnin avulla kokemaan itsensä tervetulleeksi
-sivustolla.
+ihmisen käyttämiä ohjelmistoja. Toisena Blom mainitsee ihmisen tarpeen ilmaista
+omaa identiteettiään, jota hän tarkentaa vielä ihmisen tarpeella liittää itsensä
+johonkin yhteisöön. Nämä syyt mielessä pitäen henkilö saadaan personoinnin
+avulla kokemaan itsensä tervetulleeksi sivustolla.
 
 Vesanen~\cite{10.1108/03090560710737534} pohtii laajemmin personoinnin
 määritelmää erityisesti palveluntarjoajan näkökulmasta. Yleisesti voidaan todeta
@@ -370,7 +369,7 @@ yleisöille~\cite{sanchez_2022}.
 Personoidulla tiedonvälityksellä on kuitenkin myös kääntöpuolensa, jota
 tarkastellaan seuraavaksi osana personoinnin haittoja.
 
-\subsection{Personoinnin haitat}
+\subsection{Personoinnin haitat}\label{personalization-cons}
 
 Personoinnissa on hyötyjen lisäksi selkeitä kipukohtia. Personointi perustuu
 käyttäjästä kerättyyn tietoon. Tietoa kerätään mahdollisesti monesta eri
@@ -385,15 +384,14 @@ personoinnin osalta ovat muuttuneet kielteisempään suuntaan, kun vielä
 pelastajana~\cite{adams_1995}.
 
 Arkielämän teknistyessä käyttäjälle ei myöskään ole välttämättä aina selvää,
-mitä kaikkea tietoa on edes mahdollista kerätä. Tietoja kuten hiiren liike,
-näppäimistösyöte, laitetiedot ja jossain määrin myös selailuhistoria ovat
-sivuston käytettävissä. Laitetietojen pohjalta sivusto voi muodostaa
-käyttäjästä sormenjäljen, jota on käytännössä mahdoton muuttaa tai pyyhkiä pois
-vaihtamatta laitetta. Evästeiden avulla isot mainosverkostot pystyvät seuraamaan
-käyttäjää sivustolta toiselle ja personoimaan mainontaa selailukäyttäytymisen
-perusteella.
+mitä kaikkea tietoa hänestä on edes mahdollista kerätä. Tiedot kuten hiiren
+liike, näppäimistösyöte, laitetiedot ja jossain määrin myös selailuhistoria ovat
+web-analytiikan käytettävissä. Laitetietojen pohjalta käyttäjästä voi muodostaa
+sormenjäljen, jota on käytännössä mahdoton muuttaa tai pyyhkiä pois vaihtamatta
+laitetta. Evästeiden avulla isot mainosverkostot pystyvät seuraamaan käyttäjää
+sivustolta toiselle ja personoimaan mainontaa selailukäyttäytymisen perusteella.
 
-Personointi ei aina ole edes haluttua. Monet alustapohjaiset teknologiayritykset
+Personointi ei aina ole toivottua. Monet alustapohjaiset teknologiayritykset
 ovat viime vuosina panostaneet erilaisiin suosittelualgoritmeihin kohdentaakseen
 sisältöään paremmin. Suosittelualgoritmit toimivat hyvin suurelle osalle
 käyttäjäkunnasta, mutta saattavat hankaloittaa palvelun käyttöä pienelle osalle,
@@ -402,43 +400,45 @@ ovat myös korvanneet palveluiden aiemmin käyttäjälle tarjoamia
 kustomointimahdollisuuksia kuten sisällön järjestelyasetuksia, mikä on
 hankaloittanut palvelun käyttöä~\cite{patel_2022}.
 
-Jo aiemmin mainittu COVID-19 rokotetietoisuuden kohdentaminen on myös
-kaksiteräinen miekka. Jos hyväntahtoiset toimijat kuten terveysvirastot pystyvät
+Luvussa~\ref{personalization-pros} kuvattu tiedonvälityksen personointi voi olla
+myös haitaksi. Jos hyväntahtoiset toimijat, kuten terveysvirastot, pystyvät
 personoimaan tiedonvälitystä avainryhmille, sama onnistuu myös pahantahtoisilta
-toimijoilta. Välittämällä kyseenalaista tietoa kuten salaliittoteorioita
-vastaanottavaisille ryhmille voidaan lyödä kiilaa yhteiskunnan sisälle.
+toimijoilta. Tiedonvälityksen personointi voi muodostua ongelmaksi myös
+itsestään. Spohr~\cite{doi:10.1177/0266382117722446} näyttää, että sisällön
+personointi sosiaalisen median alustoilla johtaa sisällön yksipuolistumiseen,
+vähentäen näin käyttäjän altistumista erilaisille näkökulmille.
 
 Tämän työn aihe eli sivuston ulkoasun personointi on kuitenkin verrattain
 harmiton personoinnin osa-alue. Sen haittapuolena on lähinnä lisääntynyt
-tekninen monimutkaisuus käytetystä menetelmästä riippuen. Saavutetut hyödyt ovat
-sivuston palveluntarjoajan lisääntyvässä asiakastyytyväisyydessä ja sitä
-kautta lisääntyvissä tuloissa tai vähentyvissä menoissa.
+sivuston tekninen monimutkaisuus käytetystä menetelmästä riippuen.
 
 \subsection{Näkökulmat ulkoasun personointiin}\label{personalization-aspects}
 
-Tässä työssä web-sivuston ulkoasun personointia tarkastellaan eri näkökulmista.
-Näkökulmat jakaantuvat karkeasti kahteen ryhmään, käyttäjälähtöisiin näkökulmiin
-ja ympäristölähtöisiin näkökulmiin.
+Web-sivuston ulkoasun personointia tarkastellaan työssäni käyttäjälähtöisistä ja
+ympäristölähtöisistä näkökulmista.
 
 Osa käyttäjälähtöisistä näkökulmista perustuu käyttäjän fyysisiin
-ominaisuuksiin. Käyttäjällä voi olla esimerkiksi rajoitteita, kuten näkö- ja
-liikuntarajoitteita, jotka vaikuttavat merkittävästi sivuston käyttöön.
-Muita fyysisiä ominaisuuksia, jotka voivat vaikuttaa sivuston käyttöön, ovat
-ikä ja sukupuoli. Fyysisten ominaisuuksien lisäksi myös kulttuuritausta ja
-kieli, koulutustaso, kiinnostuksen kohteet, sosiaaliset verkostot ja jopa
-mieliala ovat ominaisuuksia, joiden perusteella sivustoa voidaan personoida
-käyttäjälle. Lisäksi myös sivuston aiempi käyttöhistoria voi vaikuttaa
-personointiin.
+ominaisuuksiin. Käyttäjällä voi olla esimerkiksi näkö- ja liikuntarajoitteita,
+jotka vaikuttavat merkittävästi sivuston käyttöön. Muita fyysisiä ominaisuuksia,
+joiden näkökulmasta personointia tarkastellaan, ovat ikä ja sukupuoli. Fyysisten
+ominaisuuksien lisäksi myös kulttuuritausta ja kieli, koulutustaso,
+kiinnostuksen kohteet ja asiointihistoria, sosiaaliset verkostot ja mieliala
+ovat ominaisuuksia, joiden näkökulmasta sivuston ulkoasun personointia
+tarkastellaan.
 
-Ympäristölähtöiset näkökulmat liittyvät sivuston selailuun käytettävän
-laitteen ominaisuuksiin ja toisaalta myös laajemmin käyttöympäristön
-ominaisuuksiin. Laitteen ominaisuuksia, joiden perusteella personointia voidaan
-tehdä, ovat laitteen näyttökoko ja suorituskyky. Laajemmin käyttöympäristöön
-liittyviä personoitavia näkökulmia ovat verkkoyhteyden nopeus, sijainti sekä
-vuoden- ja kellonaika. Laitteen antureita voidaan hyödyntää lähiympäristön
-havainnoimiseen, jolloin personoinnissa voidaan hyödyntää ympäristön kirkautta,
-lämpötilaa, taustamelun äänenvoimakkuutta sekä liike-ominaisuuksia, kuten
-tärinää ja nopeutta.
+Ympäristölähtöiset näkökulmat liittyvät sivuston selailuun käytettävän laitteen
+ominaisuuksiin ja toisaalta myös laajemmin käyttöympäristön ominaisuuksiin.
+Laitteen ominaisuuksia, joiden näkökulmasta personointia tarkastellaan, ovat
+laitteen näyttökoko ja suorituskyky. Laajemmin käyttöympäristöön liittyviä
+personoinnin näkökulmia ovat verkkoyhteyden nopeus, sijainti sekä vuoden- ja
+kellonaika. Laitteen antureita voidaan hyödyntää lähiympäristön havainnoimiseen,
+jolloin personoinnissa voidaan hyödyntää ympäristön kirkautta, lämpötilaa,
+taustamelun äänenvoimakkuutta sekä liike-ominaisuuksia, kuten tärinää ja
+nopeutta.
+
+Näitä näkökulmia tarkastellaan erityisesti
+luvussa~\ref{personalization-comparison}. Seuraavissa alaluvuissa esitellään
+personoinnin menetelmiä sivuston eri osa-alueiden näkökulmasta.
 
 \subsection{Asettelun personointi}\label{layout-personalization}
 
@@ -450,15 +450,15 @@ yleensä suurin piirtein muuttumattomina sivustolla navigoidessa, mutta
 sisältöalueen sisältö luonnollisesti vaihtuu sivun mukaan. Ylätunniste ja
 alatunniste ovat valikonomaisia sivuston osia. Ylätunniste sijaitsee aina sivun
 alussa ja alatunniste sivun lopussa. Niiden asettelun personointi ei ole
-mielekästä, joten niitä ei tarkastella enempää tässä luvussa.
+mielekästä, joten niitä ei tarkastella enempää tässä alaluvussa.
 
-Valikoiden asettelua on toki myös mahdollista personoida. Valikoiden asettelu
-eroaa normaalista sisällöstä hivenen siksi, että valikon vaihtoehdoilla on
-vähemmän vapausasteita verrattuna sisällön asetteluun. Vaihtoehtojen järjestys
-voi muuttua, niitä voidaan piilottaa ja niitä voidaan korostaa esimerkiksi
-lihavoinnilla. Ne eivät siis esimerkiksi voi lähtökohtaisesti siirtyä valikon
-ulkopuolelle. Valikoiden personointi onkin siis ulkoasullisesti triviaalia, ja
-menee enemmän sisällön personoinnin puolelle.
+Sivun asettelun lisäksi myös valikoiden asettelua on mahdollista personoida.
+Valikoiden asettelu eroaa normaalista sisällöstä hivenen siksi, että valikon
+vaihtoehdoilla on vähemmän vapausasteita verrattuna sisällön asetteluun.
+Vaihtoehtojen järjestys voi muuttua, niitä voidaan piilottaa ja niitä voidaan
+korostaa esimerkiksi lihavoinnilla. Ne eivät siis esimerkiksi voi
+lähtökohtaisesti siirtyä valikon ulkopuolelle. Valikoiden personointi onkin siis
+ulkoasullisesti triviaalia, ja liittyy enemmän sisällön personointiin.
 
 Sisältöalueen asettelu perustuu nykyään lähtökohtaisesti ruudukkorakenteeseen
 (engl.~\textit{grid layout}). Ruudukko koostuu sivustosta ja päätelaitteen
@@ -480,12 +480,12 @@ näkyville.
 
 Ennen 2010-lukua asettelu tehtiin lähtökohtaisesti staattisesti, tarkoittaen
 että sivun sisältöalueella oli ennalta määrätty leveys. Leveys oli yleensä
-maksimissaan 1024 pikseliä, joka oli senaikaiset päätelaitteet huomioon ottaen sopiva
-koko~\cite{viite?}. Sisältöalueen leveys ei muuttunut päätelaitteen mukaan. Sivun suunnittelu
-ja toteutus oli verrattain helppoa, koska hankalista asettelun rajatapauksista
-ei tarvinnut huolehtia. Toisaalta staattisesti rakennetut sivustot alkoivat olla
-hankalia käyttää älypuhelinten yleistyessä, sillä sivustojen käyttö pienellä
-näyttökoolla vaati zoomausta sisällön erottamiseksi.
+maksimissaan 1024 pikseliä, joka oli senaikaiset päätelaitteet huomioon ottaen
+sopiva koko. Sisältöalueen leveys ei muuttunut päätelaitteen mukaan. Sivun
+suunnittelu ja toteutus oli verrattain helppoa, koska hankalista asettelun
+rajatapauksista ei tarvinnut huolehtia. Toisaalta staattisesti rakennetut
+sivustot alkoivat olla hankalia käyttää älypuhelinten yleistyessä, sillä
+sivustojen käyttö pienellä näyttökoolla vaati zoomausta sisällön erottamiseksi.
 
 Nykypäivänä on tyypillistä, että sivuston asettelu mukautuu päätelaitteen
 näyttökokoon. Näyttökokoon perustuvaa asettelun mukautumista kutsutaan
@@ -612,28 +612,29 @@ suunnittelujärjestelmä ja väripaletti.
 
 Haastavaa värisuunnittelua on mahdollista helpottaa personoimalla väripalettia
 kullekin käyttäjälle sopivaksi. Personoinissa täytyy toki ottaa huomioon
-esimerkiksi yrityskuvaan (engl.~\textit{brand}) liittyvät seikat, mutta
-esimerkiksi sivuston huomiovärin kaltaisia yksityiskohtia voi olla mahdollista
-personoida matalalla kynnyksellä.
+esimerkiksi yrityskuvaan liittyvät seikat, mutta esimerkiksi sivuston
+huomiovärin kaltaisia yksityiskohtia voi olla mahdollista personoida matalalla
+kynnyksellä.
 
 Suhtautuminen väreihin on erilaista eri puolilla maailmaa. Jos sivuston
 käyttäjäkunta koostuu vain pienen kultuurillisesti yhtenäisen alueen asukkaista,
 värien personoinnista ei välttämättä ole hyötyä. Jos käyttäjäkunta on laajempaa
 tai jopa maailmanlaajuista, väripersonointi nousee uuteen merkitykseen. Reinecke
 ym.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelussa
-pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri sivuston
-visuaalista miellyttävyyttä. He huomasivat, että esimerkiksi makedonialaiset
-pitävät keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
+pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri sivuston visuaalista
+miellyttävyyttä. He huomasivat, että esimerkiksi pohjoismakedonialaiset pitävät
+keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
 yksinkertaisempia leiskoja ja väripaletteja.
 
 O'Donovan esittelee väitöskirjassaan~\cite{odonovan_2015} menetelmän tuottaa
 osan väripaletista koneellisesti. Menetelmä olettaa, että päävärit on lukittu,
-kuten yleensä on. Joukkoistamisella kerätyn tiedon pohjalta menetelmä pystyy
-muodostamaan puuttuvat värit palettiin miellyttävällä tavalla. Menetelmä ei ole
-suoraan sovellettavissa sivuston ulkoasun personointiin, koska se perustuu
-joukkoistamisen avulla kerättyyn yleiseen tietoon väripalettien mielekkyydestä.
-Jotta menetelmä olisi hyödyksi personoinnissa, tieto väripalettien
-mielekkyydestä täytyisi kerätä sivuston käyttäjäryhmiltä etukäteen.
+kuten yleensä tapana on. Joukkoistamisella kerätyn tiedon pohjalta menetelmä
+pystyy muodostamaan puuttuvat värit palettiin miellyttävällä tavalla. Menetelmä
+ei ole suoraan sovellettavissa sivuston ulkoasun personointiin, koska se
+perustuu joukkoistamisen avulla kerättyyn yleiseen tietoon väripalettien
+mielekkyydestä. Jotta menetelmä olisi hyödyksi personoinnissa, tieto
+väripalettien mielekkyydestä täytyisi kerätä sivuston käyttäjäryhmiltä
+etukäteen.
 
 Värien personoinnista löytyy jonkin verran sovelluksia web-suunnittelun ja
 -kehityksen toimialalta. Salesforcen
