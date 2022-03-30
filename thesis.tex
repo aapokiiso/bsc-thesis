@@ -374,20 +374,21 @@ tarkastellaan seuraavaksi osana personoinnin haittoja.
 Personoinnissa on hyötyjen lisäksi selkeitä kipukohtia. Personointi perustuu
 käyttäjästä kerättyyn tietoon. Tietoa kerätään mahdollisesti monesta eri
 kanavasta, ja on tärkeää että tietojen keräämiseen on aina käyttäjän suostumus.
-Tietolähteiden lisääntyessä käyttäjä ei välttämättä enää ole kartalla siitä,
-mitä tietoa on suostunut luovuttamaan ja mihin. Tietojen luovutuspyyntöihin myös
-turtuu nopeasti, mistä esimerkkinä on EUn GDPR-direktiivin myötä yleistyneet
-evästesuostumuslomakkeet. Suostumusta kysytään lähes jokaisella sivustolla,
-koska web-analytiikka ja kohdennettu mainonta on niin yleistä. Asenteet sisällön
-personoinnin osalta ovat muuttuneet kielteisempään suuntaan, kun vielä
-90-luvulla sisällön personointi nähtiin verkkoon siirtyvän printtimedian
-pelastajana~\cite{adams_1995}.
+Tietolähteiden lisääntyessä käyttäjä ei välttämättä enää ole selvillä siitä,
+mitä tietoa on suostunut luovuttamaan ja mihin. Fernandez
+ym.~\cite{10.1145/3476087} löysivät, että Euroopan Unionin General Data
+Protection Regulation -direktiivin (\textit{GDPR}) myötä yleistyneet
+evästesuostumuslomakkeet ohitetaan usein lukematta. Suostumusta kysytään lähes
+jokaisella sivustolla, koska web-analytiikka ja kohdennettu mainonta on niin
+yleistä. Asenteet sisällön personoinnin osalta ovat muuttuneet kielteisempään
+suuntaan, kun vielä 90-luvulla sisällön personointi nähtiin verkkoon siirtyvän
+printtimedian pelastajana~\cite{adams_1995}.
 
 Arkielämän teknistyessä käyttäjälle ei myöskään ole välttämättä aina selvää,
-mitä kaikkea tietoa hänestä on edes mahdollista kerätä. Tiedot kuten hiiren
+minkälaista tietoa hänestä on edes mahdollista kerätä. Tiedot kuten hiiren
 liike, näppäimistösyöte, laitetiedot ja jossain määrin myös selailuhistoria ovat
 web-analytiikan käytettävissä. Laitetietojen pohjalta käyttäjästä voi muodostaa
-sormenjäljen, jota on käytännössä mahdoton muuttaa tai pyyhkiä pois vaihtamatta
+tunnisteen, jota on käytännössä mahdoton muuttaa tai pyyhkiä pois vaihtamatta
 laitetta. Evästeiden avulla isot mainosverkostot pystyvät seuraamaan käyttäjää
 sivustolta toiselle ja personoimaan mainontaa selailukäyttäytymisen perusteella.
 
@@ -395,10 +396,10 @@ Personointi ei aina ole toivottua. Monet alustapohjaiset teknologiayritykset
 ovat viime vuosina panostaneet erilaisiin suosittelualgoritmeihin kohdentaakseen
 sisältöään paremmin. Suosittelualgoritmit toimivat hyvin suurelle osalle
 käyttäjäkunnasta, mutta saattavat hankaloittaa palvelun käyttöä pienelle osalle,
-johon kuuluvat eivät istu hyvin algoritmin luokittelijaan. Suosittelualgoritmit
+johon kuuluvat eivät sovi hyvin algoritmin luokitteluun. Suosittelualgoritmit
 ovat myös korvanneet palveluiden aiemmin käyttäjälle tarjoamia
-kustomointimahdollisuuksia kuten sisällön järjestelyasetuksia, mikä on
-hankaloittanut palvelun käyttöä~\cite{patel_2022}.
+kustomointimahdollisuuksia, kuten sisällön järjestelyasetuksia, mikä on
+hankaloittanut palveluiden käyttöä~\cite{patel_2022}.
 
 Luvussa~\ref{personalization-pros} kuvattu tiedonvälityksen personointi voi olla
 myös haitaksi. Jos hyväntahtoiset toimijat, kuten terveysvirastot, pystyvät
@@ -560,18 +561,17 @@ web-suunnittelu), josta voidaan laskennallisten menetelmien avulla laajentaa
 muille laitteille sopivat versiot.
 
 Laine ym.~kehittivät vuonna 2021 \textit{Computational responsive web design
-    (C-RWD)}-teknologiakonseptin~\cite{laine2021responsive}, joka perustuu Laine
-    ym.~vuonna 2020 kehittämään \textit{Layout as a Service
-    (LaaS)}-alustakonseptiin~\cite{laine2020_laas}. Tutkimusryhmän C-RWD
-    -teknologia kykenee automatisoimaan sivuston mukauttamisen erikokoisille
-    näytöille. Teknologia seuraa sivuston vieralijoiden käyttäytymiseen
-    liittyviä tietoja, kuten vierailuaikaa kullakin sivulla ja mitä sisältöjä on
-    klikattu. C-RWD parsii sivun HTML-rakennetta ja kykenee kerättyjen tietojen
-    avulla optimoimaan siitä käyttäjälle personoidun version. Personoitu versio
-    sivustosta tarjoillaan käyttäjälle vanhan sivuston sijasta. Käyttäjälle
-    tärkeiksi arvioituja sisältöjä voidaan esimerkiksi nostaa ylemmäs sivulla,
-    jolloin ne näkyvät käyttäjälle heti sivun latautuessa missä tahansa
-    näyttökoossa.
+(C-RWD)} -teknologiakonseptin~\cite{laine2021responsive}, joka perustuu Laine
+ym.~vuonna 2020 kehittämään \textit{Layout as a Service (LaaS)}
+-alustakonseptiin~\cite{laine2020_laas}. Tutkimusryhmän C-RWD -teknologia
+kykenee automatisoimaan sivuston mukauttamisen erikokoisille näytöille.
+Teknologia seuraa sivuston vieralijoiden käyttäytymiseen liittyviä tietoja,
+kuten vierailuaikaa kullakin sivulla ja mitä sisältöjä on klikattu. C-RWD parsii
+sivun HTML-rakennetta ja kykenee kerättyjen tietojen avulla optimoimaan siitä
+käyttäjälle personoidun version. Personoitu versio sivustosta tarjoillaan
+käyttäjälle vanhan sivuston sijasta. Käyttäjälle tärkeiksi arvioituja sisältöjä
+voidaan esimerkiksi nostaa ylemmäs sivulla, jolloin ne näkyvät käyttäjälle heti
+sivun latautuessa missä tahansa näyttökoossa.
 
 C-RWD laajentaa asettelun laskennallista suunnittelua nimenomaan responsiivisen
 web-suunnittelun osalta. Aiempaa tutkimusta edustaa Gajos ym.~kehittämä
@@ -1081,6 +1081,54 @@ Tähän yhteinen kuva kaikista menetelmistä.
 \clearpage
 
 \section{Yhteenveto}
+
+Tässä työssä tarkasteltiin web-sivuston ulkoasun personointimenetelmiä
+erinäisistä käyttäjä- ja ympäristölähtöisistä näkökulmista.
+Personointimenetelmiä esiteltiin sivuston eri osa-alueiden, kuten asettelun,
+värien ja typografian kautta. Tarkasteltuja käyttäjälähtöisiä näkökulmia oli
+muun muassa rajoitteet, kuten näkö- ja liikuntavammat, ikä ja kulttuuritausta.
+Tarkasteltuja ympäristölähtöisiä näkökulmia oli muun muassa laitteen näyttökoko,
+suorituskyky ja käyttöympäristön ominaisuudet, kuten valoisuus.
+
+Työ oli rajattu sivuston ulkoasun personointiin. Sivuston ulkoasun suunnittelu
+ja toteutus on edelleen pitkälti manuaalista työtä. Sivustoa on hankala
+suunnitella jokaiselle käyttäjälle sopivaksi, koska käyttäjillä on eri
+mieltymyksiä ulkoasun suhteen muun muassa kulttuuritaustasta riippuen. Työssä
+selvitettiin voisiko tätä ongelmaa ratkaista sivuston ulkoasun
+personointimenetelmillä, jotka perustuvat matemaattiseen optimointiin ja
+käyttöliittymäsuunnittelun heuristiikkoihin. Sisällön personointi jätettiin
+työn ulkopuolelle, sillä sen sisällyttäminen olisi kasvattanut työn rajausta
+liian suureksi.
+
+Työ vertaili havaittuja personointimenetelmiä pisteyttämällä ne vaivattomuuden
+ja arvioidun hyödyn saralla. Molempien akselien pisteytykseen kehitettiin
+kriteeristö, jonka pisteytysasteikko on eksponentiaalinen erojen
+selkeyttämiseksi. Pisteytyksessä kaikkia työhön valittuja personoinnin
+näkökulmia tarkasteltiin erikseen jokaisen sivuston osa-alueen kannalta. Pisteet
+kuvattiin priorisointitaulukkoon, josta näkee selkeästi mitkä menetelmistä
+kannattaa ottaa heti käyttöön, mitkä kannattaa ottaa seuraavaksi käyttöön, mitä
+menetelmiä kannattaa harkita, ja mitä ei kannata ottaa käyttöön.
+
+Työssä löydettiin, että suurin osa tarkastelluista menetelmistä on sellaisia,
+joita ei kannata ottaa käyttöön. Hyödyllisiä ja vaivattomia
+personointimenetelmiä, eli menetelmiä jotka kannattaa ottaa heti käyttöön, ei
+ollut montaa, ja niissä korostui vakiintuineisuus toimialalla. Tärkein tällainen
+menetelmä on sisällön asettelun personointi laitteen näyttökoon perusteella, eli
+responsiivinen web-suunnittelu. Hyödyllisissä mutta vähemmän vaivattomaksi
+havaituissa menetelmissä korostui teknisesti vaativammat menetelmät. Tällaisia
+menetelmiä ovat muun muassa sisällön asettelun personointi käyttäjän kiinnostuksen
+kohteiden mukaan ja responsiivisen web-suunnittelun automaatio laskennallisilla
+menetelmillä. Moni menetelmä havaittiin hyödylliseksi, mutta toteutus vaatii
+suuren vaivan, esimerkiksi uuden teknologian kehityksen. Tällaiseksi
+menetelmäksi havaittiin muun muassa värien personointi käyttäjän rajoitteiden,
+kuten näkövamman perusteella.
+
+Web-sivuston ulkoasun personointiin on siis muutama selkeä, mutta suurilta osin
+jo toimialalle vakiintunut menetelmä. Ulkoasun personoinnin automaatioon ei
+tällä hetkellä löydy toimialaratkaisuja, jotka olisi mahdollista ottaa käyttöön
+pienellä vaivalla. Personointiin ja sivuston ulkoasun suunnittelun ja
+toteutuksen automaatioon kohdistuu kuitenkin vireää tutkimusta, mikä
+toivottavasti näkyy lähiaikoina myös käytännön ratkaisuina toimialalla.
 
 \clearpage
 
