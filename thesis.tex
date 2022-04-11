@@ -157,10 +157,22 @@ käyttäjille oli hidasta ja kallista. 1990-luvulla yleistyneitä internet- eli
 web-sivustoja ei tarvitse perinteisten ohjelmistojen tapaan jaella käyttäjille,
 vaan palvelimelta voidaan tarjoilla aina uusin versio sivustosta. Internetin
 mahdollistama palveluntarjoajan ja loppukäyttäjän välinen reaaliaikainen
-vuorovaikutus johti myös osaltaan personointia hyödyntävän liiketoiminnan, kuten
-sähköisen kaupankäynnin ja sosiaalisen median kehittymiseen. Internetin käytön
-leviäminen arkielämään 1990- ja 2000-lukujen kuluessa kiihdytti personointiin
-kohdistuvaa tutkimusta ja kehitystä edelleen~\cite{10.1108/03090560710737534}.
+vuorovaikutus edisti myös osaltaan sellaisten personointia hyödyntävien
+liiketoimintojen kehittymistä kuin verkkokaupankäynti ja sosiaalinen media.
+Internetin käytön leviäminen arkielämään 1990- ja 2000-lukujen kuluessa
+kiihdytti personointiin kohdistuvaa tutkimusta ja kehitystä
+edelleen~\cite{10.1108/03090560710737534}.
+
+Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
+ja työni on tarkoituksella rajattu vain sivuston ulkoasun personointiin
+näkökulman tarkentamiseksi. Rajauksen ulkopuolelle jää sivuston sisällön
+personointi, joka on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
+Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
+suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
+merkittävästi sivuston ulkoasun personoinnista. Ulkoasun personointiin kuuluu
+kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen, jota
+tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
+personointia.
 
 Vaikka web-sivustojen personointia on tutkittu verrattain pitkään, käytännön
 hyödyntäminen toimialalla on vielä harvinaista. Sivuston ulkoasu suunnitellaan
@@ -168,22 +180,22 @@ nykyäänkin lähtökohtaisesti ihmisen toimesta, ja myös ulkoasusuunnitelman
 tulkitseminen ja ohjelmoiminen lopulliseksi sivustoksi on manuaalista työtä.
 Käyttäjille tai edes käyttäjäryhmille ei siis ole kustannustehokasta suunnitella
 personoituja versioita sivustoista. Yhden ja saman version jakelu kaikille
-sivuston käyttäjille ei ole kuitenkaan aina optimaalista, sillä käyttäjillä on
+sivuston käyttäjille ei kuitenkaan ole aina optimaalista, sillä käyttäjillä on
 eri mieltymyksiä muun muassa kulttuuritaustasta ja iästä
 riippuen~\cite{10.1145/2556288.2557052}.
 
-Selvitän työssäni mitä menetelmiä web-sivuston ulkoasun eri osien personointiin
-on olemassa. Tarkasteltavia osia ovat muun muassa sivuston asettelu, kirjasin-
-ja värivalinnat sekä valikot. Työ tarkastelee myös eri personointimenetelmien
+Selvitän työssäni, mitä menetelmiä web-sivuston ulkoasun eri osa-alueiden
+personointiin on olemassa. Tarkasteltavia osa-alueita ovat sivuston asettelu,
+värit, typografia sekä kuvat. Tarkastelen työssä myös eri personointimenetelmien
 toimintatapoja. Monet tarkasteltavista menetelmistä perustuvat matemaattisen
-optimointiin, mutta hyödyntävät myös käyttöliittymäsuunnittelun heuristiikkoja
-kuten tekstin luettavuuskriiterejä tuloksissaan. Sivuston eri osien personointia
-ja personointimenetelmien toimintatapoja tarkastellaan
+optimointiin, mutta hyödyntävät tuloksissaan lisäksi käyttöliittymäsuunnittelun
+heuristiikkoja, kuten tekstin luettavuuskriteerejä. Sivuston eri osa-alueiden
+personointia ja personointimenetelmien toimintatapoja tarkastellaan
 luvussa~\ref{personalization}.
 
-Vertailen työssäni myös personointimenetelmien käyttöönoton vaivattomuutta ja
+Vertailen työssä myös personointimenetelmien käyttöönoton vaivattomuutta ja
 niillä saavutettavaa hyötyä. Pyrin vertailun avulla löytämään
-persononointimenetelmät, joista saa suurimman hyödyn pienimmällä vaivalla.
+personointimenetelmät, joista saa suurimman hyödyn pienimmällä vaivalla.
 Pisteytyskriteeristö ja vertailun tulokset on esitelty
 luvussa~\ref{personalization-comparison}.
 
@@ -191,21 +203,16 @@ luvussa~\ref{personalization-comparison}.
 
 \section{Tausta}\label{background}
 
-Web-kehitys on muuhun ohjelmistokehitykseen verrattuna nuori ala ja
-edelleen jatkuvassa murroksessa. Tässä kappaleessa esitellään web-kehityksen
-nykytilannetta työn taustatiedoksi.
+Web-ohjelmistokehitys on muuhun ohjelmistokehitykseen verrattuna nuori ala ja
+edelleen jatkuvassa murroksessa. Tässä luvussa selvitetään web-suunnittelun ja
+-kehityksen nykytilannetta työn taustatiedoksi. Luvussa käsitellään myös
+personoinnin kannalta oleellinen web-analytiikan ala (engl.~\textit{web
+analytics}) ja tarkastellaan yleisesti käyttöliittymän tuottamista
+koneellisesti.
 
-\subsection{Web-teknologiat}
+\subsection{Web-sivuston ulkoasun toteutus}
 
-\subsubsection{HyperText Markup Language}
-
-\subsubsection{Cascading Style Sheets}
-
-\subsubsection{JavaScript}
-
-\subsection{Sivuston toteutus}
-
-\subsubsection{Sivuston suunnittelu}
+\subsubsection{Ulkoasun suunnittelu}
 
 Web-suunnittelu (engl.~\textit{web design}) on käytännön tasolla lähellä muita
 graafisen suunnittelun aloja kuten printtisuunnittelua, vaikka mediana web
@@ -217,33 +224,37 @@ prototyyppejä, joilla sivuston toimintaa voi esitellä ulkoasusuunnitelman kaut
 esimerkiksi asiakkaalle ennen toteutusta. Ulkoasusuunnitelmaan tehdään
 tarvittavat mukautukset eri käyttäjäryhmille vain ennalta sovittujen
 määrittelyjen ja palvelumuotoilun (engl.~\textit{service design}) pohjalta.
-Yleisin tällainen mukautus on omien leiskojen tuottaminen eri laitetyypeille,
-kuten mobiili-, tabletti- ja työpöytälaitteille. Laitetyyppeihin perustuvaa
-mukauttamista kutsutaan responsiiviseksi web-suunnitteluksi
+Yleisin tällainen mukautus on oman ulkoasusuunnitelman tuottaminen eri
+laitetyypeille, kuten mobiili-, tabletti- ja työpöytälaitteille. Laitetyyppeihin
+perustuvaa mukauttamista kutsutaan responsiiviseksi web-suunnitteluksi
 (engl.~\textit{responsive web design}), josta kerrotaan lisää
-luvussa~\ref{responsive-web-design}. Varsinaista personointia leiskoihin ei
-yleensä sisällytetä.
+luvussa~\ref{responsive-web-design}. Yksilötason personointia
+ulkoasusuunnitelmiin ei yleensä sisällytetä.
 
-\subsubsection{Sivuston ulkoasun kehitys}
+\subsubsection{Ulkoasun kehitys}
 
 Ulkoasun kehittäjän (engl.~\textit{front-end developer}) tehtävä on kääntää
 ulkoasusuunnitelma toimivaksi sivustoksi. Ei-vuorovaikutteisesta luonteestaan
 huolimatta ulkoasusuunnitelma ei nykyään ole enää pelkkä rasterikuva
-(engl.~\textit{raster image}), toisin kuin yleisesti vielä 2000-luvun alussa.
+(engl.~\textit{raster image}), toisin kuin yleisesti vielä 2000-luvulla. Vuonna
+2010 julkaistun Sketch-ohjelmiston myötä vektorimuotoisesta
+ulkoasusuunnittelusta on tullut valtavirtaa~\cite{webdesignmuseum_2022}.
 Vektorimuotoiseen ulkoasusuunnitelmaan on upotettu kaikki kehittäjän tarvitsemat
 yksityiskohdat ulkoasun toteuttamiseen, kuten kirjasintyyppi ja -koko,
 marginaalit ja värikoodit. Kehittäjä hyödyntää ulkoasusuunnitelman käsittelyyn
-joko samoja työkaluja kuin suunnittelija, tai varta vasten leiskojen käsittelyyn
-tarkoitettuja kehittäjätyökaluja.
+joko samoja työkaluja kuin suunnittelija tai varta vasten ulkoasusuunnitelmien
+käsittelyyn tarkoitettuja kehittäjätyökaluja.
 
-Karkeasti yleistäen web-kehityksessä on pääosassa kolme teknologiaa: HTML, CSS
-ja JavaScript. HTML-merkintäkielen avulla määritetään sivuston rakenne ja eri
-osien rakenteellinen merkitys. Selain ymmärtää rakenteen eri osien merkityksen
-ja pystyy piirtämään ne sivulle oikealla tavalla. CSS-säännöstön avulla
-määritetään sivuston osien tyyli ja asettelu, eli se on HTML-merkintäkielen
-lisäksi merkittävässä osassa ulkoasusuunnitelmaa toteuttaessa. JavaScript on
-ainoa web-alustalla kattavasti tuettu varsinainen ohjelmointikieli. Sillä on
-mahdollista luoda vuorovaikutusta käyttäjän ja sivuston välille.
+Karkeasti yleistäen web-sivuston ulkoasun kehityksessä on pääosassa kolme
+teknologiaa: HTML-merkintäkieli (\textit{HyperText Markup Language}),
+CSS-säännöstö (\textit{Cascading Style Sheets}) ja JavaScript-ohjelmointikieli.
+HTML-merkintäkielen avulla määritetään sivuston rakenne ja sen eri osien
+rakenteellinen merkitys. Selain ymmärtää HTML-rakenteen eri osien merkityksen ja
+pystyy piirtämään ne sivulle oikealla tavalla. CSS-säännöstön avulla määritetään
+sivuston osien tyyli ja asettelu, eli se on HTML-rakenteen lisäksi merkittävässä
+osassa ulkoasusuunnitelmaa toteuttaessa. JavaScript on ainoa web-alustalla
+kattavasti tuettu varsinainen ohjelmointikieli. Sillä on mahdollista luoda
+vuorovaikutusta käyttäjän ja sivuston välille.
 
 Nykyään kehittäjä rakentaa sivuston ulkoasua harvemmin enää pelkästään näillä
 kolmella perusteknologialla. Niiden päälle on kehitetty teknologioita ja
@@ -255,26 +266,25 @@ rakentaa lähes ilman ohjelmointityötä pelkän HTML-merkintäkielen ja
 CSS-tyylisäännöstön avulla. Sivustojen käytettävyyttä parannettiin kevyen
 JavaScript-skriptauksen avulla siellä ja täällä, mutta varsinainen
 ohjelmointityö rajoittui yleensä palvelinpuolelle. Palvelinpuolen kehitystä ei
-esitellä tai käsitellä työn rajauksesta johtuen.
+käsitellä tässä työn rajauksesta johtuen.
 
 Sittemmin tärkeä edistysaskel sivuston ulkoasun kehityksessä on tapahtunut
-2010-luvun loppupuolen jälkeen, kun JavaScript-käyttöliittymäkirjastot ovat
-yleistyneet merkittävästi. Yleisimmät käyttöliittymäkirjastot vuonna 2022 ovat
-React ja Vue. Käyttöliittymäkirjastot siirtävät perinteisen ulkoasun kehityksen
-vaiheet kuten HTML-rakenteen luomisen, CSS-tyylittelyn ja
-JavaScript-toiminnallisuuden rakentamisen semanttisten web-komponenttien
-sisälle. Yksittäinen komponentti toteuttaa jonkin tietyn toiminnallisuuden, ja
-niitä on suhteellisen helppo uudelleenkäyttää myöhemmin. Komponentit myös
-mahdollistavat osaltaan suunnittelujärjestelmien (engl.~\textit{design system})
-luomisen jo projektin alussa. Suunnittelujärjestelmä sisältää yleensä projektin
-komponenttikirjaston, joka käsittää sivuston rakennuspalikat kuten painikkeet,
-otsikot ja lomakkeet.
+2010-luvun loppupuolella, kun JavaScript-käyttöliittymäkirjastot, kuten React ja
+Vue, ovat yleistyneet merkittävästi. Käyttöliittymäkirjastot siirtävät
+perinteisen ulkoasun kehityksen vaiheet, kuten HTML-rakenteen luomisen,
+CSS-tyylittelyn ja JavaScript-ohjelmoinnin, itsenäisten web-komponenttien
+sisälle. Yksittäinen komponentti toteuttaa jonkin rajatun ja selkeän
+toiminnallisuuden, ja niitä on suhteellisen helppo uudelleenkäyttää myöhemmin.
+Komponentit myös mahdollistavat osaltaan suunnittelujärjestelmien
+(engl.~\textit{design system}) luomisen jo projektin alussa.
+Suunnittelujärjestelmä sisältää yleensä projektin komponenttikirjaston, joka
+käsittää sivuston rakennuspalikat, kuten painikkeet, otsikot ja lomakkeet.
 
 %Tähän vielä selkeytystä komponenteista ja mitä muuta fronttikirjastot tekee.
-%Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esimerkiksi valmiit
-%komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
+%Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esimerkiksi
+%valmiit komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
 
-\subsubsection{Web-analytiikka}
+\subsection{Web-analytiikka}
 
 \subsection{Ulkoasun tuottaminen koneellisesti}
 
@@ -292,78 +302,66 @@ kasvaa. Personoinnin myötä tehdyt muutokset ovat lähtökohtaisesti käyttäj�
 pysyviä, joskin ne voivat muuttua edelleen käytön jatkuessa. Personoinnin
 perusteeksi kerätty tieto voi olla hyvin erilaisista lähteistä, kuten
 asiointihistoriasta, julkishallinnon rekistereistä tai web-sivuston tapauksessa
-sivuston web-analytiikasta ja lokitiedoista. Tieto jonka pohjalta personointia
+sivuston web-analytiikasta ja lokitiedoista. Tieto, jonka pohjalta personointia
 tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin puhutaan
-yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa
+yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa,
 jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-,
 puhelin- tai web-asioinnissa. Työni keskittyy web-asioinnin personointiin ja
 nimenomaan web-sivuston ulkoasun personointiin.
 
-Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe,
-ja työni on tarkoituksella rajattu vain sivuston ulkoasun personointiin
-näkökulman tarkentamiseksi. Rajauksen ulkopuolelle jää sivuston sisällön
-personointi, joka on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
-Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
-suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
-merkittävästi sivuston ulkoasun personoinnista. Ulkoasun personointiin kuuluu
-kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen, jota
-tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
-personointia.
-
 Ennen kuin personoinnin näkökulmia ja varsinaisia menetelmiä käydään läpi, on
-tärkeää tarkentaa miksi personointia ylipäätään kannattaa hyödyntää
+tärkeää tarkentaa, miksi personointia ylipäätään kannattaa hyödyntää
 sivustolla.
 
 \subsection{Personoinnin hyödyt}\label{personalization-pros}
 
 Tarve personoinnille vaihtelee sivuston mukaan, mutta Blomin taksonomian
-mukaisesti tarpeet voidaan jakaa karkeasti kahteen luokkaan.
-
-Ensimmäinen luokka käsittää ohjelmiston, kuten sivuston, kanssa työskentelyyn
-liittyvät syyt, jotka voidaan jakaa kolmeen ryhmään. Ensinnäkin personointi
-mahdollistaa tehokkaamman pääsyn käyttäjälle tärkeään sisältöön. Blom antaa
-esimerkkinä kirjanmerkkien käytön sivustolla, mutta nykyaikaisempi esimerkki
-voisi olla suosittelualgoritmin automaattisesti korostamat sisällöt. Toisekseen
+mukaisesti tarpeet voidaan jakaa karkeasti kahteen luokkaan. Ensimmäinen luokka
+käsittää ohjelmiston, kuten sivuston, kanssa työskentelyyn liittyvät tarpeet,
+jotka voidaan jakaa kolmeen ryhmään. Ensinnäkin personointi mahdollistaa
+tehokkaamman pääsyn käyttäjälle tärkeään sisältöön. Blom mainitsee esimerkkinä
+kirjanmerkkien käytön sivustolla, mutta nykyaikaisempi esimerkki voisi olla
+suosittelualgoritmin automaattisesti korostamat sisällöt. Toisekseen
 personoinnilla on mahdollista optimoida prosesseja, kuten lomakkeen täyttöä
 sivustolla. Osa lomakkeen vaiheista voidaan ohittaa, jos tiedot saadaan haettua
 suoraan taustajärjestelmistä. Kolmanneksi personoinnilla voidaan huomioida
 yksilölliset erot, kuten näkövammat ja liikunnalliset rajoitteet. Esimerkiksi
 näkövammaisille voidaan tarjota suurempikontrastinen versio sivustosta.
 Yksilölliset erot ja rajoitteet voivat olla lähtöisiä myös käyttöympäristöstä,
-kuten esimerkiksi kirkas auringonvalo tai voimakas taustahäly. Myös
+kuten esimerkiksi kirkas auringonvalo tai äänekäs taustahäly. Myös
 tämäntyyppisten rajoitteiden kaipaamaa personointia käsitellään osana tätä
 työtä.
 
-Toinen luokka käsittää sosiaaliset syyt, jotka voidaan jakaa kahteen ryhmään.
-Ensimmäisenä Blom mainitsee ihmisen tarpeen herättää tietynlainen tunnereaktio
-myös vuorovaikutuksessa ohjelmiston kanssa. Blom pohtii, että samaan tapaan kuin
-ihmisellä on tapana sisustaa työtilaansa, sama personoinnin tarve koskee myös
-ihmisen käyttämiä ohjelmistoja. Toisena Blom mainitsee ihmisen tarpeen ilmaista
-omaa identiteettiään, jota hän tarkentaa vielä ihmisen tarpeella liittää itsensä
-johonkin yhteisöön. Nämä syyt mielessä pitäen henkilö saadaan personoinnin
-avulla kokemaan itsensä tervetulleeksi sivustolla.
+Toinen Blomin taksonomian mukainen luokka käsittää sosiaaliset tarpeet, jotka
+voidaan jakaa kahteen ryhmään. Ensimmäisenä Blom mainitsee ihmisen tarpeen
+herättää tietynlainen tunnereaktio myös vuorovaikutuksessa ohjelmiston kanssa.
+Blom pohtii, että samaan tapaan kuin ihmisellä on tapana sisustaa työtilaansa,
+sama personoinnin tarve koskee myös ihmisen käyttämiä ohjelmistoja. Toisena Blom
+mainitsee ihmisen tarpeen ilmaista omaa identiteettiään, jota hän tarkentaa
+vielä ihmisen tarpeella liittää itsensä johonkin yhteisöön. Nämä tarpeet
+mielessä pitäen henkilö voidaan saada kokemaan itsensä enemmän tervetulleeksi
+personoidulla sivustolla.
 
 Vesanen~\cite{10.1108/03090560710737534} pohtii laajemmin personoinnin
-määritelmää erityisesti palveluntarjoajan näkökulmasta. Yleisesti voidaan todeta
-että personoinnin tavoitteena on ohjata käyttäjän toimintaa sivuston
-palveluntarjoajan tavoitteiden mukaisesti, ja yleensä nimenomaan joko lisätä
+määritelmää erityisesti palveluntarjoajan näkökulmasta. Yleisesti voidaan
+todeta, että personoinnin tavoitteena on ohjata käyttäjän toimintaa sivuston
+palveluntarjoajan tavoitteiden mukaisesti ja yleensä nimenomaan joko lisätä
 palveluntarjoajan tuloja tai vähentää sen menoja. Esimerkiksi verkkokauppa voi
 lisätä myyntiä personoimalla asiakkaalle suositeltavia tuotteita tämän
 ostohistorian perusteella. Sitä vastoin kunta voisi asiointisivustoaan
-personoimalla nostaa vierailijalle ajankohtaiset lomakkeet heti etusivun alkuun,
+personoimalla nostaa vierailijalle ajankohtaiset lomakkeet heti etusivun alkuun
 ja täten lisätä verkkoasiointia ja vähentää kalliimpaa puhelinasiointia.
 
-Personoinnilla voidaan siis parantaa käyttökokemusta ja säästää rahaa, mutta
-siitä on hyötyä myös yhteiskunnan tasolla. Sivuston personointi mahdollistaa
-yksilöllisen tiedonvälityksen kokoluokassa, joka ei aiemmin ole ollut
-mahdollista. Painettu media skaalautuu hyvin, ja sen kautta tietoa on ollut
-mahdollista levittää laajalle jo vuosisatoja, mutta sen personointi on liki
-mahdotonta tai ainakin erittäin kallista. Toinen ääripää, eli tiedonvälitys
-henkilöltä toiselle, on aina personoitua, mutta ei mahdollista tehokasta tiedon
-levitystä. Julkinen valta ja muut yleishyödylliset toimijat voivat siis
-hyödyntää personointia tiedonvälityksessä tavoittaakseen suurempia yleisöjä.
-Tästä on ollut hyötyä esimerkiksi koronaviruspandemian aikana, kun
-rokotekampanjoiden verkkoviestintää on voitu personoida tärkeille
+Personoinnista on hyötyä myös yhteiskunnallisella tasolla. Personointi
+mahdollistaa yksilöllisen tiedonvälityksen kokoluokassa, joka ei aiemmin ole
+ollut mahdollinen. Painettu media skaalautuu hyvin, ja sen kautta tietoa on
+ollut mahdollista levittää laajalle jo vuosisatoja, mutta sen personointi on
+liki mahdotonta tai ainakin erittäin kallista. Toinen ääripää, eli tiedonvälitys
+henkilöltä toiselle, on aina personoitua, mutta ei mahdollista tehokasta
+tiedonvälitystä suurille väkijoukoille. Julkinen valta ja muut yleishyödylliset
+toimijat voivat siis hyödyntää personointia tiedonvälityksessä tavoittaakseen
+suurempia yleisöjä. Tästä on ollut hyötyä esimerkiksi koronaviruspandemian
+aikana, kun rokotekampanjoiden verkkoviestintää on voitu personoida tärkeille
 yleisöille~\cite{sanchez_2022}.
 
 Personoidulla tiedonvälityksellä on kuitenkin myös kääntöpuolensa, jota
@@ -376,13 +374,13 @@ käyttäjästä kerättyyn tietoon. Tietoa kerätään mahdollisesti monesta eri
 kanavasta, ja on tärkeää että tietojen keräämiseen on aina käyttäjän suostumus.
 Tietolähteiden lisääntyessä käyttäjä ei välttämättä enää ole selvillä siitä,
 mitä tietoa on suostunut luovuttamaan ja mihin. Fernandez
-ym.~\cite{10.1145/3476087} löysivät, että Euroopan Unionin General Data
-Protection Regulation -direktiivin (\textit{GDPR}) myötä yleistyneet
-evästesuostumuslomakkeet ohitetaan usein lukematta. Suostumusta kysytään lähes
-jokaisella sivustolla, koska web-analytiikka ja kohdennettu mainonta on niin
-yleistä. Asenteet sisällön personoinnin osalta ovat muuttuneet kielteisempään
-suuntaan, kun vielä 90-luvulla sisällön personointi nähtiin verkkoon siirtyvän
-printtimedian pelastajana~\cite{adams_1995}.
+ym.~\cite{10.1145/3476087} löysivät, että Euroopan Unionin yleisen
+tietosuoja-asetuksen (engl. \textit{General Data Protection Regulation, GDPR})
+myötä yleistyneet evästesuostumuslomakkeet ohitetaan usein lukematta.
+Suostumusta kysytään lähes jokaisella sivustolla, koska web-analytiikka ja
+kohdennettu mainonta on niin yleistä. Asenteet sisällön personoinnin osalta ovat
+muuttuneet kielteisempään suuntaan, kun vielä 90-luvulla sisällön personointi
+nähtiin verkkoon siirtyvän printtimedian pelastajana~\cite{adams_1995}.
 
 Arkielämän teknistyessä käyttäjälle ei myöskään ole välttämättä aina selvää,
 minkälaista tietoa hänestä on edes mahdollista kerätä. Tiedot kuten hiiren
