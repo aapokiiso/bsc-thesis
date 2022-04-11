@@ -272,19 +272,21 @@ rakentaa lähes ilman ohjelmointityötä pelkän HTML-merkintäkielen ja
 CSS-tyylisäännöstön avulla. Sivustojen käytettävyyttä parannettiin kevyen
 JavaScript-skriptauksen avulla siellä ja täällä, mutta varsinainen
 ohjelmointityö rajoittui yleensä palvelinpuolelle. Palvelinpuolen kehitystä ei
-käsitellä tässä työn rajauksesta johtuen.
+käsitellä tässä työssä työn rajauksesta johtuen.
 
 Sittemmin tärkeä edistysaskel sivuston ulkoasun kehityksessä on tapahtunut
 2010-luvun loppupuolella, kun JavaScript-käyttöliittymäkirjastot, kuten React ja
-Vue, ovat yleistyneet merkittävästi. Käyttöliittymäkirjastot siirtävät
-perinteisen ulkoasun kehityksen vaiheet, kuten HTML-rakenteen luomisen,
-CSS-tyylittelyn ja JavaScript-ohjelmoinnin, itsenäisten web-komponenttien
-sisälle. Yksittäinen komponentti toteuttaa jonkin rajatun ja selkeän
-toiminnallisuuden, ja niitä on suhteellisen helppo uudelleenkäyttää myöhemmin.
-Komponentit myös mahdollistavat osaltaan suunnittelujärjestelmien
-(engl.~\textit{design system}) luomisen jo projektin alussa.
-Suunnittelujärjestelmä sisältää yleensä projektin komponenttikirjaston, joka
-käsittää sivuston rakennuspalikat, kuten painikkeet, otsikot ja lomakkeet.
+Vue, ovat yleistyneet merkittävästi. Käyttöliittymäkirjastojen myötä ulkoasu
+rakennettaan toisistaan riippumattomilla web-komponenteilla. Yksittäinen
+komponentti toteuttaa jonkin rajatun ja selkeän toiminnallisuuden, ja
+komponentteja on helppo uudelleenkäyttää myöhemmin. Komponentit myös
+mahdollistavat osaltaan suunnittelujärjestelmien (engl.~\textit{design system})
+luomisen jo projektin alussa. Suunnittelujärjestelmä sisältää yleensä projektin
+komponenttikirjaston, joka käsittää sivuston rakennuspalikat, kuten lomake- ja
+tekstielementit. Komponenttien kehityksessä käytetään kuitenkin yhä samaa
+perusteknologiaa kuin aiemminkin, eli HTML-merkintäkieltä, CSS-tyylisäännöstöä
+ja JavaScript-ohjelmointikieltä.
+
 
 %Tähän vielä selkeytystä komponenteista ja mitä muuta fronttikirjastot tekee.
 %Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esimerkiksi
