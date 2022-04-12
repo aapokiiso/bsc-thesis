@@ -218,38 +218,40 @@ Ulkoasun toteutus jakaantuu kahteen selkeään vaiheeseen. Suunnittelija tuottaa
 sivuston ulkoasusta suunnitelman, jonka pohjalta kehittäjä tuottaa lopullisen
 sivuston. Nämä kaksi vaihetta käsitellään tässä luvussa.
 
-\subsubsection{Ulkoasun suunnittelu}
+\subsubsection{Ulkoasun suunnittelu}\label{background-web-design}
 
 Web-suunnittelu (engl.~\textit{web design}) on käytännön tasolla lähellä muita
 graafisen suunnittelun aloja kuten printtisuunnittelua, vaikka mediana web
 tarjoaa paljon enemmän mahdollisuuksia vuorovaikutukseen. Web-suunnittelun
 päätuotos eli ulkoasusuunnitelma (engl.~\textit{layout}) on ei-vuorovaikutteinen
 vektorikuva siitä, miltä toteutettavan sivuston tulee näyttää.
-Ulkoasusuunnitelman lisäksi suunnittelija tuottaa usein osittain interaktiivisia
-prototyyppejä, joilla sivuston toimintaa voi esitellä ulkoasusuunnitelman kautta
-esimerkiksi asiakkaalle ennen toteutusta. Ulkoasusuunnitelmaan tehdään
-tarvittavat mukautukset eri käyttäjäryhmille vain ennalta sovittujen
-määrittelyjen ja palvelumuotoilun (engl.~\textit{service design}) pohjalta.
-Yleisin tällainen mukautus on oman ulkoasusuunnitelman tuottaminen eri
-laitetyypeille, kuten mobiili-, tabletti- ja työpöytälaitteille. Laitetyyppeihin
-perustuvaa mukauttamista kutsutaan responsiiviseksi web-suunnitteluksi
-(engl.~\textit{responsive web design}), josta kerrotaan lisää
+Ei-vuorovaikutteisesta luonteestaan huolimatta ulkoasusuunnitelma ei nykyään ole
+enää pelkkä rasterikuva (engl.~\textit{raster image}), toisin kuin yleisesti
+vielä 2000-luvulla. Vuonna 2010 julkaistun Sketch-ohjelmiston myötä
+vektorimuotoisesta ulkoasusuunnittelusta on tullut
+valtavirtaa~\cite{webdesignmuseum_2022}, ja Sketchin rinnalle on viime
+vuosikymmennellä noussut myös muita vektoripohjaisia suunnitteluohjelmistoja,
+kuten Adobe XD ja Figma. Ulkoasusuunnitelman lisäksi suunnittelija tuottaa usein
+osittain interaktiivisia prototyyppejä, joilla sivuston toimintaa voi esitellä
+ulkoasusuunnitelman kautta esimerkiksi asiakkaalle ennen toteutusta.
+Ulkoasusuunnitelmaan tehdään tarvittavat mukautukset eri käyttäjäryhmille vain
+ennalta sovittujen määrittelyjen ja palvelumuotoilun (engl.~\textit{service
+design}) pohjalta. Yleisin tällainen mukautus on oman ulkoasusuunnitelman
+tuottaminen eri laitetyypeille, kuten mobiili-, tabletti- ja työpöytälaitteille.
+Laitetyyppeihin perustuvaa mukauttamista kutsutaan responsiiviseksi
+web-suunnitteluksi (engl.~\textit{responsive web design}), josta kerrotaan lisää
 luvussa~\ref{responsive-web-design}. Yksilötason personointia
 ulkoasusuunnitelmiin ei yleensä sisällytetä.
 
-\subsubsection{Ulkoasun kehitys}
+\subsubsection{Ulkoasun kehitys}\label{background-web-development}
 
 Ulkoasun kehittäjän (engl.~\textit{front-end developer}) tehtävä on kääntää
-ulkoasusuunnitelma toimivaksi sivustoksi. Ei-vuorovaikutteisesta luonteestaan
-huolimatta ulkoasusuunnitelma ei nykyään ole enää pelkkä rasterikuva
-(engl.~\textit{raster image}), toisin kuin yleisesti vielä 2000-luvulla. Vuonna
-2010 julkaistun Sketch-ohjelmiston myötä vektorimuotoisesta
-ulkoasusuunnittelusta on tullut valtavirtaa~\cite{webdesignmuseum_2022}.
-Vektorimuotoiseen ulkoasusuunnitelmaan on upotettu kaikki kehittäjän tarvitsemat
-yksityiskohdat ulkoasun toteuttamiseen, kuten kirjasintyyppi ja -koko,
-marginaalit ja värikoodit. Kehittäjä hyödyntää ulkoasusuunnitelman käsittelyyn
-joko samoja työkaluja kuin suunnittelija tai varta vasten ulkoasusuunnitelmien
-käsittelyyn tarkoitettuja kehittäjätyökaluja.
+ulkoasusuunnitelma toimivaksi sivustoksi. Vektorimuotoiseen ulkoasusuunnitelmaan
+on upotettu kaikki kehittäjän tarvitsemat yksityiskohdat ulkoasun
+toteuttamiseen, kuten kirjasintyyppi ja -koko, marginaalit ja värikoodit.
+Kehittäjä hyödyntää ulkoasusuunnitelman käsittelyyn joko samoja työkaluja kuin
+suunnittelija tai varta vasten ulkoasusuunnitelmien käsittelyyn tarkoitettuja
+kehittäjätyökaluja, kuten Zeplin-ohjelmistoa.
 
 Karkeasti yleistäen web-sivuston ulkoasun kehityksessä on pääosassa kolme
 teknologiaa: HTML-merkintäkieli (\textit{HyperText Markup Language}),
@@ -286,11 +288,6 @@ komponenttikirjaston, joka käsittää sivuston rakennuspalikat, kuten lomake- j
 tekstielementit. Komponenttien kehityksessä käytetään kuitenkin yhä samaa
 perusteknologiaa kuin aiemminkin, eli HTML-merkintäkieltä, CSS-tyylisäännöstöä
 ja JavaScript-ohjelmointikieltä.
-
-
-%Tähän vielä selkeytystä komponenteista ja mitä muuta fronttikirjastot tekee.
-%Selkeytystä myös design system osalta. Jotain muuta ehkä myös, esimerkiksi
-%valmiit komponenttikirjastot tai frameworkit (Bootstrap, Tailwind, jne)?
 
 \subsection{Web-analytiikka}
 
@@ -342,8 +339,39 @@ kannalta.
 
 \subsection{Käyttöliittymän tuottaminen koneellisesti}
 
-%Tähän ulkoasun generoinnista asiaa. Nimenomaan ei-personoinnin näkökulmasta,
-%vaan yleisiä menetelmiä
+Ennen tarkempaa personoinnin tarkastelua esitellään vielä tutkimusta liittyen
+käyttöliittymän koneelliseen tuottamiseen, mikä on oleellista taustatietoa
+varsinkin sivuston asettelun personoinnin kannalta. Käyttöliittymän koneellinen
+tuottaminen laajentaa luvussa~\ref{background-web-design} kuvattua
+web-suunnitteluprosessia, sillä koneelliset menetelmät toimivat varsinkin
+suunnittelijan apuna suunnitteluvaiheessa. Koneellisten menetelmien avulla
+suunnittelija voi muun muassa saada välitöntä palautetta ulkoasusuunnitelman
+laadusta erilaisiin kriteereihin perustuen.
+
+Oulasvirta ym.~\cite{9000519} esittelevät menetelmiä käyttöliittymien
+koneelliseen tuottamiseen ja parantamiseen. He tarkastelevat aihetta
+kombinatorisen optimoinnin (engl.~\textit{combinatorial optimization})
+näkökulmasta. Kombinatorinen optimointi tarkoittaa optimaalisen tuloksen
+löytämistä diskreetistä ja äärellisestä joukosta tuloksia. Kombinatoriseen
+optimointiin liittyy vahvasti kokonaislukuohjelmointi (engl.~\textit{integer
+programming}). Kokonaislukuohjelmoinnissa olennaista on se, että optimoitavat
+muuttujat ovat nimenmukaisesti kokonaislukuja, mikä poistaa tarpeen esimerkiksi
+liukulukujen huomioimiselle ohjelmakoodissa. Kokonaislukuohjelmoinnin käyttö on
+luonnollista, kun optimoitava suure on kokonaisluku, kuten esimerkiksi
+sarakkeiden määrä ulkoasusuunnitelmassa. Oulasvirta ym.~näyttävät, että
+kombinatorinen optimointi on keino esittää matemaattisena ongelmana
+ulkoasusuunnittelun heuristiikat ja suunnittelun aikana tehtävät päätökset,
+kuten elementtien keskinäinen koko ja järjestys. He tähdentävät myös, että
+kombinatorinen optimointi ei tarvitse erillistä opetusdataa, kuten menetelmät
+jotka hyödyntävät koneoppimista (engl.~\textit{machine learning}). He nostavat
+esille koneellisen käyttöliittymäsuunnittelun hyötyinä muun muassa kohonneen
+laadun ja johdonmukaisuuden, kyvyn tukea suunnittelijaa erityisesti hankalissa
+erikoistapauksissa ja lisääntyneen ymmärryksen ihmisen ja tietokoneen välisestä
+vuorovaikutuksesta suunnittelijoiden keskuudessa.
+
+Käyttöliittymän koneelliseen tuottamiseen palataan
+luvussa~\ref{layout-personalization}, jossa tarkastellaan sivuston asettelun
+personointimenetelmiä.
 
 \clearpage
 
@@ -1139,18 +1167,18 @@ erinäisistä käyttäjä- ja ympäristölähtöisistä näkökulmista.
 Personointimenetelmiä esiteltiin sivuston eri osa-alueiden, kuten asettelun,
 värien ja typografian kautta. Tarkasteltuja käyttäjälähtöisiä näkökulmia oli
 muun muassa rajoitteet, kuten näkö- ja liikuntavammat, ikä ja kulttuuritausta.
-Tarkasteltuja ympäristölähtöisiä näkökulmia oli muun muassa laitteen näyttökoko,
-suorituskyky ja käyttöympäristön ominaisuudet, kuten valoisuus.
+Tarkasteltuja ympäristölähtöisiä näkökulmia olivat muun muassa laitteen
+näyttökoko, suorituskyky ja käyttöympäristön ominaisuudet, kuten valoisuus.
 
 Työ oli rajattu sivuston ulkoasun personointiin. Sivuston ulkoasun suunnittelu
-ja toteutus on edelleen pitkälti manuaalista työtä. Sivustoa on hankala
+ja toteutus ovat edelleen pitkälti manuaalista työtä. Sivustoa on hankala
 suunnitella jokaiselle käyttäjälle sopivaksi, koska käyttäjillä on eri
 mieltymyksiä ulkoasun suhteen muun muassa kulttuuritaustasta riippuen. Työssä
 selvitettiin voisiko tätä ongelmaa ratkaista sivuston ulkoasun
 personointimenetelmillä, jotka perustuvat matemaattiseen optimointiin ja
-käyttöliittymäsuunnittelun heuristiikkoihin. Sisällön personointi jätettiin
-työn ulkopuolelle, sillä sen sisällyttäminen olisi kasvattanut työn rajausta
-liian suureksi.
+käyttöliittymäsuunnittelun heuristiikkoihin. Sisällön personointi jätettiin työn
+ulkopuolelle, sillä sen sisällyttäminen olisi kasvattanut työn rajausta liian
+suureksi.
 
 Työ vertaili havaittuja personointimenetelmiä pisteyttämällä ne vaivattomuuden
 ja arvioidun hyödyn saralla. Molempien akselien pisteytykseen kehitettiin
@@ -1164,16 +1192,16 @@ menetelmiä kannattaa harkita, ja mitä ei kannata ottaa käyttöön.
 Työssä löydettiin, että suurin osa tarkastelluista menetelmistä on sellaisia,
 joita ei kannata ottaa käyttöön. Hyödyllisiä ja vaivattomia
 personointimenetelmiä, eli menetelmiä jotka kannattaa ottaa heti käyttöön, ei
-ollut montaa, ja niissä korostui vakiintuineisuus toimialalla. Tärkein tällainen
+ollut montaa, ja niissä korostui vakiintuneisuus toimialalla. Tärkein tällainen
 menetelmä on sisällön asettelun personointi laitteen näyttökoon perusteella, eli
 responsiivinen web-suunnittelu. Hyödyllisissä mutta vähemmän vaivattomaksi
 havaituissa menetelmissä korostui teknisesti vaativammat menetelmät. Tällaisia
-menetelmiä ovat muun muassa sisällön asettelun personointi käyttäjän kiinnostuksen
-kohteiden mukaan ja responsiivisen web-suunnittelun automaatio laskennallisilla
-menetelmillä. Moni menetelmä havaittiin hyödylliseksi, mutta toteutus vaatii
-suuren vaivan, esimerkiksi uuden teknologian kehityksen. Tällaiseksi
-menetelmäksi havaittiin muun muassa värien personointi käyttäjän rajoitteiden,
-kuten näkövamman perusteella.
+menetelmiä ovat muun muassa sisällön asettelun personointi käyttäjän
+kiinnostuksen kohteiden mukaan ja responsiivisen web-suunnittelun automaatio
+laskennallisilla menetelmillä. Moni menetelmä havaittiin hyödylliseksi, mutta
+toteutus vaatii suuren vaivan, esimerkiksi uuden teknologian kehityksen.
+Tällaiseksi menetelmäksi havaittiin muun muassa värien personointi käyttäjän
+rajoitteiden, kuten näkövamman perusteella.
 
 Web-sivuston ulkoasun personointiin on siis muutama selkeä, mutta suurilta osin
 jo toimialalle vakiintunut menetelmä. Ulkoasun personoinnin automaatioon ei
