@@ -294,6 +294,52 @@ ja JavaScript-ohjelmointikieltä.
 
 \subsection{Web-analytiikka}
 
+Personointi perustuu yleensä käyttäjästä kerätyn tiedon pohjalta tehtävään
+automaattiseen mukauttamiseen. Web-analytiikka on siksi tärkeässä osassa
+personoinnin kannalta, sillä tarvittava tieto käyttäjästä kerätään yleensä
+analytiikan avulla. Burby ym.~\cite{burby2007web} määrittelevät web-analytiikan olevan
+käyttötiedon keräämisen, analysiin ja raportoinnin pohjalta tehtävää
+web-sivuston optimointia. He jakavat kerättävän tiedon kolmeen eri luokkaan.
+Ensinnäkin osa tiedosta on määrämuotoista, kuten kävijöiden määrä sivustolla tai
+vuoden myynti euroissa. Toinen osa tiedosta on suhdelukumuotoista, esimerkiksi
+sivukatseluiden määrä per kävijä. Kolmannen osan kerättävästä tiedosta
+muodostavat keskeiset suorituskykyindikaattorit (engl.~\textit{Key Performance
+Indicator, KPI}), jotka ovat usein yhdistelmä suhdeluku- ja määrämuotoista
+tietoa.
+
+Burby ym.~luokittelevat kerättävän tiedon kolmeen tasoon tarkkuuden perusteella.
+Yleisintä on koottu eli aggregoitu tieto, esimerkiksi kävijöiden määrä
+etusivulla koko sivuston olemassaolon ajalta. Segmentoitu tieto on jokin
+tarkempi näkökulma koottuun tietoon nähden, esimerkiksi kävijöiden määrä
+sijainnin, kuten maan tai kaupungin, perusteella. Web-analytiikka mahdollistaa
+myös yksittäisen kävijän seuraamisen. Yksilötason tiedoista näkee esimerkiksi
+millä sivustoilla yksittäinen kävijä on sivustovierailunsa aikana käynyt.
+
+Teknisesti web-analytiikassa hyödynnettävää tietoa voi kerätä muutamalla eri
+tavalla. Zheng ja Peltsverger~\cite{zheng2015web} luokittelevat neljä eri tasoa
+web-käyttötiedon keräämiseen. Tietoliikenteen tasolla voidaan kerätä liikenteen
+reititykseen käytettäviä tietoja, kuten käyttäjän IP-osoite. IP-osoitteen avulla
+on muun muassa mahdollista arvioida karkeasti käyttäjän sijainti. Selaimen ja
+palvelimen väliseen kommunikointiin käytettävän hypertekstin siirtoprotokollan
+(engl.~\textit{HyperText Transfer Protocol, HTTP}) pyyntö- ja vastaussanomista
+voidaan kerätä metatietoa selailusta, esimerkiksi tieto siitä millä sivuilla
+käyttäjä on vieraillut. Sovellustasolla, eli palvelimella tai selaimessa,
+voidaan kerätä tietoa sivuston käytöstä, esimerkiksi mitä tietoja käyttäjä on
+lähettänyt jonkin lomakkeen kautta. Kerättyä tietoa voidaan yhdistää ulkoisista
+lähteistä, kuten sähköpostikampanjoista, kerättyyn tietoon.
+
+Tämä Zhengin ja Peltsvergerin määrittämä neljäs taso, eli ulkoisista lähteistä
+kerätty tieto, voi olla ongelmallista tietosuojan kannalta. Yleinen keino
+seurata käyttäjää ulkoisilla sivustoilla on asettaa yksilöivä eväste, eli pieni
+tekstitiedosto, käyttäjän laitteelle. Tämän jälkeen ulkoiset sivustot, jotka
+ottavat yhteyttä lähdesivustoon, välittävät samalla lähdesivustolle sen
+käyttäjän laitteelle asettamat evästeet. Tällöin lähdesivusto pystyy
+tunnistamaan käyttäjän ja hyödyntämään uutta tietoa tämän ulkoisesta
+web-selailusta analytiikassaan. Nämä niin kutsutut kolmannen osapuolen evästeet
+ovat lähitulevaisuudessa poistumassa käytöstä ilmeisten tietosuojariskien takia,
+millä voi olla arvaamattomia vaikutuksia web-analytiikan ja -liiketoiminnan
+kannalta.
+
 \subsection{Käyttöliittymän tuottaminen koneellisesti}
 
 %Tähän ulkoasun generoinnista asiaa. Nimenomaan ei-personoinnin näkökulmasta,
