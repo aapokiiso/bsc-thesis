@@ -210,7 +210,7 @@ edelleen jatkuvassa murroksessa. Tässä luvussa selvitetään web-suunnittelun 
 -kehityksen nykytilannetta työn taustatiedoksi. Luvussa käsitellään myös
 personoinnin kannalta oleellinen web-analytiikan ala (engl.~\textit{web
 analytics}) ja tarkastellaan yleisesti käyttöliittymän tuottamista
-koneellisesti.
+laskennallisesti.
 
 \subsection{Web-sivuston ulkoasun toteutus}
 
@@ -291,18 +291,17 @@ ja JavaScript-ohjelmointikieltä.
 
 \subsection{Web-analytiikka}
 
-Personointi perustuu yleensä käyttäjästä kerätyn tiedon pohjalta tehtävään
-automaattiseen mukauttamiseen. Web-analytiikka on siksi tärkeässä osassa
-personoinnin kannalta, sillä tarvittava tieto käyttäjästä kerätään yleensä
-analytiikan avulla. Burby ym.~\cite{burby2007web} määrittelevät web-analytiikan olevan
-käyttötiedon keräämisen, analysiin ja raportoinnin pohjalta tehtävää
-web-sivuston optimointia. He jakavat kerättävän tiedon kolmeen eri luokkaan.
-Ensinnäkin osa tiedosta on määrämuotoista, kuten kävijöiden määrä sivustolla tai
-vuoden myynti euroissa. Toinen osa tiedosta on suhdelukumuotoista, esimerkiksi
-sivukatseluiden määrä per kävijä. Kolmannen osan kerättävästä tiedosta
-muodostavat keskeiset suorituskykyindikaattorit (engl.~\textit{Key Performance
-Indicator, KPI}), jotka ovat usein yhdistelmä suhdeluku- ja määrämuotoista
-tietoa.
+Personointi on käyttäjästä kerätyn tiedon pohjalta tehtävää automaattista
+mukauttamista. Web-analytiikka on siksi tärkeässä osassa personoinnissa, sillä
+tarvittava tieto käyttäjästä kerätään yleensä analytiikan avulla. Burby
+ym.~\cite{burby2007web} määrittelevät web-analytiikan olevan käyttötiedon
+keräämisen, analysiin ja raportoinnin pohjalta tehtävää web-sivuston
+optimointia. He jakavat kerättävän tiedon kolmeen eri luokkaan. Ensinnäkin osa
+tiedosta on määrämuotoista, kuten kävijöiden määrä sivustolla tai vuoden myynti
+euroissa. Toinen osa tiedosta on suhdelukumuotoista, esimerkiksi sivukatseluiden
+määrä per kävijä. Kolmannen osan kerättävästä tiedosta muodostavat keskeiset
+suorituskykyindikaattorit (engl.~\textit{Key Performance Indicator, KPI}), jotka
+ovat usein yhdistelmä suhdeluku- ja määrämuotoista tietoa.
 
 Burby ym.~luokittelevat kerättävän tiedon kolmeen tasoon tarkkuuden perusteella.
 Yleisintä on koottu eli aggregoitu tieto, esimerkiksi kävijöiden määrä
@@ -337,19 +336,19 @@ ovat lähitulevaisuudessa poistumassa käytöstä ilmeisten tietosuojariskien ta
 millä voi olla arvaamattomia vaikutuksia web-analytiikan ja -liiketoiminnan
 kannalta.
 
-\subsection{Käyttöliittymän tuottaminen koneellisesti}
+\subsection{Käyttöliittymän tuottaminen laskennallisesti}
 
 Ennen tarkempaa personoinnin tarkastelua esitellään vielä tutkimusta liittyen
-käyttöliittymän koneelliseen tuottamiseen, mikä on oleellista taustatietoa
-varsinkin sivuston asettelun personoinnin kannalta. Käyttöliittymän koneellinen
-tuottaminen laajentaa luvussa~\ref{background-web-design} kuvattua
-web-suunnitteluprosessia, sillä koneelliset menetelmät toimivat varsinkin
-suunnittelijan apuna suunnitteluvaiheessa. Koneellisten menetelmien avulla
-suunnittelija voi muun muassa saada välitöntä palautetta ulkoasusuunnitelman
-laadusta erilaisiin kriteereihin perustuen.
+käyttöliittymän laskennalliseen tuottamiseen, mikä on oleellista taustatietoa
+varsinkin sivuston asettelun personoinnin kannalta. Käyttöliittymän
+laskennallinen tuottaminen laajentaa luvussa~\ref{background-web-design}
+kuvattua web-suunnitteluprosessia, sillä nämä laskennalliset menetelmät toimivat
+apuna varsinkin suunnitteluvaiheessa. Laskennallisen menetelmän avulla
+suunnittelija voi saada välitöntä palautetta ulkoasusuunnitelman laadusta
+menetelmän määrittämiin kriteereihin perustuen.
 
 Oulasvirta ym.~\cite{9000519} esittelevät menetelmiä käyttöliittymien
-koneelliseen tuottamiseen ja parantamiseen. He tarkastelevat aihetta
+laskennalliseen tuottamiseen ja kohentamiseen. He tarkastelevat aihetta
 kombinatorisen optimoinnin (engl.~\textit{combinatorial optimization})
 näkökulmasta. Kombinatorinen optimointi tarkoittaa optimaalisen tuloksen
 löytämistä diskreetistä ja äärellisestä joukosta tuloksia. Kombinatoriseen
@@ -357,19 +356,21 @@ optimointiin liittyy vahvasti kokonaislukuohjelmointi (engl.~\textit{integer
 programming}). Kokonaislukuohjelmoinnissa olennaista on se, että optimoitavat
 muuttujat ovat nimenmukaisesti kokonaislukuja, mikä poistaa tarpeen esimerkiksi
 liukulukujen huomioimiselle ohjelmakoodissa. Kokonaislukuohjelmoinnin käyttö on
-luonnollista, kun optimoitava suure on kokonaisluku, kuten esimerkiksi
-sarakkeiden määrä ulkoasusuunnitelmassa. Oulasvirta ym.~näyttävät, että
-kombinatorinen optimointi on keino esittää matemaattisena ongelmana
-ulkoasusuunnittelun heuristiikat ja suunnittelun aikana tehtävät päätökset,
-kuten elementtien keskinäinen koko ja järjestys. He tähdentävät myös, että
-kombinatorinen optimointi ei tarvitse erillistä opetusdataa, kuten menetelmät
-jotka hyödyntävät koneoppimista (engl.~\textit{machine learning}). He nostavat
-esille koneellisen käyttöliittymäsuunnittelun hyötyinä muun muassa kohonneen
-laadun ja johdonmukaisuuden, kyvyn tukea suunnittelijaa erityisesti hankalissa
+järkevää silloin, kun optimoitava suure on kokonaisluku, kuten esimerkiksi
+sarakkeiden määrä ulkoasusuunnitelmassa.
+
+Oulasvirta ym.~näyttävät, että kombinatorinen optimointi on keino esittää
+matemaattisena ongelmana ulkoasusuunnittelun heuristiikat ja suunnittelun aikana
+tehtävät päätökset, kuten elementtien keskinäinen koko ja järjestys. He
+tähdentävät myös, että kombinatorinen optimointi ei tarvitse erillistä
+opetusdataa, kuten menetelmät jotka hyödyntävät koneoppimista
+(engl.~\textit{machine learning}). He nostavat esille laskennallisen
+käyttöliittymäsuunnittelun hyötyinä muun muassa kohonneen laadun ja
+johdonmukaisuuden, kyvyn tukea suunnittelijaa erityisesti hankalissa
 erikoistapauksissa ja lisääntyneen ymmärryksen ihmisen ja tietokoneen välisestä
 vuorovaikutuksesta suunnittelijoiden keskuudessa.
 
-Käyttöliittymän koneelliseen tuottamiseen palataan
+Käyttöliittymän laskennalliseen tuottamiseen palataan
 luvussa~\ref{layout-personalization}, jossa tarkastellaan sivuston asettelun
 personointimenetelmiä.
 
@@ -633,7 +634,7 @@ web-suunnittelun arvoa, sillä sen hyödyt ovat ilmeiset.
 
 Näistä lähtökohdista tutkimusta on kohdistunut laskennallisten menetelmien
 hyödyntämiseen responsiivisessa web-suunnittelussa. Sivusto on pohjimmiltaan
-rakenteellista sisältöä, joten sitä voidaan käsitellä koneellisesti. Jos
+rakenteellista sisältöä, joten sitä voidaan käsitellä laskennallisesti. Jos
 responsiivinen web-suunnittelu kyetään automatisoimaan, vähentää se
 suunnittelijan ja kehittäjän työtaakkaa huomattavasti. Tällöin riittää että
 sivustosta suunnitellaan vain mobiiliversio (ns. \textit{mobile first}
@@ -707,7 +708,7 @@ keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
 yksinkertaisempia leiskoja ja väripaletteja.
 
 O'Donovan esittelee väitöskirjassaan~\cite{odonovan_2015} menetelmän tuottaa
-osan väripaletista koneellisesti. Menetelmä olettaa, että päävärit on lukittu,
+osan väripaletista laskennallisesti. Menetelmä olettaa, että päävärit on lukittu,
 kuten yleensä tapana on. Joukkoistamisella kerätyn tiedon pohjalta menetelmä
 pystyy muodostamaan puuttuvat värit palettiin miellyttävällä tavalla. Menetelmä
 ei ole suoraan sovellettavissa sivuston ulkoasun personointiin, koska se
@@ -777,9 +778,9 @@ mielenkiintoinen.
 Jos kirjasintyypin personointi halutaan viedä yksilötasolle, suunnittelijan on
 mahdotonta valita eri kirjasintyypit etukäteen. Sen sijaan voidaan käyttää
 \href{https://www.metaflop.com/}{Metaflop}-palvelun kaltaista kirjasintyypin
-koneellista luontia. Metaflop perustuu TeX-ladontaohjelman kehittäjän Donald
+laskennallista luontia. Metaflop perustuu TeX-ladontaohjelman kehittäjän Donald
 Knuthin kehittämään Metafont-kieleen, jolla on mahdollista luoda
-kirjasintyyppejä koneellisesti~\cite{knuth_1986}. Personointimenetelmä voisi
+kirjasintyyppejä laskennallisesti~\cite{knuth_1986}. Personointimenetelmä voisi
 käyttää hyväkseen O'Donovanin kehittämää kirjasintyyppien luokittelujärjestelmää
 ja luoda käyttäjälle sopivan kirjasintyypin lennosta.
 
