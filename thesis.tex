@@ -659,6 +659,56 @@ määrittämään asettelun rajoitteet, kuten päätelaitteen näyttökoon ja
 käyttötavan. C-RWD päättelee optimointiin tarvittavat rajoitteet itse
 seuraamalla käyttäjän käyttäytymistä sivustolla.
 
+\subsubsection{Valikoiden asettelu}
+
+Sivuston sisällön asettelun lisäksi myös valikoiden optimointi ja personointi on
+hyödyllistä. Järkevästi järjestetty valikko auttaa käyttäjää löytämään
+tarvitsemansa toiminnon nopeammin. Valikoiden asettelun optimointia voi
+hyödyntää sivustolla laajasti, sillä valikoita käytetään monenlaisissa
+tilanteissa, kuten sivunavigaatiossa ja lomakkeissa.
+
+Valikoiden asettelun suunnittelu koetaan vaikeaksi, ja lopullinen ratkaisu
+löytyy yleensä yrityksen ja erehdyksen kautta~\cite{10.1145/2501988.2502024}.
+Ensinnäkin ongelmana on usein erittäin suuri määrä vaihtoehtoja valikon
+asetteluun. Yksitasoinen \textit{n} toiminnon valikko voidaan järjestää
+\textit{n!} eri tavalla, ja monitasoisen valikkohierarkian mahdollisten
+järjestelytapojen määrä kasvaa eksponentiaalisesti valikon kasvaessa. Toisekseen
+haasteena on ihmisten eri tavat etsiä toimintoja valikoista. Esimerkiksi, jotkut
+etsivät toimintoja satunnaisella haulla, toiset käyvät valikon toiminnot läpi
+yksi kerrallaan.
+
+Laskennallista valikoiden suunnittelua on tutkittu ratkaisuna tähän, kuten
+esimerkiksi Bailly ym.~\cite{10.1145/2501988.2502024} kehittämä
+\textit{MenuOptimizer}-konsepti. Dayama ym.~\cite{DAYAMA2021102624} tutkima
+menetelmä on kuitenkin ensimmäinen, joka pystyy tuottamaan todistettavasti
+optimaalisen valikkorakenteen. Dayama ym.~menetelmä perustuu luonnosta
+mallinnetun ruoan etsimisen (engl.~\textit{foraging}) mukailuun. Ajatuksena on,
+että etsimisalueet jakaantuvat erillään oleviin palstoihin
+(engl.~\textit{patch}), joiden välillä agentti, kuten ruokaa etsivä eläin,
+joutuu tekemään päätöksen, missä etsiä. Jos nykyinen palsta ei tuota
+optimoitavaa resurssia, kuten ruokaa, tarpeeksi, agentti joutuu päättämään, onko
+järkevää siirtyä viereiselle palstalle. Voi olla myös järkevää siirtyä kauempana
+olevalle palstalle, jos siellä on merkittävästi enemmän optimoitavaa resurssia.
+Malli pätee hyvin valikoiden asetteluun, koska valikot jakaantuvat yleensä
+kuvitteelisiin palstoihin, eli esimerkiksi välilehtiin tai muihin erilaisiin
+ryhmityksiin. Optimoitava resurssi on valikoiden asettelun tapauksessa
+esimerkiksi paremmalla asettelulla saavutettava ajan säästö.
+
+Dayama ym.~löysivät, että heidän ruoan etsimistä mallintava menetelmänsä tuottaa
+valikon asettelun, jolla haluttu valikon toiminto löytyy nopeammin. He arvioivat
+ratkaisuaan kolmella eri sovelluksessa pienessä käyttäjätutkimuksessa (n=24).
+Jokaisella tutkituista ohjelmista halutun toiminnon löytyminen nopeutui
+merkittävästi verrattuna ohjelman omaan valikon asetteluun. He pohtivat myös
+personoinnin hyödyntämistä valikon asettelun optimoinnissa. Ohjelman vakiintunut
+käyttäjä on tottunut ohjelman omaan valikoon asetteluun, joten asettelun
+optimointi ja sen mukainen uudelleenjärjestely voisi olla tämänkaltaiselle
+käyttäjälle enemmänkin haitallista. Tähän ratkaisuna he ehdottavat malliin
+lisättäväksi uutta parametria, joka ottaisi huomioon valikon toiminnon
+suhteellisen siirtymän sen alkuperäisestä sijainnista. Tällöin malli suosisi
+ratkaisua, jossa asettelun muutokset optimoinnin myötä ovat pienempiä
+vakiintuneelle käyttäjälle. Uudelle käyttäjälle optimointi olisi edelleen
+alkuperäisen mallin mukaista ja mahdollisesti suurempaa.
+
 \subsection{Ilmeen personointi}
 
 Ilmeellä tarkoitetaan tässä sivuston visuaalista tyyliä. Siihen sisältyy
