@@ -80,7 +80,7 @@ style=ieee
 
 \date{xx.xx.2022}
 
-\supervisor{Titteli Samuli Aalto}
+\supervisor{FT Samuli Aalto}
 
 \advisor{TkT Markku Laine}
 
@@ -169,12 +169,13 @@ Personointi osana ihmisen ja tietokoneen välistä vuorovaikutusta on laaja aihe
 ja työni on tarkoituksella rajattu vain sivuston ulkoasun personointiin
 näkökulman tarkentamiseksi. Rajauksen ulkopuolelle jää sivuston sisällön
 personointi, joka on aiheena laaja ja kasvattaisi työn rajausta liian suureksi.
-Sisällön personointiin kuuluu esimerkiksi sosiaalisen median alustojen
+Työn rajausta on havainnollistettu kuvassa~\ref{fig:thesis-scope}. Sisällön
+personointiin kuuluu esimerkiksi sosiaalisen median alustojen
 suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
 merkittävästi sivuston ulkoasun personoinnista. Ulkoasun personointiin kuuluu
 kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen, jota
 tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
-personointia. Tämä työn rajaus on esillä kuvassa~\ref{fig:thesis-scope}.
+personointia.
 
 \begin{figure}[h]
     \centering
@@ -223,7 +224,7 @@ laskennallisesti.
 Ulkoasun toteutus jakaantuu kahteen selkeään vaiheeseen. Suunnittelija tuottaa
 sivuston ulkoasusta suunnitelman, jonka pohjalta kehittäjä tuottaa lopullisen
 sivuston. Nämä kaksi vaihetta käsitellään tässä luvussa. Esimerkinomainen
-havainnollistus web-sivuston toteutuksesta on esitetty
+havainnollistus web-sivuston ulkoasun toteutuksesta on esitetty
 kuvassa~\ref{fig:website-implementation}.
 
 \subsubsection{Ulkoasun suunnittelu}\label{background-web-design}
@@ -459,8 +460,8 @@ lisätä myyntiä personoimalla asiakkaalle suositeltavia tuotteita tämän
 ostohistorian perusteella. Sitä vastoin kunta voisi asiointisivustoaan
 personoimalla nostaa vierailijalle ajankohtaiset lomakkeet heti etusivun alkuun
 ja täten lisätä verkkoasiointia ja vähentää kalliimpaa puhelinasiointia. Blomin
-ja Vesasen esittämät personoinnin hyödyt on esitetty
-kuvassa~\ref{fig:personalization-benefits}.
+ja Vesasen esittämät personoinnin hyödyt on kiteytetty ja yhdistetty
+kuvaan~\ref{fig:personalization-benefits}.
 
 \begin{figure}[h]
     \centering
@@ -582,8 +583,8 @@ Valikoiden asettelu eroaa normaalista sisällöstä hivenen siksi, että valikon
 vaihtoehdoilla on vähemmän vapausasteita verrattuna sisällön asetteluun.
 Vaihtoehtojen järjestys voi muuttua, niitä voidaan piilottaa ja niitä voidaan
 korostaa esimerkiksi lihavoinnilla. Ne eivät siis esimerkiksi voi
-lähtökohtaisesti siirtyä valikon ulkopuolelle. Valikoiden personointi onkin siis
-ulkoasullisesti triviaalia, ja liittyy enemmän sisällön personointiin.
+lähtökohtaisesti siirtyä valikon ulkopuolelle. Valikoiden asettelun personointia
+tarkastellaan tarkemmin luvussa~\ref{menu-personalization}.
 
 Sisältöalueen asettelu perustuu nykyään lähtökohtaisesti ruudukkorakenteeseen
 (engl.~\textit{grid layout}). Ruudukko koostuu sivustosta ja päätelaitteen
@@ -642,7 +643,7 @@ ratkaisujen kautta. Nykyään suosittuja web-suunnitteluun käytettäviä
 ohjelmistoja ovat muun muassa Sketch, Figma ja Adobe XD, joihin kaikkiin on
 mahdollista rakentaa lisäosia. Perinteisempiä työkaluja edustavat Adoben
 tuoteperheen Photoshop ja Illustrator, joiden käyttö web-suunnittelussa on
-vähentynyt merkittävästi.
+vähentynyt merkittävästi~\cite{webdesignmuseum_2022}.
 
 Yksi suunnittelijoille suunnattu apukeino on Pang et al.~\cite{10.1145/2980179.2982422}
 esittelemä menetelmä sivuston asettelun optimoimiseen käyttäjien
@@ -705,7 +706,7 @@ määrittämään asettelun rajoitteet, kuten päätelaitteen näyttökoon ja
 käyttötavan. C-RWD päättelee optimointiin tarvittavat rajoitteet itse
 seuraamalla käyttäjän käyttäytymistä sivustolla.
 
-\subsubsection{Valikoiden asettelu}
+\subsubsection{Valikoiden asettelu}\label{menu-personalization}
 
 Sivuston sisällön asettelun lisäksi myös valikoiden optimointi ja personointi on
 hyödyllistä. Järkevästi järjestetty valikko auttaa käyttäjää löytämään
@@ -798,7 +799,7 @@ ym.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelus
 pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri sivuston visuaalista
 miellyttävyyttä. He huomasivat, että esimerkiksi pohjoismakedonialaiset pitävät
 keskimäärin värikkäämistä sivuista ja toisaalta venäläiset suosivat
-yksinkertaisempia leiskoja ja väripaletteja.
+yksinkertaisempia ulkoasusuunnitelmia ja väripaletteja.
 
 O'Donovan esittelee väitöskirjassaan~\cite{odonovan_2015} menetelmän tuottaa
 osan väripaletista laskennallisesti. Menetelmä olettaa, että päävärit on lukittu,
@@ -840,7 +841,7 @@ sivuston antamaa yleisvaikutelmaa. Virallinen teksti ei voi käyttää samaa
 typografiaa kuin syntymäpäiväjuhlakutsu. Eri kirjasintyyppejä on tuhansia, joten
 suunnittelijalla täytyy olla asiantuntemusta tietää, mikä kirjasintyyppi sopii
 kuhunkin tarpeeseen. Personoinnin näkökulmasta on mahdoton löytää yksi
-kirjastintyyppi, joka olisi paras kaikille käyttäjille. Edellämainitussa
+kirjasintyyppi, joka olisi paras kaikille käyttäjille. Edellämainitussa
 Reinecke ym.~tutkimuksessa~\cite{10.1145/2556288.2557052} ryhmä löysi värien
 lisäksi yhteyden ulkoasun monimutkaisuuden ja kulttuuritaustan välillä. Siksi
 olisi hyvä jos myös kirjasintyyppi voitaisiin personoida kullekin käyttäjälle
@@ -901,7 +902,7 @@ Kang ym.~\cite{5539850} osoittavat, että kuvan ominaisuuksilla, kuten
 valkotasapainolla ja kontrastilla on vaikutusta koettuun mielekkyyteen. He
 toteuttivat pienen (n=14) tutkimuksen kollegoillaan testatakseen menetelmää,
 joka personoi kuvia aiemmin kerättyjen mieltymysten perusteella. He löysivät
-että yli puolet suosi omien mieltymystensä mukaan personoituja versioituja
+että yli puolet suosi omien mieltymystensä mukaan personoituja versioita
 kuvista. Tutkimuksen otanta on pieni, mutta suuntaa-antava ja itse menetelmä on
 mielenkiintoinen. Sen isoin rajoite on käyttäjän mieltymysten kerääminen, joka
 täytyy tehdä ennen kuin kuvia voidaan personoida. Myös personoitavat
