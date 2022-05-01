@@ -113,6 +113,7 @@ style=ieee
     mukauttaminen & kohdentaminen käyttäjälle tai käyttäjäryhmälle sopivaksi \\
     personointi   & kerättyyn tietoon perustuva automaattinen mukauttaminen  \\
     kustomointi   & valintoihin ja asetuksiin perustuva mukauttaminen        \\
+    saavutettavuus & \\
     yms           & yms
 \end{tabular}
 
@@ -173,7 +174,14 @@ suosittelualgoritmit ja web-mainonnan kohdennus, jotka eroavat menetelmiltään
 merkittävästi sivuston ulkoasun personoinnista. Ulkoasun personointiin kuuluu
 kuitenkin olennaisena osana käyttäjälle tärkeän sisällön korostaminen, jota
 tarkastellaan luvussa~\ref{layout-personalization} osana sisällön asettelun
-personointia.
+personointia. Tämä työn rajaus on esillä kuvassa~\ref{fig:thesis-scope}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/thesis-scope.jpg}
+    \caption{Työssä tarkastellaan web-sivuston ulkoasun personointia. Sisällön
+    personointi on rajattu työn ulkopuolelle.~\label{fig:thesis-scope}}
+\end{figure}
 
 Vaikka web-sivustojen personointia on tutkittu verrattain pitkään, käytännön
 hyödyntäminen toimialalla on vielä harvinaista. Sivuston ulkoasu suunnitellaan
@@ -214,7 +222,9 @@ laskennallisesti.
 
 Ulkoasun toteutus jakaantuu kahteen selkeään vaiheeseen. Suunnittelija tuottaa
 sivuston ulkoasusta suunnitelman, jonka pohjalta kehittäjä tuottaa lopullisen
-sivuston. Nämä kaksi vaihetta käsitellään tässä luvussa.
+sivuston. Nämä kaksi vaihetta käsitellään tässä luvussa. Esimerkinomainen
+havainnollistus web-sivuston toteutuksesta on esitetty
+kuvassa~\ref{fig:website-implementation}.
 
 \subsubsection{Ulkoasun suunnittelu}\label{background-web-design}
 
@@ -287,6 +297,14 @@ tekstielementit. Komponenttien kehityksessä käytetään kuitenkin yhä samaa
 perusteknologiaa kuin aiemminkin, eli HTML-merkintäkieltä, CSS-tyylisäännöstöä
 ja JavaScript-ohjelmointikieltä.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/website-implementation.jpg}
+    \caption{Yksinkertaistettu ja kuvitteellinen havainnollistus web-sivuston~\cite{aalto-website}
+    toteutuksesta. MagazineHero-komponentin yhteydessä on esitetty komponentin
+    esimerkinomainen HTML-rakenne.~\label{fig:website-implementation}}
+\end{figure}
+
 \subsection{Web-analytiikka}
 
 Personointi on käyttäjästä kerätyn tiedon pohjalta tehtävää automaattista
@@ -330,9 +348,9 @@ ottavat yhteyttä lähdesivustoon, välittävät samalla lähdesivustolle sen
 käyttäjän laitteelle asettamat evästeet. Tällöin lähdesivusto pystyy
 tunnistamaan käyttäjän ja hyödyntämään uutta tietoa tämän ulkoisesta
 web-selailusta analytiikassaan. Nämä niin kutsutut kolmannen osapuolen evästeet
-ovat lähitulevaisuudessa poistumassa käytöstä ilmeisten tietosuojariskien takia,
-millä voi olla arvaamattomia vaikutuksia web-analytiikan ja -liiketoiminnan
-kannalta.
+ovat lähitulevaisuudessa poistumassa käytöstä ilmeisten tietosuojariskien
+takia~\cite{third-party-cookies-phaseout}, millä voi olla arvaamattomia
+vaikutuksia web-analytiikan ja -liiketoiminnan kannalta.
 
 \subsection{Käyttöliittymän tuottaminen laskennallisesti}
 
@@ -343,7 +361,8 @@ laskennallinen tuottaminen laajentaa luvussa~\ref{background-web-design}
 kuvattua web-suunnitteluprosessia, sillä nämä laskennalliset menetelmät toimivat
 apuna varsinkin suunnitteluvaiheessa. Laskennallisen menetelmän avulla
 suunnittelija voi saada välitöntä palautetta ulkoasusuunnitelman laadusta
-menetelmän määrittämiin kriteereihin perustuen.
+menetelmän määrittämiin kriteereihin perustuen. Menetelmä voi myös suoraan
+suositella vaihtoehtoisia ulkoasusuunnitelmia.
 
 Oulasvirta ym.~\cite{9000519} esittelevät menetelmiä käyttöliittymien
 laskennalliseen tuottamiseen ja kohentamiseen. He tarkastelevat aihetta
@@ -378,16 +397,25 @@ personointimenetelmiä.
 Käytän työssäni Blomin~\cite{10.1145/633292.633483} vuonna 2000 julkaisemaa
 personoinnin taksonomiaa. Sen mukaan personoinnilla tarkoitetaan järjestelmän
 muuttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän näkökulmasta
-kasvaa. Personoinnin myötä tehdyt muutokset ovat lähtökohtaisesti käyttäjälle
-pysyviä, joskin ne voivat muuttua edelleen käytön jatkuessa. Personoinnin
-perusteeksi kerätty tieto voi olla hyvin erilaisista lähteistä, kuten
-asiointihistoriasta, julkishallinnon rekistereistä tai web-sivuston tapauksessa
-sivuston web-analytiikasta ja lokitiedoista. Tieto, jonka pohjalta personointia
-tehdään voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin puhutaan
-yleensä kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa,
-jossa on käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-,
-puhelin- tai web-asioinnissa. Työni keskittyy web-asioinnin personointiin ja
-nimenomaan web-sivuston ulkoasun personointiin.
+kasvaa. Tämä personoinnin prosessi on esitetty kuvassa~\ref{fig:personalization}.
+Personoinnin myötä tehdyt muutokset ovat lähtökohtaisesti käyttäjälle pysyviä,
+joskin ne voivat muuttua edelleen käytön jatkuessa. Personoinnin perusteeksi
+kerätty tieto voi olla hyvin erilaisista lähteistä, kuten asiointihistoriasta,
+julkishallinnon rekistereistä tai web-sivuston tapauksessa sivuston
+web-analytiikasta ja lokitiedoista. Tieto, jonka pohjalta personointia tehdään
+voi olla myös käyttäjän itse ilmoittamaa, joskin tällöin puhutaan yleensä
+kustomoinnista. Personointia voidaan tehdä missä tahansa rajapinnassa, jossa on
+käyttäjän ja palvelun välistä vuorovaikutusta, kuten toimipiste-, puhelin- tai
+web-asioinnissa. Työni keskittyy web-asioinnin personointiin ja nimenomaan
+web-sivuston ulkoasun personointiin.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/personalization.jpg}
+    \caption{Käyttökokemusta voidaan parantaa personoimalla palvelua esimerkiksi
+    web-analytiikan avulla kerätyn käyttötiedon
+    perusteella.~\label{fig:personalization}}
+\end{figure}
 
 Ennen kuin personoinnin näkökulmia ja varsinaisia menetelmiä käydään läpi, on
 tärkeää tarkentaa, miksi personointia ylipäätään kannattaa hyödyntää
@@ -430,7 +458,16 @@ palveluntarjoajan tuloja tai vähentää sen menoja. Esimerkiksi verkkokauppa vo
 lisätä myyntiä personoimalla asiakkaalle suositeltavia tuotteita tämän
 ostohistorian perusteella. Sitä vastoin kunta voisi asiointisivustoaan
 personoimalla nostaa vierailijalle ajankohtaiset lomakkeet heti etusivun alkuun
-ja täten lisätä verkkoasiointia ja vähentää kalliimpaa puhelinasiointia.
+ja täten lisätä verkkoasiointia ja vähentää kalliimpaa puhelinasiointia. Blomin
+ja Vesasen esittämät personoinnin hyödyt on esitetty
+kuvassa~\ref{fig:personalization-benefits}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/personalization-benefits.jpg}
+    \caption{Personoinnin hyödyt karkealla tasolla käyttäjän ja
+    palveluntarjoajan näkökulmasta.~\label{fig:personalization-benefits}}
+\end{figure}
 
 Personoinnista on hyötyä myös yhteiskunnallisella tasolla. Personointi
 mahdollistaa yksilöllisen tiedonvälityksen kokoluokassa, joka ei aiemmin ole
@@ -517,7 +554,16 @@ nopeutta.
 
 Näitä näkökulmia tarkastellaan erityisesti
 luvussa~\ref{personalization-comparison}. Seuraavissa alaluvuissa esitellään
-personoinnin menetelmiä sivuston eri osa-alueiden näkökulmasta.
+personoinnin menetelmiä sivuston eri osa-alueiden näkökulmasta. Tarkasteltavat
+sivuston osa-alueet on esitetty kuvassa~\ref{fig:website-areas}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/website-areas.png}
+    \caption{Personoinnin näkökulmia tarkastellaan työssä neljän eri sivuston
+    osa-alueen kautta: asettelu, värit, typografia ja kuvat. Kuvissa
+    Aalto-yliopiston etusivu~\cite{aalto-website}.~\label{fig:website-areas}}
+\end{figure}
 
 \subsection{Asettelun personointi}\label{layout-personalization}
 
@@ -690,13 +736,13 @@ optimoitavaa resurssia, kuten ruokaa, tarpeeksi, agentti joutuu päättämään,
 järkevää siirtyä viereiselle palstalle. Voi olla myös järkevää siirtyä kauempana
 olevalle palstalle, jos siellä on merkittävästi enemmän optimoitavaa resurssia.
 Malli pätee hyvin valikoiden asetteluun, koska valikot jakaantuvat yleensä
-kuvitteelisiin palstoihin, eli esimerkiksi välilehtiin tai muihin erilaisiin
+kuvitteellisiin palstoihin, eli esimerkiksi välilehtiin tai muihin erilaisiin
 ryhmityksiin. Optimoitava resurssi on valikoiden asettelun tapauksessa
 esimerkiksi paremmalla asettelulla saavutettava ajan säästö.
 
 Dayama ym.~löysivät, että heidän ruoan etsimistä mallintava menetelmänsä tuottaa
 valikon asettelun, jolla haluttu valikon toiminto löytyy nopeammin. He arvioivat
-ratkaisuaan kolmella eri sovelluksessa pienessä käyttäjätutkimuksessa (n=24).
+ratkaisuaan kolmella eri sovelluksella pienessä käyttäjätutkimuksessa (n=24).
 Jokaisella tutkituista ohjelmista halutun toiminnon löytyminen nopeutui
 merkittävästi verrattuna ohjelman omaan valikon asetteluun. He pohtivat myös
 personoinnin hyödyntämistä valikon asettelun optimoinnissa. Ohjelman vakiintunut
@@ -1052,7 +1098,7 @@ harkita. Lisäksi käyttäjän rajoitteisiin pohjautuva personointi on hyödylli
 mutta sen toteuttaminen on tällä hetkellä vielä työlästä. Nämä tärkeimmät
 menetelmät on merkitty kuvaan~\ref{fig:layout-priorization}.
 
-\begin{figure}[htb]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/layout-priorization.pdf}
     \caption{Tärkeimmät sisällön asettelun personointimenetelmät.~\label{fig:layout-priorization}}
@@ -1122,7 +1168,7 @@ tärkeimmät menetelmät painottuvat käyttöympäristön näkökulmien puolelle
 Tärkeimmät typografian personointimenetelmät on merkitty
 kuvaan~\ref{fig:typography-priorization}.
 
-\begin{figure}[htb]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/typography-priorization.pdf}
     \caption{Tärkeimmät typografian personointimenetelmät.~\label{fig:typography-priorization}}
@@ -1190,7 +1236,7 @@ käyttäjän kiinnostuksen kohteiden pohjalta tehtävä ulkoasun personointi, jo
 muun muassa Salesforcen Einstein Designer -konsepti on demonstroinut. Tärkeimmät
 värien personointimenetelmät on merkitty kuvaan~\ref{fig:color-priorization}.
 
-\begin{figure}[htb]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/color-priorization.pdf}
     \caption{Tärkeimmät värien personointimenetelmät.~\label{fig:color-priorization}}
@@ -1259,7 +1305,7 @@ kuvattu käyttäjän mieltymysten mukainen kuvien muokkaus vaikuttaa lupaavalta.
 Tärkeimmät kuvien personointimenetelmät on merkitty
 kuvaan~\ref{fig:images-priorization}.
 
-\begin{figure}[htb]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{images/images-priorization.pdf}
     \caption{Tärkeimmät kuvien muokkauksen personointimenetelmät.~\label{fig:images-priorization}}
@@ -1291,7 +1337,7 @@ näkökulma. Sekä värien että typografian personoinnin osalta hyödyllisiä
 näkökulmia löytyi vain yksi. Sen sijaan molemmille näistä osa-alueista löytyi
 useampi näkökulma, jotka saivat jonkin verran pisteitä hyödyllisyydestä, mutta
 jotka eivät saaneet lähes yhtään pisteitä vaivattomuudesta. Näkökulmia, kuten
-typografian personointi laitteen liikuessa ja värien personointi käyttäjän
+typografian personointi laitteen liikkuessa ja värien personointi käyttäjän
 sosiaalisten verkostojen perusteella, ei kannata edistää vaikka niiden
 hyödyllisyydestä onkin näyttöä.
 
