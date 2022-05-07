@@ -812,15 +812,14 @@ väripalettien mielekkyydestä täytyisi kerätä sivuston käyttäjäryhmiltä
 etukäteen.
 
 Värien personoinnista löytyy jonkin verran sovelluksia web-suunnittelun ja
--kehityksen toimialalta. Salesforcen
-\href{https://medium.com/salesforce-ux/einstein-designer-ai-powered-personalized-design-at-scale-367d71b85a3d}{Einstein
-    Designer} -konsepti analysoi olemassa olevan sivuston ja luo sen pohjalta
-uusia vedoksia sivustosta. Einstein Designer huomioi asettelun, typografian ja
-myös värit. Konsepti kykenee luomaan kullekin käyttäjälle oman version
-sivustosta. Konsepti on siitä mielenkiintoinen, että se toimii olemassa olevan
-sivuston kanssa, eli sen voi ottaa käyttöön myös suunnitteluvaiheen ja
-toteutuksen jälkeen. Einstein Designer on kuitenkin vasta konseptitasolla eikä
-sitä ole vielä tuotteistettu.
+-kehityksen toimialalta. Salesforce Einstein Designer
+-konsepti~\cite{salesforce-einstein-designer} analysoi olemassa olevan sivuston
+ja luo sen pohjalta uusia vedoksia sivustosta. Einstein Designer huomioi
+asettelun, typografian ja myös värit. Konsepti kykenee luomaan kullekin
+käyttäjälle oman version sivustosta. Konsepti on siitä mielenkiintoinen, että se
+toimii olemassa olevan sivuston kanssa, eli sen voi ottaa käyttöön myös
+suunnitteluvaiheen ja toteutuksen jälkeen. Einstein Designer on kuitenkin vasta
+konseptitasolla eikä sitä ole vielä tuotteistettu.
 
 Värit on tunnistettu tärkeäksi osaksi sivuston personointia, mutta tällä
 hetkellä osa-alue on vasta tutkimuksen ja konseptien tasolla. Valmista tuotetta
@@ -872,7 +871,7 @@ mielenkiintoinen.
 
 Jos kirjasintyypin personointi halutaan viedä yksilötasolle, suunnittelijan on
 mahdotonta valita eri kirjasintyypit etukäteen. Sen sijaan voidaan käyttää
-\href{https://www.metaflop.com/}{Metaflop}-palvelun kaltaista kirjasintyypin
+Metaflop-palvelun~\cite{metaflop-website} kaltaista kirjasintyypin
 laskennallista luontia. Metaflop perustuu TeX-ladontaohjelman kehittäjän Donald
 Knuthin kehittämään Metafont-kieleen, jolla on mahdollista luoda
 kirjasintyyppejä laskennallisesti~\cite{knuth_1986}. Personointimenetelmä voisi
@@ -1199,7 +1198,7 @@ luvussa~\ref{color-personalization}.
     \midrule
     Koulutustausta                         & Vaikutusta ei ole tutkittu. Tieto koulutustaustasta saatavilla julkishallinnon tietokannoista tai käyttäjältä erikseen pyydettynä.                                                                                                                                                                                   & 0                                          & 1                                   & 0                                      & 1                            & 0                                               & 1                                         & 0                                         & 1                            \\
     \midrule
-    Kiinnostuksen kohteet                  & Vaikutusta ei ole tutkittu, mutta Salesforcen Einstein Designer -konsepti personoi myös värejä sivustokäyttäytymisen pohjalta.                                                                                                                                                                                       & 0                                          & 10                                  & 1                                      & 11                           & 1                                               & 10                                        & 10                                        & 21                           \\
+    Kiinnostuksen kohteet                  & Vaikutusta ei ole tutkittu, mutta Salesforcen Einstein Designer -konsepti~\cite{salesforce-einstein-designer} personoi myös värejä sivustokäyttäytymisen pohjalta.                                                                                                                                                                                       & 0                                          & 10                                  & 1                                      & 11                           & 1                                               & 10                                        & 10                                        & 21                           \\
     \midrule
     Mieliala                               & Vaikutusta ei ole tutkittu. Ei selkeää keinoa kerätä tietoa.                                                                                                                                                                                                                                                         & 0                                          & 0                                   & 0                                      & 0                            & 1                                               & 1                                         & 0                                         & 2                            \\
     \midrule
@@ -1235,7 +1234,8 @@ värimieltymysten ja erinäisten ominaisuuksien, kuten iän ja sukupuolen välil
 mutta käytännön tasolla menetelmät on hankala ottaa käyttöön sivustolla. Värien
 osalta tärkeimmät personointimenetelmät ovat värisokeuden huomioiminen ja
 käyttäjän kiinnostuksen kohteiden pohjalta tehtävä ulkoasun personointi, jota
-muun muassa Salesforcen Einstein Designer -konsepti on demonstroinut. Tärkeimmät
+muun muassa Salesforcen Einstein Designer
+-konsepti~\cite{salesforce-einstein-designer} on demonstroinut. Tärkeimmät
 värien personointimenetelmät on merkitty kuvaan~\ref{fig:color-priorization}.
 
 \begin{figure}[h]
