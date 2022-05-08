@@ -88,7 +88,7 @@ style=ieee
 
 \keywords{personointi\spc{}responsiivinen web-suunnittelu\spc{}web-teknologiat\spc{}web-analytiikka\spc{}kombinatorinen optimointi\spc{}tietosuoja\spc{}saavutettavuus}
 
-\thesisabstract{ Työssä tarkasteltiin personointia web-sivuston eri osa-alueiden, kuten asettelun ja värien, näkökulmasta. Personointi on palvelun, kuten web-sivuston, mukauttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän näkökulmasta kasvaa. Työ toteutettiin kirjallisuustutkimuksena. Työn tavoitteena oli löytää web-sivuston ulkoasun personointiin menetelmiä ja näkökulmia, joista saa suurimman hyödyn pienimmällä vaivalla. Tätä varten kehitettiin pisteytysmenetelmä, jonka avulla parhaat personoinnin menetelmät ja näkökulmat erottuisivat. Pisteytyksen jälkeen tulokset kuvattiin kaavioon, jolla menetelmien hyödyllisyyttä ja käyttöönoton vaivattomuutta voi vertailla silmämääräisesti. Tulosten perusteella voidaan todeta, että suurinta osaa tarkastelluista menetelmistä ja näkökulmista ei kannata ottaa käyttöön, sillä ne ovat joko liian työläitä tai niistä saatava hyöty on tutkimuksen perusteella epäselvää. Vertailussa parhaaksi havaitut menetelmät ovat jo laajasti käytössä toimialalla. Tarkastelussa havaittiin, että laskennallisiin menetelmiin perustuvaan ulkoasun personointiin kohdistuu aktiivista tutkimusta. Tämä näkyy toivottavasti pian myös toimialalla uusina personointimenetelminä, joihin vaadittava työpanos web-sivuston suunnittelussa ja toteutuksessa pienenee nykyisestä. }
+\thesisabstract{ Työssä tarkasteltiin personointia web-sivuston eri osa-alueiden, kuten asettelun ja värien, näkökulmasta. Personointi on palvelun, kuten web-sivuston, mukauttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän näkökulmasta kasvaa. Työ toteutettiin kirjallisuustutkimuksena. Työn tavoitteena oli löytää web-sivuston ulkoasun personointiin menetelmiä ja näkökulmia, joista saa suurimman hyödyn pienimmällä vaivalla. Tätä varten kehitettiin pisteytysmenetelmä, jonka avulla parhaat personoinnin menetelmät ja näkökulmat erottuisivat. Pisteytyksen jälkeen tulokset kuvattiin kaavioon, jolla menetelmien hyödyllisyyttä ja käyttöönoton vaivattomuutta voi vertailla silmämääräisesti. Tulosten perusteella voidaan todeta, että suurinta osaa tarkastelluista menetelmistä ja näkökulmista ei kannata ottaa käyttöön, sillä ne ovat joko liian työläitä tai niistä saatava hyöty on tutkimuksen perusteella epäselvää. Vertailussa parhaaksi havaitut menetelmät ovat jo laajasti käytössä toimialalla. Tarkastelussa havaittiin, että laskennallisiin menetelmiin perustuvaan ulkoasun personointiin kohdistuu vireää tutkimusta. Tämä näkyy toivottavasti pian myös toimialalla uusina personointimenetelminä, joihin vaadittava työpanos web-sivuston suunnittelussa ja toteutuksessa pienenee nykyisestä. }
 
 \copyrighttext{Copyright \noexpand\copyright\ \number\year\ \ThesisAuthor}
 {Copyright \copyright{} \number\year{} \ThesisAuthor}
@@ -117,7 +117,7 @@ style=ieee
     liian työläitä tai niistä saatava hyöty on tutkimuksen perusteella
     epäselvää. Vertailussa parhaaksi havaitut menetelmät ovat jo laajasti
     käytössä toimialalla. Tarkastelussa havaittiin, että laskennallisiin
-    menetelmiin perustuvaan ulkoasun personointiin kohdistuu aktiivista
+    menetelmiin perustuvaan ulkoasun personointiin kohdistuu vireää
     tutkimusta. Tämä näkyy toivottavasti pian myös toimialalla uusina
     personointimenetelminä, joihin vaadittava työpanos web-sivuston
     suunnittelussa ja toteutuksessa pienenee nykyisestä.
@@ -381,8 +381,8 @@ Oulasvirta ym.~näyttävät, että kombinatorinen optimointi on keino esittää
 matemaattisena ongelmana ulkoasusuunnittelun heuristiikat ja suunnittelun aikana
 tehtävät päätökset, kuten elementtien keskinäinen koko ja järjestys. He
 tähdentävät myös, että kombinatorinen optimointi ei tarvitse erillistä
-opetusdataa, kuten menetelmät, jotka hyödyntävät koneoppimista
-(engl.~\textit{machine learning}). He nostavat esille laskennallisen
+opetusdataa, kuten menetelmät, jotka hyödyntävät ohjattua koneoppimista
+(engl.~\textit{supervised machine learning}). He nostavat esille laskennallisen
 käyttöliittymäsuunnittelun hyötyinä muun muassa kohonneen laadun ja
 johdonmukaisuuden, kyvyn tukea suunnittelijaa erityisesti hankalissa
 erikoistapauksissa ja lisääntyneen ymmärryksen ihmisen ja tietokoneen välisestä
@@ -607,7 +607,7 @@ näkyville.
     \centering
     \includegraphics[width=\textwidth]{images/grid-layout.png}
     \caption{Ruudukkorakenne koostuu sarakkeista (1), jotka on erotettu
-    marginaaleilla (2) toisistaan. Itse ruudukkorakenteella voi myös olla
+    marginaaleilla (2) toisistaan. Ruudukkoalueella voi myös olla
     marginaalit, joilla se erotetaan sivun reunoista ja keskitetään sivulle
     (3).~\cite{material-design-grid}~\label{fig:grid-layout}}
 \end{figure}
@@ -815,16 +815,17 @@ huomiovärin kaltaisia yksityiskohtia voi olla mahdollista personoida matalalla
 kynnyksellä.
 
 Suhtautuminen väreihin on erilaista eri puolilla maailmaa. Jos sivuston
-käyttäjäkunta koostuu vain pienen kulttuurillisesti yhtenäisen alueen asukkaista,
-värien personoinnista ei välttämättä ole hyötyä. Jos käyttäjäkunta on laajempaa
-tai jopa maailmanlaajuista, väripersonointi nousee uuteen merkitykseen. Reinecke
-ym.~\cite{10.1145/2556288.2557052} tutkivat värien merkitystä web-suunnittelussa
-pyytämällä ihmisiä eri kulttuuritaustoista arvioimaan eri sivuston visuaalista
-miellyttävyyttä. He huomasivat, että esimerkiksi pohjoismakedonialaiset pitävät
-keskimäärin värikkäämmistä sivuista ja toisaalta venäläiset suosivat
-yksinkertaisempia ulkoasusuunnitelmia ja väripaletteja.
+käyttäjäkunta koostuu vain pienen kulttuurillisesti yhtenäisen alueen
+asukkaista, värien personoinnista ei välttämättä ole hyötyä. Jos käyttäjäkunta
+on laajempaa tai jopa maailmanlaajuista, väripersonointi nousee uuteen
+merkitykseen. Reinecke ym.~\cite{10.1145/2556288.2557052} tutkivat värien
+merkitystä web-suunnittelussa pyytämällä ihmisiä eri kulttuuritaustoista
+arvioimaan eri sivustojen visuaalista miellyttävyyttä. He huomasivat, että
+esimerkiksi pohjoismakedonialaiset pitävät keskimäärin värikkäämmistä sivuista
+ja toisaalta venäläiset suosivat yksinkertaisempia ulkoasusuunnitelmia ja
+väripaletteja.
 
-O'Donovan esittelee väitöskirjassaan~\cite{odonovan_2015} menetelmän tuottaa
+O'Donovan esitteli väitöskirjassaan~\cite{odonovan_2015} menetelmän tuottaa
 osan väripaletista laskennallisesti. Menetelmä olettaa, että päävärit on lukittu,
 kuten yleensä tapana on. Joukkoistamisella kerätyn tiedon pohjalta menetelmä
 pystyy muodostamaan puuttuvat värit palettiin miellyttävällä tavalla. Menetelmä
@@ -855,8 +856,8 @@ käyttökokemukseen.
 Väripaletin ohella toinen sivuston ilmeen tärkeä osa on typografia.
 Typografialla tarkoitetaan tekstin ulkoasua, eli kirjasintyyppiä ja -kokoa,
 riviväliä yms.~sekä tekstissä käytettyä korostusta kuten lihavointia ja
-kursiivia. Lisäksi sivustoa riippuen on huomioitava kielet, jotka käyttävät eri
-kirjoitusjärjestelmiä kuin latinalaisia aakkosia, kuten kyrillisiä aakkosia.
+kursiivia. Lisäksi sivustosta riippuen on huomioitava kielet, jotka käyttävät
+eri kirjoitusjärjestelmiä kuin latinalaisia aakkosia, kuten kyrillisiä aakkosia.
 
 Typografia on tärkeässä osassa, kun tarkastellaan sivuston luettavuutta ja
 sivuston antamaa yleisvaikutelmaa. Virallinen teksti ei voi käyttää samaa
@@ -869,14 +870,14 @@ lisäksi yhteyden ulkoasun monimutkaisuuden ja kulttuuritaustan välillä. Siksi
 olisi hyvä, jos myös kirjasintyyppi voitaisiin personoida kullekin käyttäjälle
 sopivaksi.
 
-Jotta kirjasintyyppiä voitaisiin personoida, täytyy niille ensin kehittää
-luokittelujärjestelmä. O'Donovan~\cite{odonovan_2015} esittelee kirjasintyyppien
+Jotta kirjasintyyppejä voitaisiin personoida, täytyy niille ensin kehittää
+luokittelujärjestelmä. O'Donovan~\cite{odonovan_2015} esitteli kirjasintyyppien
 ominaisuuksiin pohjautuvan luokittelujärjestelmän, jolla kirjasintyyppi voidaan
 luokitella erilaisten tunnesanojen perusteella. Esimerkkejä O'Donovanin
 menetelmän luokitteluista on mm.~ohut, monimutkainen, rauhallinen ja virallinen.
-Näiden luokittelun avulla sivuston kirjasintyyppi voitaisiin personoida
+Näiden luokittelujen avulla sivuston kirjasintyyppi voitaisiin personoida
 käyttäjän mielialan tai Reinecken osoittaman kulttuuritaustayhteyden avulla. Jos
-käyttäjä esimerkiksi selailee omaisen kuolemaan liittyviä tietoja kuten
+käyttäjä esimerkiksi selailee omaisen kuolemaan liittyviä tietoja, kuten
 perunkirjoituksen tekemistä Verohallinnon sivustolla, kirjasintyyppi voidaan
 vaihtaa hienovaraisempaan. Samoin jos käyttäjän huomataan olevan hyvällä
 tuulella, verkkokaupan kirjasintyyppiä voidaan muuttaa hieman leikittelevämmäksi
@@ -980,8 +981,8 @@ käyttöönoton vaivattomuus ja saavutettava hyöty. Molemmissa akseleissa on ko
 kriteeriä, joissa kaikissa on kolme tasoa. Pisteytys perustuu eksponentiaaliseen
 asteikkoon, tarkoittaen että kustakin kriteeristä voi saada 0, 1 tai 10
 pistettä. Miinuspisteitä ei voi saada. Täten kummankin akselin minimipistemäärä
-on 0 ja maksimipistemäärä 30. Eksponentiaaliseen asteikon tarkoitus on korostaa
-kunkin akselin ääripäitä, jolloin heikoimmat ja parhaimmat menetelmät
+on 0 ja maksimipistemäärä on 30. Eksponentiaaliseen asteikon tarkoitus on
+korostaa kunkin akselin ääripäitä, jolloin heikoimmat ja parhaimmat menetelmät
 erottautuisivat vertailuissa paremmin. Molempien akseleiden pisteytyskriteerit
 esitellään seuraavaksi sanallisesti, mutta ne ovat myös kootusti
 tarkasteltavissa taulukosta~\ref{table:personalization-comparison-criteria}.
@@ -1057,7 +1058,7 @@ luvussa~\ref{personalization-aspects} kuvattujen personoinnin näkökulmien
 kautta.
 
 Pisteytystaulukon lisäksi kunkin osion tärkeimmät menetelmät on esitetty
-graafisessa priorisointikuvassa, jonka akseleina toimivat aiemmin kuvatut
+graafisessa priorisointikaaviossa, jonka akseleina toimivat aiemmin kuvatut
 vaivattomuus ja hyöty. Tärkeimmiksi menetelmiksi lasketaan ne, joiden
 vaivattomuus ja/tai hyöty on yli 10 pistettä.
 
@@ -1186,8 +1187,8 @@ taulukkoon~\ref{table:typography-personalization-comparison}. Typografian
 personointimenetelmien vertailussa korostuu sisällön asettelun tapaan
 responsiivinen web-suunnittelu. Tekstin tulee olla luettavaa kaikilla
 laitteilla, ja siksi esimerkiksi kirjasinkoon suurentaminen mobiililaitteilla on
-erittäin hyödyllistä. Lisäksi tekstin luettavuuteen vaikuttavat tekijät kuten
-ympäristön kirkkaus ja laitteen liike, kuten tärinä nousevat hyödyllisiksi. Ne
+erittäin hyödyllistä. Lisäksi tekstin luettavuuteen vaikuttavat tekijät, kuten
+ympäristön kirkkaus, ja laitteen liike, kuten tärinä, nousevat hyödyllisiksi. Ne
 eivät kuitenkaan tällä hetkellä ole helposti personoitavissa. Käyttäjälle
 personoitava typografia ei nouse vertailussa kovin hyödylliseksi, vaan
 tärkeimmät menetelmät painottuvat käyttöympäristön näkökulmien puolelle.
@@ -1344,16 +1345,16 @@ Tässä luvussa vertailtiin personoinnin eri näkökulmia pisteyttämällä ne l
 alussa esitellyn kriteeristön perusteella. Pisteytys tehtiin erikseen jokaiselle
 työssä tarkasteltavista sivuston ulkoasun osa-alueista, joita ovat sisällön
 asettelu, typografia, värit ja kuvien muokkaus. Pisteytetyt näkökulmat koottiin
-osa-aluekohtaiseen priorisointitaulukkoon, josta näkee helposti mitä
+osa-aluekohtaiseen priorisointikaavioon, josta näkee helposti mitä
 personoinnin näkökulmia ja menetelmiä kannattaa palveluntarjoajana lähteä
 edistämään ensimmäisenä.
 
-Priorisointitaulukoiden parhaassa, eli hyödyllisimmässä ja vaivattomimmassa,
-kvadrantissa korostuvat ne personoinnin näkökulmat, jotka ovat jo vakiintuneet
+Priorisointikaavioiden parhaassa, eli hyödyllisimmässä ja vaivattomimmassa,
+kulmassa korostuvat ne personoinnin näkökulmat, jotka ovat jo vakiintuneet
 toimialalle. Tällainen näkökulma on esimerkiksi sisällön asettelun personointi
 laitteen näyttökoon perusteella, johon löytyy valmis menetelmä, eli
 responsiivinen web-suunnittelu. Typografian ja kuvien muokkauksen personointi
-verkkoyhteyden laadun perusteella nousi myös parhaaseen kvadranttiin
+verkkoyhteyden laadun perusteella nousi myös kaavioiden parhaaseen kulmaan
 toimialaratkaisujen, kuten fonttien esilatauksen ja uusien kuvaformaattien,
 siivittämänä.
 
@@ -1370,7 +1371,7 @@ hyödyllisyydestä onkin näyttöä.
 
 Yksi työn tavoitteista oli löytää vertailun avulla personointimenetelmät, joista
 saa suurimman hyödyn pienimmällä vaivalla. Tässä luvussa esiteltyjen
-priorisointitaulukkojen avulla palveluntarjoaja voi helposti vertailla eri
+priorisointikaavioiden avulla palveluntarjoaja voi helposti vertailla eri
 personoinnin näkökulmia ja pohtia, mitä niistä kannattaisi lähteä edistämään
 web-sivustollaan.
 
@@ -1400,7 +1401,7 @@ ja arvioidun hyödyn saralla. Molempien akselien pisteytykseen kehitettiin
 kriteeristö, jonka pisteytysasteikko on eksponentiaalinen erojen
 selkeyttämiseksi. Pisteytyksessä kaikkia työhön valittuja personoinnin
 näkökulmia tarkasteltiin erikseen jokaisen sivuston osa-alueen kannalta. Pisteet
-kuvattiin priorisointitaulukkoon, josta näkee selkeästi mitkä menetelmistä
+kuvattiin priorisointikaavioon, josta näkee selkeästi mitkä menetelmistä
 kannattaa ottaa heti käyttöön, mitkä kannattaa ottaa seuraavaksi käyttöön, mitä
 menetelmiä kannattaa harkita, ja mitä ei kannata ottaa käyttöön.
 
