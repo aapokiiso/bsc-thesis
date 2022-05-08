@@ -86,7 +86,7 @@ style=ieee
 
 \uselogo{aaltoBlue}{''}
 
-\keywords{personointi\spc{}responsiivinen web-suunnittelu\spc{}web-teknologiat\spc{}web-analytiikka\spc{}kombinatorinen optimointi\spc{}tietosuoja}
+\keywords{personointi\spc{}responsiivinen web-suunnittelu\spc{}web-teknologiat\spc{}web-analytiikka\spc{}kombinatorinen optimointi\spc{}tietosuoja\spc{}saavutettavuus}
 
 \thesisabstract{ Työssä tarkasteltiin personointia web-sivuston eri osa-alueiden, kuten asettelun ja värien, näkökulmasta. Personointi on palvelun, kuten web-sivuston, mukauttamista tavalla, jossa sen henkilökohtainen merkitys käyttäjän näkökulmasta kasvaa. Työ toteutettiin kirjallisuustutkimuksena. Työn tavoitteena oli löytää web-sivuston ulkoasun personointiin menetelmiä ja näkökulmia, joista saa suurimman hyödyn pienimmällä vaivalla. Tätä varten kehitettiin pisteytysmenetelmä, jonka avulla parhaat personoinnin menetelmät ja näkökulmat erottuisivat. Pisteytyksen jälkeen tulokset kuvattiin kaavioon, jolla menetelmien hyödyllisyyttä ja käyttöönoton vaivattomuutta voi vertailla silmämääräisesti. Tulosten perusteella voidaan todeta, että suurinta osaa tarkastelluista menetelmistä ja näkökulmista ei kannata ottaa käyttöön, sillä ne ovat joko liian työläitä tai niistä saatava hyöty on tutkimuksen perusteella epäselvää. Vertailussa parhaaksi havaitut menetelmät ovat jo laajasti käytössä toimialalla. Tarkastelussa havaittiin, että laskennallisiin menetelmiin perustuvaan ulkoasun personointiin kohdistuu aktiivista tutkimusta. Tämä näkyy toivottavasti pian myös toimialalla uusina personointimenetelminä, joihin vaadittava työpanos web-sivuston suunnittelussa ja toteutuksessa pienenee nykyisestä. }
 
@@ -587,7 +587,8 @@ lähtökohtaisesti siirtyä valikon ulkopuolelle. Valikoiden asettelun personoin
 tarkastellaan tarkemmin luvussa~\ref{menu-personalization}.
 
 Sisältöalueen asettelu perustuu nykyään lähtökohtaisesti ruudukkorakenteeseen
-(engl.~\textit{grid layout}). Ruudukko koostuu sivustosta ja päätelaitteen
+(engl.~\textit{grid layout}). Ruudukkorakennetta on havainnollistettu
+kuvassa~\ref{fig:grid-layout}. Ruudukko koostuu sivustosta ja päätelaitteen
 näyttökoosta riippuen yleensä n.~1--16 sarakkeesta (engl.~\textit{column}),
 jotka on erotettu toisistaan vakiosuuruisella marginaalilla
 (engl.~\textit{margin}). Sarakkeiden leveys, joka on kääntäen verrannollinen
@@ -601,6 +602,15 @@ sisällön kasvaessa. Sen sijaan elementit laajenevat tarvittaessa
 pituussuunnassa. Tyypillisesti sivustot eivät mahdukaan kokonaan kerralla
 näytölle, vaan niitä pitää vierittää alaspäin jolloin lisää sisältöä tulee
 näkyville.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/grid-layout.png}
+    \caption{Ruudukkorakenne koostuu sarakkeista (1), jotka on erotettu
+    marginaaleilla (2) toisistaan. Itse ruudukkorakenteella voi myös olla
+    marginaalit, joilla se erotetaan sivun reunoista ja keskitetään sivulle
+    (3).~\cite{material-design-grid}~\label{fig:grid-layout}}
+\end{figure}
 
 \subsubsection{Responsiivinen web-suunnittelu}\label{responsive-web-design}
 
@@ -756,6 +766,19 @@ ratkaisua, jossa asettelun muutokset optimoinnin myötä ovat pienempiä
 vakiintuneelle käyttäjälle. Uudelle käyttäjälle optimointi olisi edelleen
 alkuperäisen mallin mukaista ja mahdollisesti suurempaa.
 
+Todi ym.~\cite{10.1145/3411764.3445497} kehittivät valikoiden
+mukautusmenetelmän, joka perustuu mallipohjaiseen vahvistusoppimiseen
+(engl.~\textit{reinforcement learning}). Vahvistusoppiminen on koneoppimisen
+ala, jossa tarkoituksena on löytää paras ratkaisu ikään kuin yrityksen ja
+erehdyksen kautta ajan kuluessa. Ohjatulle koneoppimiselle tyypillistä
+opetusdataa ei tarvita, kunhan saavutettujen ratkaisujen laatu on mitattavissa.
+Menetelmä muistuttaa siis Dayama ym.~käyttämää ruoanhakuun perustuvaa
+menetelmää, jossa korostuu myös parhaan ratkaisun löytyminen yrityksen ja
+erehdyksen kautta. Todi ym.~toteuttamassa käyttäjätutkimuksessa (n=18) tulokset
+olivat samansuuntaisia kuin Dayama ym.~tutkimuksessa, eli halutun toiminnon
+löytyminen valikosta nopeutui merkittävästi, kun valikko oli optimoitu
+menetelmän avulla.
+
 \subsection{Ilmeen personointi}
 
 Ilmeellä tarkoitetaan tässä sivuston visuaalista tyyliä. Siihen sisältyy
@@ -908,7 +931,9 @@ mielenkiintoinen. Sen isoin rajoite on käyttäjän mieltymysten kerääminen, j
 täytyy tehdä ennen kuin kuvia voidaan personoida. Myös personoitavat
 ominaisuudet rajoittuvat vain kontrastiin ja valkotasapainoon, mutta ryhmä
 pohtii, että menetelmää voisi laajentaa esimerkiksi tekemään automaattista
-rajausta, tarkkuuden säätöä ja optista korjausta.
+rajausta, tarkkuuden säätöä ja optista korjausta. Automaattiseen rajaukseen
+löytyy monia valmiita kirjastoja, kuten smartcrop.js~\cite{smartcrop}, jotka
+osaavat huomioida rajauksessa kuvan sisällön.
 
 Kang ym.~kehittämää menetelmää ei siis voi suoraan tuoda sivustolle
 personoimaan kuvia, mutta jos käyttäjästä saadaan pääteltyä tietoja, kuten
